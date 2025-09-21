@@ -1,0 +1,1 @@
+/srv/luminous-dynamics/_websites/mycelix.net/holochain/test-wasm-build/target/wasm32-unknown-unknown/release/test_zome.wasm: /srv/luminous-dynamics/_websites/mycelix.net/holochain/test-wasm-build/src/lib.rs

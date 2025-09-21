@@ -1,0 +1,20 @@
+[package]
+name = "ghost_actor"
+version = "0.4.0-alpha.5"
+authors = ["Holochain Core Dev Team <devcore@holochain.org>"]
+edition = "2018"
+description = "GhostActor makes it simple, ergonomic, and idiomatic to implement async / concurrent code using an Actor model."
+keywords = ["asynchronous", "holo", "holochain", "actor"]
+categories = ["asynchronous"]
+license = "Apache-2.0"
+readme = "README.md"
+documentation = "https://docs.rs/ghost_actor"
+repository = "https://github.com/holochain/ghost_actor"
+
+[dependencies]
+futures = "0.3.8"
+tracing = "0.1"
+
+[dev-dependencies]
+observability = "0.1"
+tokio = { version = "1", features = ["full"] }

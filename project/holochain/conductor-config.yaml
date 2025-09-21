@@ -1,0 +1,20 @@
+---
+environment_path: conductor-data
+keystore:
+  type: lair_server
+  connection_url: "unix:///tmp/lair-keystore/socket?k=dummy"
+
+admin_interfaces:
+  - driver:
+      type: websocket
+      port: 4444
+
+app_interfaces:
+  - driver:
+      type: websocket
+      port: 4445
+
+network:
+  bootstrap_service: https://bootstrap.holo.host
+  transport_pool:
+    - type: webrtc

@@ -1,0 +1,39 @@
+[package]
+name = "app_dirs2"
+version = "2.5.5"
+authors = ["Andy Barron <AndrewLBarron@gmail.com>", "Simon Heath <icefoxen@gmail.com>"]
+categories = ["filesystem", "os"]
+description = "Put your app's data in the right place on every platform. Community-maintained project."
+documentation = "https://docs.rs/app_dirs2"
+homepage = "https://lib.rs/app_dirs2"
+keywords = ["application", "data", "storage", "location", "directory"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/app-dirs-rs/app_dirs2"
+edition = "2018"
+
+[target.'cfg(all(unix, not(target_os = "macos")))'.dependencies]
+xdg = "2.4.1"
+
+[target.'cfg(target_os = "android")'.dependencies]
+jni = "0.21.0"
+ndk-context = "0.1.1"
+
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3.9", features = ["shlobj", "combaseapi"] }
+
+[dev-dependencies]
+once_cell = "1.14.0"
+tempfile = "3.3.0"
+test-case = "2.2.1"
+
+[target.'cfg(target_os = "android")'.dev-dependencies]
+ndk-glue = { version = "0.7.0", features = ["logger"] }
+log = "0.4.17"
+
+[badges]
+maintenance = { status = "passively-maintained" }
+
+[[example]]
+name = "android"
+crate-type = ["cdylib"]

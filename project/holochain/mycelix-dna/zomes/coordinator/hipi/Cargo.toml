@@ -1,0 +1,15 @@
+[package]
+name = "hipi"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+hdk.workspace = true
+serde.workspace = true
+hipi_integrity = { path = "../../integrity/hipi" }
+consciousness_integrity = { path = "../../integrity/consciousness" }

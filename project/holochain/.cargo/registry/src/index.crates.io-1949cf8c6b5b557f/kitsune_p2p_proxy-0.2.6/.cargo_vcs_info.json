@@ -1,0 +1,6 @@
+{
+  "git": {
+    "sha1": "0a3b2408b2d6482b913b9f0faf58a39b567f763a"
+  },
+  "path_in_vcs": "crates/kitsune_p2p/proxy"
+}

@@ -1,0 +1,13 @@
+node_modules/
+*.log
+.env
+.DS_Store
+.postgres/
+holochain/.postgres/
+project/holochain/.postgres/
+*.pyc
+__pycache__/
+.venv/
+dist/
+build/
+*.egg-info/

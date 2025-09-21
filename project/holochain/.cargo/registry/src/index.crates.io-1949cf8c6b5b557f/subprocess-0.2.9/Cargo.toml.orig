@@ -1,0 +1,28 @@
+[package]
+name = "subprocess"
+version = "0.2.9"
+authors = ["Hrvoje Nikšić <hniksic@gmail.com>"]
+readme = "README.md"
+keywords = ["execute", "process", "command", "redirect", "pipe"]
+license = "Apache-2.0/MIT"
+repository = "https://github.com/hniksic/rust-subprocess"
+documentation = "https://docs.rs/subprocess/"
+description = """
+Execution of child processes and pipelines, inspired by Python's subprocess
+module, with Rust-specific extensions.
+"""
+edition = "2018"
+
+[dependencies]
+libc = "0.2.78"
+
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3.8", features = ["std", "handleapi", "namedpipeapi", "processenv", "synchapi", "winerror", "processthreadsapi", "winbase"] }
+
+[dev-dependencies]
+tempfile = "3.3.0"
+lazy_static = "1.4.0"
+
+[lib]
+name = "subprocess"
+path = "src/lib.rs"

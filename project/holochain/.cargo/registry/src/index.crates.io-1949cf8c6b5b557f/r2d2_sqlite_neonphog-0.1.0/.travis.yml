@@ -1,0 +1,9 @@
+language: rust
+rust:
+- nightly
+- beta
+- stable
+addons:
+  sqlite3
+script:
+- cargo test

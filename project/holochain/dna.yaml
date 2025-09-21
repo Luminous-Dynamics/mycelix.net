@@ -1,0 +1,13 @@
+---
+manifest_version: "1"
+name: mycelix
+uid: 00000000-0000-0000-0000-000000000000
+properties: ~
+origin_time: 2024-01-01T00:00:00.000000Z
+network_seed: ~
+coordinator:
+  zomes:
+    - name: hipi
+      bundled: "zomes/hipi/target/wasm32-unknown-unknown/release/hipi.wasm"
+      dependencies: []
+      dylib: ~

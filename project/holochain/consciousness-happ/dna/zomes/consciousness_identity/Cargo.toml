@@ -1,0 +1,19 @@
+[package]
+name = "consciousness_identity"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+hdk = "0.5.0"
+serde = { version = "1.0", features = ["derive"] }
+
+[dev-dependencies]
+holochain = { version = "0.5.0", default-features = false }
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1

@@ -1,0 +1,19 @@
+[package]
+authors = ["Xuanwo <github@xuanwo.io>"]
+description = "Retry with backoff without effort."
+documentation = "https://docs.rs/backon"
+edition = "2021"
+license = "Apache-2.0"
+name = "backon"
+version = "0.4.1"
+
+[dependencies]
+fastrand = "1.9.0"
+futures-core = "0.3.26"
+pin-project = "1"
+tokio = { version = "1", features = ["time"] }
+
+[dev-dependencies]
+anyhow = "1"
+reqwest = "0.11"
+tokio = { version = "1", features = ["full"] }

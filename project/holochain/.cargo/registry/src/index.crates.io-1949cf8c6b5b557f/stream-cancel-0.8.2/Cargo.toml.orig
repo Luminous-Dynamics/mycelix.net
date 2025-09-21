@@ -1,0 +1,27 @@
+[package]
+name = "stream-cancel"
+version = "0.8.2"
+edition = "2021"
+rust-version = "1.63.0"
+authors = ["Jon Gjengset <jon@thesquareplanet.com>"]
+description = "A library for interrupting asynchronous streams."
+
+homepage = "https://github.com/jonhoo/stream-cancel"
+repository = "https://github.com/jonhoo/stream-cancel.git"
+
+keywords = ["asynchronous", "futures"]
+categories = ["network-programming", "asynchronous"]
+
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+futures-core = "0.3.0"
+pin-project = "1.0.0"
+tokio = { version = "1.0", features = ["sync"] }
+
+[dev-dependencies]
+futures = "0.3.0"
+tokio = { version = "1.0", features = ["full"] }
+tokio-stream = {version="0.1.1", features=["net"]}
+futures-util = "0.3.0"
+static_assertions = "1.1.0"

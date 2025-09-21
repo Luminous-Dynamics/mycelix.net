@@ -1,0 +1,22 @@
+[package]
+name = "cron"
+version = "0.9.0"
+authors = ["Zack Slayton <zack.slayton@gmail.com>"]
+repository = "https://github.com/zslayton/cron"
+documentation = "https://docs.rs/cron"
+readme = "README.md"
+description = "A cron expression parser and schedule explorer."
+keywords = [ "cron", "schedule", "repeat", "periodic", "time" ]
+license = "MIT OR Apache-2.0"
+edition = "2018"
+
+[lib]
+name = "cron"
+
+[dependencies]
+chrono = "~0.4"
+nom = "~4.1"
+once_cell = "1.5.2"
+
+[dev-dependencies]
+chrono-tz = "0.4"

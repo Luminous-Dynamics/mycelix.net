@@ -1,0 +1,26 @@
+[package]
+
+name = "intervallum"
+version = "1.4.1"
+authors = [ "Pierre Talbot <pierre.talbot@uni.lu>" ]
+
+description = "Generic interval and interval set library."
+documentation = "https://docs.rs/intervallum/1.4.1/interval/"
+repository = "https://github.com/ptal/intervallum"
+readme = "README.md"
+keywords = ["interval", "math", "data-structure", "containers", "interval-set"]
+license = "MIT OR Apache-2.0"
+edition = "2018"
+
+[lib]
+
+name = "interval"
+path = "src/libinterval/lib.rs"
+
+[dependencies]
+
+num-integer = "0.1.44"
+num-traits = "0.2.14"
+bit-set = "0.5.0"
+gcollections = "1.5.0"
+trilean = "1.1.0"

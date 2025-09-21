@@ -1,0 +1,10 @@
+- lazy writes (return it in `get` if it is in the flushing queue)
+- `swap_keys`
+- `insert` -> `replace`
+- `insert` should return a guard
+- use reentrant mutex
+- make tests for deadlock
+- iterators
+- hash sets
+- rename `CHashMap` to `HashMap`
+- box the values

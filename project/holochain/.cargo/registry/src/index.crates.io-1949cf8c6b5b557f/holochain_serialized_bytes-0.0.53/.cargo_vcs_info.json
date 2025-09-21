@@ -1,0 +1,6 @@
+{
+  "git": {
+    "sha1": "e1c42dd8dc4d63a489f87327ac924059155da839"
+  },
+  "path_in_vcs": "crates/holochain_serialized_bytes"
+}

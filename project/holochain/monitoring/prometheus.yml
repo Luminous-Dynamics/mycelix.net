@@ -1,0 +1,14 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'mycelix-gateway'
+    static_configs:
+      - targets: ['mycelix-holochain:8765']
+    metrics_path: '/metrics'
+    
+  - job_name: 'holochain-conductor'
+    static_configs:
+      - targets: ['mycelix-holochain:4444']
+    metrics_path: '/metrics'

@@ -1,0 +1,15 @@
+[package]
+name = "hipi_integrity"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+hdi.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+consciousness_integrity = { path = "../consciousness" }

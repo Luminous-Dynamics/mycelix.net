@@ -1,0 +1,33 @@
+[package]
+name = "err-derive"
+version = "0.3.1"
+description = "Derive macro for `std::error::Error`"
+readme = "README.md"
+keywords = ["derive", "error", "display"]
+repository = "https://gitlab.com/torkleyy/err-derive"
+license = "MIT/Apache-2.0"
+edition = "2018"
+build = "build.rs"
+
+[badges]
+gitlab = { repository = "torkleyy/err-derive"  }
+maintenance = { status = "passively-maintained" }
+
+[lib]
+proc-macro = true
+
+[build-dependencies]
+rustversion = "1.0"
+skeptic = { version = "0.13.5", optional = true }
+
+[dependencies]
+quote = "1.0.2"
+syn = "1.0.5"
+synstructure = "0.12.2"
+proc-macro2 = "1.0.1"
+proc-macro-error = "1.0.0"
+skeptic = { version = "0.13.5", optional = true }
+
+[features]
+default = ["std"]
+std = []

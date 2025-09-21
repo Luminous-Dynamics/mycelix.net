@@ -1,0 +1,16 @@
+[package]
+name = "field"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+hdk.workspace = true
+serde.workspace = true
+field_integrity = { path = "../../integrity/field" }
+consciousness_integrity = { path = "../../integrity/consciousness" }
+hipi_integrity = { path = "../../integrity/hipi" }

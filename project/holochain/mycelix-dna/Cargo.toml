@@ -1,0 +1,29 @@
+[workspace]
+members = [
+    "zomes/coordinator/consciousness",
+    "zomes/coordinator/hipi", 
+    "zomes/coordinator/field",
+    "zomes/integrity/consciousness",
+    "zomes/integrity/hipi",
+    "zomes/integrity/field",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+authors = ["Luminous Dynamics <consciousness@mycelix.net>"]
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/Luminous-Dynamics/mycelix"
+
+[workspace.dependencies]
+hdi = "0.5.0"
+hdk = "0.5.0"
+serde = { version = "1.0", features = ["derive"] }
+thiserror = "1.0"
+
+[profile.release]
+opt-level = "z"     # Optimize for size
+lto = true          # Link-time optimization
+codegen-units = 1   # Single codegen unit for better optimization
+strip = true        # Strip symbols for smaller size

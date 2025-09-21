@@ -1,0 +1,20 @@
+---
+manifest_version: "1"
+name: consciousness
+uuid: 00000000-0000-0000-0000-000000000000
+properties: ~
+zomes:
+  - name: consciousness_identity
+    bundled: target/wasm32-unknown-unknown/release/consciousness_identity.wasm
+    dependencies:
+      - name: consciousness_identity
+    
+  - name: consensus_mechanism  
+    bundled: target/wasm32-unknown-unknown/release/consensus_mechanism.wasm
+    dependencies:
+      - name: consciousness_identity
+    
+  - name: hx402_payments
+    bundled: target/wasm32-unknown-unknown/release/hx402_payments.wasm
+    dependencies:
+      - name: consciousness_identity

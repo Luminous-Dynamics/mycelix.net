@@ -1,0 +1,24 @@
+version: '3.8'
+
+# Simplified Docker Compose for Mycelix Demo
+# This runs the Node.js demo gateway without Holochain
+
+services:
+  mycelix-demo:
+    image: node:20-alpine
+    container_name: mycelix-demo
+    working_dir: /app
+    volumes:
+      - ./:/app
+    ports:
+      - "8765:8765"  # Gateway WebSocket/HTTP
+      - "8766:8766"  # Demo client HTTP
+    environment:
+      - NODE_ENV=production
+    command: sh -c "apk add --no-cache python3 && npm install ws && sh demo.sh"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8765/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

@@ -1,0 +1,37 @@
+---
+# Holochain 0.3.2 Conductor Configuration
+# For P2P Consciousness Network
+
+# Data directory for conductor state
+data_root_path: ./conductor-data
+environment_path: ./conductor-data
+
+# Use test keystore for development
+use_dangerous_test_keystore: true
+
+# Admin interface for managing the conductor
+admin_interfaces:
+  - driver:
+      type: websocket
+      port: 4444
+    allowed_origins: "*"
+
+# App interfaces for applications
+app_interfaces:
+  - driver:
+      type: websocket  
+      port: 4445
+    allowed_origins: "consciousness-network"
+
+# Network configuration
+network:
+  # Use local network for testing (change to bootstrap.holo.host for production)
+  transport_pool:
+    - type: mem
+  bootstrap_service: https://bootstrap.holo.host
+  
+# DPKI settings (optional)
+dpki: ~
+
+# Logging configuration
+# tracing_override: ~

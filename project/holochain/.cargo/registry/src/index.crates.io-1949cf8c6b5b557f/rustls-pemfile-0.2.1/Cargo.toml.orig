@@ -1,0 +1,21 @@
+[package]
+name = "rustls-pemfile"
+version = "0.2.1"
+authors = ["Joseph Birr-Pixton <jpixton@gmail.com>"]
+edition = "2018"
+license = "Apache-2.0/ISC/MIT"
+readme = "README.md"
+description = "Basic .pem file parser for keys and certificates"
+homepage = "https://github.com/rustls/pemfile"
+repository = "https://github.com/rustls/pemfile"
+categories = ["network-programming", "cryptography"]
+
+[dependencies]
+base64 = "0.13.0"
+
+[dev-dependencies]
+criterion = "0.3"
+
+[[bench]]
+name = "benchmark"
+harness = false

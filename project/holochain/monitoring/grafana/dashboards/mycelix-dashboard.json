@@ -1,0 +1,81 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Mycelix Consciousness Network",
+    "tags": ["mycelix", "p2p", "consciousness"],
+    "timezone": "browser",
+    "panels": [
+      {
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0},
+        "id": 1,
+        "type": "graph",
+        "title": "WebSocket Connections",
+        "targets": [
+          {
+            "expr": "mycelix_websocket_connections",
+            "legendFormat": "Active Connections"
+          }
+        ]
+      },
+      {
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 0},
+        "id": 2,
+        "type": "graph",
+        "title": "Message Throughput",
+        "targets": [
+          {
+            "expr": "rate(mycelix_messages_total[5m])",
+            "legendFormat": "Messages/sec"
+          }
+        ]
+      },
+      {
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 8},
+        "id": 3,
+        "type": "graph",
+        "title": "Resonance Matches",
+        "targets": [
+          {
+            "expr": "mycelix_resonance_matches_total",
+            "legendFormat": "Total Matches"
+          }
+        ]
+      },
+      {
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 8},
+        "id": 4,
+        "type": "graph",
+        "title": "Network Coherence",
+        "targets": [
+          {
+            "expr": "mycelix_network_coherence",
+            "legendFormat": "Coherence Score"
+          }
+        ]
+      },
+      {
+        "gridPos": {"h": 8, "w": 24, "x": 0, "y": 16},
+        "id": 5,
+        "type": "graph",
+        "title": "System Performance",
+        "targets": [
+          {
+            "expr": "mycelix_latency_ms",
+            "legendFormat": "Latency (ms)"
+          },
+          {
+            "expr": "mycelix_bandwidth_kbps / 1000",
+            "legendFormat": "Bandwidth (Mbps)"
+          }
+        ]
+      }
+    ],
+    "refresh": "5s",
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "schemaVersion": 16,
+    "version": 1
+  }
+}

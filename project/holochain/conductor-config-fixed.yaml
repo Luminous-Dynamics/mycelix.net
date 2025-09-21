@@ -1,0 +1,9 @@
+---
+environment_path: conductor-data
+use_dangerous_test_keystore: true
+admin_interfaces:
+  - driver:
+      type: websocket
+      port: 4444
+    allowed_origins: "*"
+app_interfaces: []

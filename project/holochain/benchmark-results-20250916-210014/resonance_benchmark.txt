@@ -1,0 +1,6 @@
+Resonance Matching Results:
+  Patterns: 1000
+  Comparisons: 499500
+  Matches found: 499500
+  Total time: 8.836866ms
+  Time per comparison: 0.02 µs

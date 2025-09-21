@@ -1,0 +1,41 @@
+[package]
+name = "test-fuzz"
+version = "3.0.4"
+edition = "2018"
+
+description = "To make fuzzing Rust easy"
+
+authors = ["Samuel E. Moelius III <sam@moeli.us>"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/trailofbits/test-fuzz"
+
+[dependencies]
+afl = { version = "0.12.6", optional = true }
+serde = "1.0.144"
+
+internal = { path = "../internal", package = "test-fuzz-internal", version = "=3.0.4" }
+runtime = { path = "../runtime", package = "test-fuzz-runtime", version = "=3.0.4" }
+test-fuzz-macro = { path = "../macro", version = "=3.0.4" }
+
+[dev-dependencies]
+assert_cmd = "2.0.4"
+cargo_metadata = "0.15.0"
+lazy_static = "1.4.0"
+predicates = "2.1.1"
+regex = "1.6.0"
+semver = "1.0.13"
+
+testing = { path = "../testing", package = "test-fuzz-testing" }
+
+# smoelius: A list of formats we might support can be found here:
+# https://github.com/djkoloski/rust_serialization_benchmark
+
+[features]
+auto_concretize = ["internal/__auto_concretize", "test-fuzz-macro/__auto_concretize"]
+serde_bincode = ["internal/__serde_bincode", "runtime/__serde_bincode", "test-fuzz-macro/__serde_bincode"]
+serde_cbor = ["internal/__serde_cbor", "runtime/__serde_cbor", "test-fuzz-macro/__serde_cbor"]
+serde_cbor4ii = ["internal/__serde_cbor4ii", "runtime/__serde_cbor4ii", "test-fuzz-macro/__serde_cbor4ii"]
+__persistent = ["afl", "test-fuzz-macro/__persistent"]
+
+[package.metadata.cargo-udeps.ignore]
+normal = ["afl"]

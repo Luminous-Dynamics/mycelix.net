@@ -1,0 +1,34 @@
+# Fixed Holochain Conductor Configuration
+# Based on official docs research
+
+admin_interfaces:
+  - driver:
+      type: websocket
+      port: 4444
+      allowed_origins: "localhost"
+
+network:
+  network_type: quic_bootstrap
+  transport_pool:
+    - type: mem
+  bootstrap_service: https://bootstrap.holo.host
+  tuning_params:
+    gossip_loop_iteration_delay_ms: 100
+    default_notify_remote_agent_count: 5
+    default_notify_timeout_ms: 10000
+    default_rpc_single_timeout_ms: 30000
+    default_rpc_multi_remote_agent_count: 2
+    default_rpc_multi_timeout_ms: 30000
+    agent_info_expires_after_ms: 300000
+    tls_in_mem_session_storage: 512
+    proxy_keepalive_ms: 60000
+    proxy_to_expire_ms: 300000
+
+data_root_path: ./conductor-storage
+
+keystore:
+  type: danger_test_keystore
+
+dpki:
+  instance_id: default_hc_instance
+  init_params: ~

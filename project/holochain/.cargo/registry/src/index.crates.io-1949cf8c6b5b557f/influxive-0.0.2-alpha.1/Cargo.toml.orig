@@ -1,0 +1,21 @@
+[package]
+name = "influxive"
+version = "0.0.2-alpha.1"
+edition = "2021"
+description = "High-level Rust integration of opentelemetry metrics and InfluxDB"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/holochain/influxive"
+documentation = "https://docs.rs/influxive"
+authors = [ "Holochain Core Dev Team <devcore@holochain.org>" ]
+keywords = ["metrics"]
+categories = ["development-tools"]
+
+[dependencies]
+influxive-writer = { workspace = true }
+influxive-child-svc = { workspace = true }
+influxive-otel = { workspace = true }
+
+[dev-dependencies]
+opentelemetry_api = { workspace = true }
+tempfile = { workspace = true }
+tokio = { workspace = true, features = [ "full" ] }

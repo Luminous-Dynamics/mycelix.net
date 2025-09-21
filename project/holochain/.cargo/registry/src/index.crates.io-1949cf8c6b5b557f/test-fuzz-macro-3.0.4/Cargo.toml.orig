@@ -1,0 +1,33 @@
+[package]
+name = "test-fuzz-macro"
+version = "3.0.4"
+edition = "2018"
+
+description = "test-fuzz-macro"
+
+authors = ["Samuel E. Moelius III <sam@moeli.us>"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/trailofbits/test-fuzz"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+darling = "0.14.1"
+if_chain = "1.0.2"
+lazy_static = "1.4.0"
+proc-macro2 = "1.0.43"
+quote = "1.0.21"
+subprocess = "0.2.9"
+syn = { version = "1.0.99", features = ["full", "parsing", "visit", "visit-mut"] }
+toolchain_find = "0.2.0"
+unzip-n = "0.1.2"
+
+internal = { path = "../internal", package = "test-fuzz-internal", version = "=3.0.4" }
+
+[features]
+__auto_concretize = []
+__persistent = []
+__serde_bincode = ["internal/__serde_bincode"]
+__serde_cbor = ["internal/__serde_cbor"]
+__serde_cbor4ii = ["internal/__serde_cbor4ii"]

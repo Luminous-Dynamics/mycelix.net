@@ -1,0 +1,78 @@
+---
+default_semver_increment_mode: !pre_patch rc
+---
+# Changelog
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/). This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## \[Unreleased\]
+
+## 0.1.6
+
+## 0.1.6-rc.0
+
+## 0.1.5
+
+## 0.1.5-rc.1
+
+## 0.1.5-rc.0
+
+## 0.1.4
+
+## 0.1.4-rc.0
+
+## 0.1.3
+
+## 0.1.3-rc.1
+
+## 0.1.3-rc.0
+
+## 0.1.3-beta-rc.0
+
+## 0.1.2
+
+## 0.1.2-beta-rc.1
+
+## 0.1.2-beta-rc.0
+
+## 0.1.1
+
+## 0.1.1-beta-rc.0
+
+## 0.1.1-beta-dev.0
+
+## 0.1.0
+
+## 0.1.0-beta-rc.4
+
+## 0.1.0-beta-rc.3
+
+## 0.1.0-beta-rc.2
+
+## 0.1.0-beta-rc.1
+
+## 0.1.0-beta-rc.0
+
+## 0.0.12-dev.0
+
+## 0.0.11
+
+## 0.0.10
+
+## 0.0.9
+
+## 0.0.8
+
+## 0.0.7
+
+## 0.0.6
+
+## 0.0.5
+
+## 0.0.4
+
+## 0.0.3
+
+## 0.0.2
+
+## 0.0.1
