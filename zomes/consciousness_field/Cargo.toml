@@ -1,0 +1,18 @@
+[package]
+name = "consciousness_field"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+hdk = { workspace = true }
+hdi = { workspace = true }
+serde = { workspace = true }
+chrono = { workspace = true }
+uuid = { workspace = true }
+
+[dev-dependencies]
+holochain = { workspace = true }
+tokio = { workspace = true }

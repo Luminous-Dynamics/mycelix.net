@@ -1,0 +1,40 @@
+[workspace]
+members = [
+    "consciousness_field",
+    "sacred_messaging",
+    "resonance_tracker",
+]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+authors = ["Luminous Dynamics <contact@luminousdynamics.org>"]
+license = "CAL-1.0"
+
+[workspace.dependencies]
+# Holochain dependencies
+hdk = "0.4.0"
+hdi = "0.5.0"
+serde = { version = "1.0", features = ["derive"] }
+thiserror = "1.0"
+
+# For timestamps and utilities
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1.0", features = ["v4", "serde"] }
+
+# Testing dependencies
+holochain = { version = "0.4.0", features = ["test_utils"] }
+tokio = { version = "1.0", features = ["full"] }
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+
+[profile.dev]
+panic = "abort"
+
+[profile.test]
+panic = "unwind"

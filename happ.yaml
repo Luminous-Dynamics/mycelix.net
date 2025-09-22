@@ -1,0 +1,44 @@
+manifest_version: "1"
+name: mycelix_consciousness_network
+description: "P2P Consciousness Network - Living Digital Mycelium"
+
+# Roles define the different DNAs in your hApp
+roles:
+  - id: consciousness_field
+    provisioning:
+      strategy: create
+      deferred: false
+    dna:
+      bundled: "./dnas/consciousness_field.dna"
+      modifiers:
+        network_seed: ~
+        properties:
+          name: "Consciousness Field Protocol"
+          description: "Shared consciousness field for P2P awareness"
+          version: "0.1.0"
+      
+  - id: sacred_messaging  
+    provisioning:
+      strategy: create
+      deferred: false
+    dna:
+      bundled: "./dnas/sacred_messaging.dna"
+      modifiers:
+        network_seed: ~
+        properties:
+          name: "Sacred Messaging Protocol"
+          description: "Encrypted consciousness-to-consciousness communication"
+          version: "0.1.0"
+          
+  - id: resonance_tracker
+    provisioning:
+      strategy: create
+      deferred: false
+    dna:
+      bundled: "./dnas/resonance_tracker.dna"
+      modifiers:
+        network_seed: ~
+        properties:
+          name: "Resonance Tracker"
+          description: "Track and amplify field coherence"
+          version: "0.1.0"
