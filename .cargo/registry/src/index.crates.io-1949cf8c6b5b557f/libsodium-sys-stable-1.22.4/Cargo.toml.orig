@@ -1,0 +1,36 @@
+[package]
+edition = "2021"
+authors = ["dnaq", "jedisct1"]
+build = "build.rs"
+description = "Maintained FFI bindings for libsodium stable"
+documentation = "https://docs.rs/libsodium-sys-stable"
+keywords = ["libsodium", "NaCl", "crypto", "cryptography"]
+license = "MIT OR Apache-2.0"
+links = "sodium"
+name = "libsodium-sys-stable"
+repository = "https://github.com/jedisct1/libsodium-sys-stable"
+categories = ["cryptography", "api-bindings"]
+version = "1.22.4"
+
+[build-dependencies]
+cc = "1.2"
+libflate = "2.1"
+minisign-verify = "0.2"
+pkg-config = "0.3"
+tar = "0.4"
+ureq = { version = "3.1", default-features = false }
+vcpkg = "0.2"
+zip = { version = "5.1", default-features = false, features = ["deflate"] }
+
+[dependencies]
+libc = { version = "0.2", default-features = false }
+
+[lib]
+name = "libsodium_sys"
+
+[features]
+default = []
+use-pkg-config = []
+fetch-latest = []
+optimized = []
+minimal = []

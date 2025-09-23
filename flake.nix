@@ -17,18 +17,41 @@
       pkgs = import nixpkgs {
         inherit system;
         overlays = [ rust-overlay.overlays.default ];
-        config = {
-          # Allow the insecure libsoup package that Holonix depends on
-          permittedInsecurePackages = [
-            "libsoup-2.74.3"
-          ];
-        };
       };
       
       rustToolchain = pkgs.rust-bin.stable.latest.default.override {
         extensions = [ "rust-src" "rustfmt" "clippy" ];
         targets = [ "wasm32-unknown-unknown" ];
       };
+      
+      # Install Holochain binaries via cargo
+      installHolochainScript = pkgs.writeShellScriptBin "install-holochain" ''
+        echo "📦 Installing Holochain 0.5.3 tools..."
+        
+        if ! command -v holochain &> /dev/null; then
+          echo "Installing holochain conductor..."
+          cargo install holochain --version 0.5.3 --locked
+        else
+          echo "✅ holochain already installed: $(holochain --version)"
+        fi
+        
+        if ! command -v hc &> /dev/null; then
+          echo "Installing holochain CLI..."
+          cargo install holochain_cli --version 0.5.0 --locked
+        else
+          echo "✅ hc already installed: $(hc --version)"
+        fi
+        
+        if ! command -v lair-keystore &> /dev/null; then
+          echo "Installing lair-keystore..."
+          cargo install lair_keystore --version 0.5.1 --locked
+        else
+          echo "✅ lair-keystore already installed"
+        fi
+        
+        echo ""
+        echo "✨ Holochain tools installation complete!"
+      '';
     in
     {
       devShells.${system}.default = pkgs.mkShell {
@@ -60,13 +83,13 @@
           # WebRTC and P2P networking
           libsodium
           
-          # For now, we'll install Holochain tools manually
-          # Instructions will be provided in the shell
+          # Installation script
+          installHolochainScript
         ];
         
         shellHook = ''
           echo "🍄 Mycelix Holochain Development Environment"
-          echo "================================================"
+          echo "============================================="
           echo ""
           
           # Set up environment variables
@@ -74,34 +97,44 @@
           export RUSTUP_HOME="$PWD/.rustup"
           export PATH="$CARGO_HOME/bin:$PATH"
           
-          # Check if we have hc-install
-          if ! command -v hc-install &> /dev/null; then
-            echo "📦 Installing Holochain CLI tools..."
+          # Check if Holochain tools are installed
+          if ! command -v holochain &> /dev/null; then
+            echo "📦 Holochain tools not found!"
             echo ""
-            
-            # Install hc-install tool
-            cargo install holochain_cli_bundle --version 0.3.0
-            
+            echo "To install Holochain 0.5.3 tools, run:"
+            echo "  install-holochain"
             echo ""
-            echo "✅ Holochain CLI installed!"
+          else
+            echo "✅ Holochain tools detected:"
+            echo "   • holochain $(holochain --version 2>/dev/null || echo '(checking...)')"
+            echo "   • hc $(hc --version 2>/dev/null || echo '(checking...)')"
+            echo ""
           fi
           
-          echo "Available commands:"
-          echo "  cargo           - Rust package manager"
-          echo "  wasm-pack       - Build WASM packages"
-          echo "  cargo build --target wasm32-unknown-unknown"
+          echo "🔧 Development Commands:"
           echo ""
-          echo "To compile the consciousness_field zome:"
-          echo "  cd zomes/consciousness_field"
-          echo "  cargo build --release --target wasm32-unknown-unknown"
+          echo "  First time setup:"
+          echo "   install-holochain        # Install Holochain 0.5.3 tools"
           echo ""
-          echo "The compiled WASM will be at:"
-          echo "  target/wasm32-unknown-unknown/release/consciousness_field.wasm"
+          echo "  Building Zomes:"
+          echo "   cd zomes/consciousness_field"
+          echo "   cargo build --release --target wasm32-unknown-unknown"
           echo ""
-          echo "🌊 Ready for P2P consciousness networking!"
+          echo "  hApp Management (after installing tools):"
+          echo "   hc app pack              # Pack hApp for distribution"
+          echo "   hc dna pack              # Pack DNA from zomes"
           echo ""
-          echo "Note: Full Holochain conductor tools require additional setup."
-          echo "For now, you can develop and compile WASM zomes."
+          echo "  Testing & Sandboxes:"
+          echo "   hc sandbox generate      # Generate test sandbox"
+          echo "   hc sandbox run           # Run sandbox conductor"
+          echo "   hc sandbox clean         # Clean up sandbox"
+          echo ""
+          echo "📂 Project Structure:"
+          echo "   zomes/                   # Holochain zomes (Rust)"
+          echo "   ui/                      # User interface"
+          echo "   happ.yaml                # hApp configuration"
+          echo ""
+          echo "🌊 P2P consciousness networking is ready to manifest!"
         '';
         
         # Environment variables

@@ -1,8 +1,8 @@
 [workspace]
 members = [
     "consciousness_field",
-    "sacred_messaging",
-    "resonance_tracker",
+    # "sacred_messaging",    # To be implemented
+    # "resonance_tracker",   # To be implemented
 ]
 resolver = "2"
 
@@ -19,8 +19,9 @@ serde = { version = "1.0", features = ["derive"] }
 thiserror = "1.0"
 
 # For timestamps and utilities
-chrono = { version = "0.4", features = ["serde"] }
-uuid = { version = "1.0", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde", "wasmbind"] }
+uuid = { version = "1.0", features = ["v4", "serde", "js"] }
+getrandom = { version = "0.2", features = ["js"] }
 
 # Testing dependencies
 holochain = { version = "0.4.0", features = ["test_utils"] }

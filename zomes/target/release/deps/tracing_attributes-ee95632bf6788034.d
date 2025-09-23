@@ -1,0 +1,7 @@
+/srv/luminous-dynamics/_websites/mycelix.net/zomes/target/release/deps/tracing_attributes-ee95632bf6788034.d: /srv/luminous-dynamics/_websites/mycelix.net/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-attributes-0.1.30/src/lib.rs /srv/luminous-dynamics/_websites/mycelix.net/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-attributes-0.1.30/src/attr.rs /srv/luminous-dynamics/_websites/mycelix.net/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-attributes-0.1.30/src/expand.rs
+
+/srv/luminous-dynamics/_websites/mycelix.net/zomes/target/release/deps/libtracing_attributes-ee95632bf6788034.so: /srv/luminous-dynamics/_websites/mycelix.net/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-attributes-0.1.30/src/lib.rs /srv/luminous-dynamics/_websites/mycelix.net/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-attributes-0.1.30/src/attr.rs /srv/luminous-dynamics/_websites/mycelix.net/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-attributes-0.1.30/src/expand.rs
+
+/srv/luminous-dynamics/_websites/mycelix.net/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-attributes-0.1.30/src/lib.rs:
+/srv/luminous-dynamics/_websites/mycelix.net/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-attributes-0.1.30/src/attr.rs:
+/srv/luminous-dynamics/_websites/mycelix.net/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-attributes-0.1.30/src/expand.rs:

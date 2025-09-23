@@ -1,0 +1,9 @@
+/srv/luminous-dynamics/_websites/mycelix.net/zomes/target/release/deps/convert_case-004cc825ca63ff9c.d: /srv/luminous-dynamics/_websites/mycelix.net/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/convert_case-0.4.0/src/lib.rs /srv/luminous-dynamics/_websites/mycelix.net/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/convert_case-0.4.0/src/case.rs /srv/luminous-dynamics/_websites/mycelix.net/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/convert_case-0.4.0/src/words.rs
+
+/srv/luminous-dynamics/_websites/mycelix.net/zomes/target/release/deps/libconvert_case-004cc825ca63ff9c.rlib: /srv/luminous-dynamics/_websites/mycelix.net/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/convert_case-0.4.0/src/lib.rs /srv/luminous-dynamics/_websites/mycelix.net/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/convert_case-0.4.0/src/case.rs /srv/luminous-dynamics/_websites/mycelix.net/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/convert_case-0.4.0/src/words.rs
+
+/srv/luminous-dynamics/_websites/mycelix.net/zomes/target/release/deps/libconvert_case-004cc825ca63ff9c.rmeta: /srv/luminous-dynamics/_websites/mycelix.net/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/convert_case-0.4.0/src/lib.rs /srv/luminous-dynamics/_websites/mycelix.net/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/convert_case-0.4.0/src/case.rs /srv/luminous-dynamics/_websites/mycelix.net/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/convert_case-0.4.0/src/words.rs
+
+/srv/luminous-dynamics/_websites/mycelix.net/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/convert_case-0.4.0/src/lib.rs:
+/srv/luminous-dynamics/_websites/mycelix.net/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/convert_case-0.4.0/src/case.rs:
+/srv/luminous-dynamics/_websites/mycelix.net/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/convert_case-0.4.0/src/words.rs:
