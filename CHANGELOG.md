@@ -5,6 +5,69 @@ All notable changes to the Mycelix Protocol landing page will be documented in t
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2025-11-14
+
+### Added
+- **Dark Mode Support**
+  - User-toggleable dark theme with floating button (🌙/☀️)
+  - localStorage persistence for theme preference
+  - System preference detection (prefers-color-scheme)
+  - Dynamic theme-color meta tag updates
+  - CSS custom properties for theming throughout
+
+- **FAQ Section**
+  - Interactive accordion with 5 comprehensive Q&A items
+  - Smooth expand/collapse animations
+  - Keyboard accessible (Enter/Space to toggle)
+  - Topics: PoGQ mechanics, comparison to Multi-Krum, production readiness, roadmap, contribution
+
+- **Animations & Transitions**
+  - CSS keyframe animations for stats (countUp effect)
+  - Fade-in animations for sections (fadeInUp)
+  - Intersection Observer for scroll-triggered reveals
+  - Hover effects on cards and buttons
+  - Smooth page transitions throughout
+
+- **Accessibility Enhancements**
+  - `prefers-reduced-motion` support (disables animations)
+  - Print stylesheet for professional printing
+  - Enhanced keyboard navigation for FAQs
+  - ARIA attributes on interactive elements
+  - Improved focus management
+
+- **Community Files**
+  - CODE_OF_CONDUCT.md (Contributor Covenant 2.1)
+  - GitHub Issue Templates (bug_report, feature_request)
+  - Pull Request Template with testing checklist
+  - FUNDING.yml for sponsorship options
+  - CODEOWNERS file for code review automation
+
+- **Performance Optimizations**
+  - Intersection Observer for lazy section loading
+  - Efficient CSS custom properties
+  - Performance timing logging
+  - Optimized JavaScript (4 IIFE modules)
+
+### Changed
+- **Complete CSS Refactor**
+  - All colors now use CSS custom properties
+  - Consistent transition timing (--transition variable)
+  - Dark mode-aware color scheme
+  - Improved mobile responsiveness
+  - Enhanced hover states
+
+- **File Size**
+  - index.html: 356 → 785 lines (+429 lines, +120%)
+  - File size: 15KB → 32KB (doubled)
+  - Added ~160 lines of JavaScript
+  - Added comprehensive FAQ content
+
+### Fixed
+- Mobile dark mode toggle positioning
+- Print layout optimization
+- Cross-browser gradient text compatibility
+- Focus visibility in both themes
+
 ## [1.1.0] - 2025-11-14
 
 ### Added
