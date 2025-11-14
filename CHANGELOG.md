@@ -5,6 +5,79 @@ All notable changes to the Mycelix Protocol landing page will be documented in t
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2025-11-14
+
+### Added
+- **Interactive Navigation**
+  - Reading progress bar at top of page (purple gradient)
+  - Back to top button (floating, appears after 300px scroll)
+  - Smooth scroll with accessibility support
+  - Visual scroll progress tracking
+
+- **Code Examples & Developer Tools**
+  - Quick Start section with Python code example
+  - Copy-to-clipboard button for code blocks
+  - Syntax highlighting with monospace font
+  - Installation and usage examples
+  - PoGQAggregator initialization snippet
+
+- **Social Proof & Engagement**
+  - GitHub stars counter (live API integration)
+  - GitHub forks counter
+  - Social share buttons (Twitter, LinkedIn, Email)
+  - Real-time repository statistics
+  - Graceful API error handling
+
+- **Visual Timeline**
+  - Replaced bullet list with interactive timeline
+  - 4 phases with visual progress indicators (✅🚧🔮🌟)
+  - Dates and detailed descriptions for each phase
+  - Hover effects and smooth transitions
+  - Vertical line with gradient
+
+- **Enhanced Styling**
+  - 200+ lines of new CSS for components
+  - Code block theming (dark mode compatible)
+  - Timeline visualization styles
+  - Social button theming (brand colors)
+  - GitHub stats badge styling
+
+### Changed
+- **Project Status → Project Roadmap**
+  - Visual timeline replaces simple bullet list
+  - More engaging presentation
+  - Better mobile responsiveness
+  - Phase-specific icons and colors
+
+- **File Size & Performance**
+  - index.html: 785 → 1,206 lines (+421 lines, +54%)
+  - File size: 32KB → 46KB (+14KB, +44%)
+  - Added 4 new JavaScript modules (~90 lines)
+  - 7 total IIFE modules now
+
+- **Get Involved Section**
+  - Added GitHub statistics display
+  - Integrated social sharing
+  - More interactive call-to-actions
+
+### Technical
+- **New JavaScript Modules:**
+  1. Reading progress bar (scroll tracking)
+  2. Back to top button (appears/disappears)
+  3. Copy code to clipboard (async/await)
+  4. GitHub API integration (fetch)
+
+- **API Integration:**
+  - GitHub REST API v3
+  - Graceful fallback on errors
+  - Real-time data fetching
+
+- **Accessibility:**
+  - Copy buttons with status feedback
+  - Keyboard accessible scroll buttons
+  - prefers-reduced-motion aware
+  - ARIA labels on all interactive elements
+
 ## [1.2.0] - 2025-11-14
 
 ### Added

@@ -411,11 +411,249 @@
                 font-size: 1rem;
             }
         }
+
+        /* Reading Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--bg-gradient-end));
+            width: 0%;
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px var(--shadow);
+            font-size: 1.5rem;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px var(--shadow);
+        }
+
+        /* Code Examples */
+        .code-block {
+            background: var(--card-bg);
+            border: 2px solid var(--card-border);
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            overflow: hidden;
+        }
+        .code-header {
+            background: var(--card-border);
+            padding: 0.75rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--card-border);
+        }
+        .code-language {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+        .copy-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+        .copy-btn:hover {
+            transform: scale(1.05);
+        }
+        .copy-btn.copied {
+            background: #4caf50;
+        }
+        pre {
+            margin: 0;
+            padding: 1.5rem;
+            overflow-x: auto;
+            background: var(--card-bg);
+        }
+        code {
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--text-color);
+        }
+
+        /* Social Share Buttons */
+        .social-share {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .social-share-label {
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-right: 0.5rem;
+        }
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        .share-twitter {
+            background: #1DA1F2;
+            color: white;
+        }
+        .share-linkedin {
+            background: #0077B5;
+            color: white;
+        }
+        .share-email {
+            background: var(--card-bg);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        /* GitHub Stats Badge */
+        .github-stats {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--card-bg);
+            border: 2px solid var(--card-border);
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin: 1rem 0;
+            transition: var(--transition);
+        }
+        .github-stats:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary-color);
+        }
+        .github-icon {
+            font-size: 1.2rem;
+        }
+        .stat-value {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        /* Timeline Visualization */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+            margin: 2rem 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color), var(--bg-gradient-end));
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 70px;
+            margin-bottom: 2rem;
+        }
+        .timeline-icon {
+            position: absolute;
+            left: 15px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0 0 0 4px var(--card-bg);
+        }
+        .timeline-content {
+            background: var(--card-bg);
+            padding: 1.2rem;
+            border-radius: 10px;
+            border: 2px solid var(--card-border);
+            transition: var(--transition);
+        }
+        .timeline-content:hover {
+            border-color: var(--primary-color);
+            transform: translateX(5px);
+        }
+        .timeline-date {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+            .timeline::before {
+                left: 15px;
+            }
+            .timeline-icon {
+                left: 3px;
+                width: 24px;
+                height: 24px;
+                font-size: 0.8rem;
+            }
+            .timeline-item {
+                padding-left: 50px;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="progress-bar" id="progressBar"></div>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
         <span class="theme-icon">🌙</span>
+    </button>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        ↑
     </button>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="container">
@@ -506,24 +744,109 @@
             <p style="margin-top: 1rem;"><strong>Results</strong>: PoGQ+Rep achieves 100% detection at 45% adversaries, where Multi-Krum fails with ValueError.</p>
         </section>
 
+        <section class="section" aria-labelledby="quickstart-heading">
+            <h2 id="quickstart-heading">Quick Start</h2>
+            <p>Get started with Mycelix Protocol in minutes:</p>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-language">Python</span>
+                    <button class="copy-btn" data-code="install">📋 Copy</button>
+                </div>
+                <pre><code id="code-install"># Install Mycelix Protocol
+pip install mycelix
+
+# Import and initialize
+from mycelix import PoGQAggregator
+
+# Create Byzantine-resistant aggregator
+aggregator = PoGQAggregator(
+    validation_data=val_dataset,
+    byzantine_tolerance=0.45,
+    reputation_decay=0.95
+)
+
+# Aggregate gradients from clients
+safe_gradients = aggregator.aggregate(
+    client_gradients,
+    detect_attacks=True
+)</code></pre>
+            </div>
+
+            <p style="margin-top: 1rem;">For full documentation, visit the <a href="https://github.com/Luminous-Dynamics/mycelix/blob/main/README.md">GitHub repository</a>.</p>
+        </section>
+
         <section class="section" aria-labelledby="status-heading">
-            <h2 id="status-heading">Project Status</h2>
-            <ul>
-                <li>✅ <strong>Phase 1</strong>: PoGQ+Rep implementation complete</li>
-                <li>✅ <strong>Grand Slam validation</strong>: 10 experiments validated</li>
-                <li>✅ <strong>PostgreSQL backend</strong>: Production-ready persistence</li>
-                <li>🚧 <strong>Phase 2</strong>: Zero-knowledge proof integration</li>
-                <li>🚧 <strong>Phase 3</strong>: Holochain decentralized storage</li>
-                <li>🔮 <strong>Phase 4+</strong>: Cross-chain interoperability</li>
-            </ul>
+            <h2 id="status-heading">Project Roadmap</h2>
+            <p style="margin-bottom: 1.5rem;">Track our journey from Byzantine-resistant FL to decentralized AI:</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">✅</div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">October 2025 - Completed</div>
+                        <h3>Phase 1: PoGQ+Rep Core</h3>
+                        <p>Proof of Gradient Quality with reputation system. 100% detection at 45% adversaries. PostgreSQL persistence. Grand Slam validation complete.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">🚧</div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Q1 2026 - In Progress</div>
+                        <h3>Phase 2: Zero-Knowledge Proofs</h3>
+                        <p>Privacy-preserving gradient verification using zk-SNARKs. Enable validation without revealing gradients. Whitepaper submission to MLSys/ICML.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">🔮</div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Q2 2026 - Planned</div>
+                        <h3>Phase 3: Holochain Integration</h3>
+                        <p>Decentralized storage for model gradients. Peer-to-peer coordination without central server. Grant applications (NSF CISE, NIH R01).</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">🌟</div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">H2 2026 - Vision</div>
+                        <h3>Phase 4+: Cross-Chain Interoperability</h3>
+                        <p>Connect multiple blockchain ecosystems. Universal federated learning protocol. Healthcare pilot deployment with 3+ institutions.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="section" aria-labelledby="get-involved-heading">
             <h2 id="get-involved-heading">Get Involved</h2>
+
+            <div class="github-stats">
+                <span class="github-icon">⭐</span>
+                <span id="github-stars">Loading...</span> stars
+                <span style="margin-left: 1rem;">|</span>
+                <span id="github-forks" style="margin-left: 1rem;">Loading...</span> forks
+            </div>
+
             <div class="cta-buttons">
                 <a href="https://github.com/Luminous-Dynamics/mycelix" class="btn btn-primary">Star on GitHub</a>
                 <a href="https://github.com/Luminous-Dynamics/mycelix/issues" class="btn btn-secondary">Report Issues</a>
             </div>
+
+            <div class="social-share">
+                <span class="social-share-label">Share this project:</span>
+                <a href="https://twitter.com/intent/tweet?text=Check%20out%20Mycelix%20Protocol%3A%20Byzantine-Resistant%20Federated%20Learning%20with%20100%25%20attack%20detection!&url=https://mycelix.net" class="share-btn share-twitter" target="_blank" rel="noopener">
+                    🐦 Twitter
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://mycelix.net" class="share-btn share-linkedin" target="_blank" rel="noopener">
+                    💼 LinkedIn
+                </a>
+                <a href="mailto:?subject=Mycelix Protocol - Byzantine-Resistant FL&body=Check out this innovative Byzantine-resistant federated learning protocol: https://mycelix.net" class="share-btn share-email">
+                    📧 Email
+                </a>
+            </div>
+
             <p style="margin-top: 1.5rem;">
                 <strong>Whitepaper</strong>: Coming January 2026 (MLSys/ICML submission)<br>
                 <strong>Grant Applications</strong>: NSF CISE, NIH R01 (June 2026)<br>
@@ -771,6 +1094,104 @@
                     }
                 });
             });
+        })();
+
+        // Reading Progress Bar
+        (function() {
+            const progressBar = document.getElementById('progressBar');
+
+            function updateProgressBar() {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                progressBar.style.width = scrolled + '%';
+            }
+
+            window.addEventListener('scroll', updateProgressBar);
+            updateProgressBar(); // Initial call
+        })();
+
+        // Back to Top Button
+        (function() {
+            const backToTop = document.getElementById('backToTop');
+
+            function toggleBackToTop() {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            }
+
+            window.addEventListener('scroll', toggleBackToTop);
+
+            backToTop.addEventListener('click', () => {
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+                if (prefersReducedMotion) {
+                    window.scrollTo(0, 0);
+                } else {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        })();
+
+        // Copy Code to Clipboard
+        (function() {
+            const copyButtons = document.querySelectorAll('.copy-btn');
+
+            copyButtons.forEach(button => {
+                button.addEventListener('click', async () => {
+                    const codeId = 'code-' + button.getAttribute('data-code');
+                    const codeElement = document.getElementById(codeId);
+                    const code = codeElement.textContent;
+
+                    try {
+                        await navigator.clipboard.writeText(code);
+                        button.textContent = '✅ Copied!';
+                        button.classList.add('copied');
+
+                        setTimeout(() => {
+                            button.textContent = '📋 Copy';
+                            button.classList.remove('copied');
+                        }, 2000);
+                    } catch (err) {
+                        console.error('Failed to copy:', err);
+                        button.textContent = '❌ Failed';
+                        setTimeout(() => {
+                            button.textContent = '📋 Copy';
+                        }, 2000);
+                    }
+                });
+            });
+        })();
+
+        // GitHub Stars Counter
+        (function() {
+            async function fetchGitHubStats() {
+                try {
+                    const response = await fetch('https://api.github.com/repos/Luminous-Dynamics/mycelix');
+                    if (response.ok) {
+                        const data = await response.json();
+                        document.getElementById('github-stars').textContent = data.stargazers_count || '0';
+                        document.getElementById('github-forks').textContent = data.forks_count || '0';
+                    } else {
+                        // Fallback if API fails
+                        document.getElementById('github-stars').textContent = '—';
+                        document.getElementById('github-forks').textContent = '—';
+                    }
+                } catch (error) {
+                    console.error('GitHub API error:', error);
+                    document.getElementById('github-stars').textContent = '—';
+                    document.getElementById('github-forks').textContent = '—';
+                }
+            }
+
+            // Fetch on load
+            fetchGitHubStats();
         })();
 
         // Performance: Log page load time (optional)
