@@ -5,15 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Mycelix Protocol: Byzantine-Resistant Federated Learning with Proof of Gradient Quality (PoGQ). 100% attack detection, 45% Byzantine tolerance, +23pp accuracy improvement.">
     <meta name="keywords" content="federated learning, Byzantine fault tolerance, PoGQ, machine learning security, privacy-preserving AI, healthcare AI">
+    <meta name="author" content="Luminous Dynamics">
+    <meta name="theme-color" content="#667eea">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mycelix.net/">
+    <meta property="og:title" content="Mycelix Protocol - Byzantine-Resistant Federated Learning">
+    <meta property="og:description" content="100% attack detection at 45% adversaries. PoGQ+Rep innovation for secure multi-institutional AI training.">
+    <meta property="og:image" content="https://mycelix.net/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mycelix.net/">
+    <meta property="twitter:title" content="Mycelix Protocol - Byzantine-Resistant Federated Learning">
+    <meta property="twitter:description" content="100% attack detection at 45% adversaries. PoGQ+Rep innovation for secure multi-institutional AI training.">
+    <meta property="twitter:image" content="https://mycelix.net/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔐</text></svg>">
+
     <title>Mycelix Protocol - Byzantine-Resistant Federated Learning</title>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Mycelix Protocol",
+      "description": "Byzantine-Resistant Federated Learning with Proof of Gradient Quality (PoGQ)",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Cross-platform",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Luminous Dynamics"
+      },
+      "codeRepository": "https://github.com/Luminous-Dynamics/mycelix"
+    }
+    </script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             line-height: 1.6;
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
+        }
+
+        /* Skip to main content link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #667eea;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 0;
         }
         .container {
             max-width: 1200px;
@@ -34,6 +97,14 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            color: #667eea; /* Fallback for browsers that don't support background-clip */
+        }
+
+        /* Ensure text is visible if background-clip is not supported */
+        @supports not (background-clip: text) or not (-webkit-background-clip: text) {
+            h1 {
+                color: #667eea;
+            }
         }
         h2 {
             color: #667eea;
@@ -130,11 +201,36 @@
         a:hover {
             text-decoration: underline;
         }
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            color: #666;
+            margin-top: 2rem;
+        }
+        footer a {
+            color: #667eea;
+            font-weight: 600;
+        }
+        /* Improve focus visibility for accessibility */
+        *:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+        /* Better button focus states */
+        .btn:focus {
+            outline: 3px solid #ffffff;
+            outline-offset: 2px;
+        }
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="container">
-        <div class="hero">
+        <main id="main-content">
+        <header class="hero" role="banner">
             <h1>Mycelix Protocol</h1>
             <p class="tagline">Byzantine-Resistant Federated Learning with Proof of Gradient Quality (PoGQ)</p>
 
@@ -154,13 +250,13 @@
             </div>
 
             <div class="cta-buttons">
-                <a href="https://github.com/Luminous-Dynamics/mycelix" class="btn btn-primary">View on GitHub</a>
-                <a href="#problem" class="btn btn-secondary">Learn More</a>
+                <a href="https://github.com/Luminous-Dynamics/mycelix" class="btn btn-primary" aria-label="View Mycelix Protocol source code on GitHub">View on GitHub</a>
+                <a href="#problem" class="btn btn-secondary" aria-label="Learn more about the problem and solution">Learn More</a>
             </div>
-        </div>
+        </header>
 
-        <div class="section" id="problem">
-            <h2>The Problem & Solution</h2>
+        <section class="section" id="problem" aria-labelledby="problem-heading">
+            <h2 id="problem-heading">The Problem & Solution</h2>
             <div class="problem-solution">
                 <div class="card">
                     <h3>🚨 The Problem</h3>
@@ -184,10 +280,10 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="section">
-            <h2>Healthcare Application</h2>
+        <section class="section" aria-labelledby="healthcare-heading">
+            <h2 id="healthcare-heading">Healthcare Application</h2>
             <p>PoGQ enables <strong>multi-institutional AI training</strong> without raw data sharing:</p>
             <ul>
                 <li><strong>$2T clinical trial inefficiency</strong> addressable market</li>
@@ -195,10 +291,10 @@
                 <li><strong>Proven results</strong> on medical imaging simulations</li>
                 <li><strong>Pilot-ready</strong> for 3+ hospital deployment</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="section">
-            <h2>Technical Innovation</h2>
+        <section class="section" aria-labelledby="technical-heading">
+            <h2 id="technical-heading">Technical Innovation</h2>
             <p><strong>PoGQ+Rep</strong> (Proof of Gradient Quality + Reputation) achieves 45% Byzantine tolerance through:</p>
             <ul>
                 <li><strong>Gradient Quality Verification</strong>: Statistical validation against held-out data</li>
@@ -206,10 +302,10 @@
                 <li><strong>Byzantine-Robust Statistics</strong>: Multi-Krum, trimmed mean, and median aggregation</li>
                 <li><strong>Zero-Knowledge Integration Path</strong>: Privacy-preserving gradient verification (Phase 2)</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="section">
-            <h2>Experimental Validation</h2>
+        <section class="section" aria-labelledby="validation-heading">
+            <h2 id="validation-heading">Experimental Validation</h2>
             <p><strong>Grand Slam Benchmark Suite</strong> validates PoGQ against adaptive attacks:</p>
             <ul>
                 <li><strong>Datasets</strong>: MNIST, CIFAR-10</li>
@@ -218,10 +314,10 @@
                 <li><strong>Baselines</strong>: FedAvg, Multi-Krum, FedProx</li>
             </ul>
             <p style="margin-top: 1rem;"><strong>Results</strong>: PoGQ+Rep achieves 100% detection at 45% adversaries, where Multi-Krum fails with ValueError.</p>
-        </div>
+        </section>
 
-        <div class="section">
-            <h2>Project Status</h2>
+        <section class="section" aria-labelledby="status-heading">
+            <h2 id="status-heading">Project Status</h2>
             <ul>
                 <li>✅ <strong>Phase 1</strong>: PoGQ+Rep implementation complete</li>
                 <li>✅ <strong>Grand Slam validation</strong>: 10 experiments validated</li>
@@ -230,10 +326,10 @@
                 <li>🚧 <strong>Phase 3</strong>: Holochain decentralized storage</li>
                 <li>🔮 <strong>Phase 4+</strong>: Cross-chain interoperability</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="section">
-            <h2>Get Involved</h2>
+        <section class="section" aria-labelledby="get-involved-heading">
+            <h2 id="get-involved-heading">Get Involved</h2>
             <div class="cta-buttons">
                 <a href="https://github.com/Luminous-Dynamics/mycelix" class="btn btn-primary">Star on GitHub</a>
                 <a href="https://github.com/Luminous-Dynamics/mycelix/issues" class="btn btn-secondary">Report Issues</a>
@@ -243,7 +339,18 @@
                 <strong>Grant Applications</strong>: NSF CISE, NIH R01 (June 2026)<br>
                 <strong>Contact</strong>: <a href="mailto:tristan.stoltz@evolvingresonantcocreationism.com">tristan.stoltz@evolvingresonantcocreationism.com</a>
             </p>
-        </div>
+        </section>
+        </main>
+
+        <footer role="contentinfo">
+            <p>
+                &copy; 2025 <a href="https://github.com/Luminous-Dynamics">Luminous Dynamics</a>.
+                Open source under <a href="https://github.com/Luminous-Dynamics/mycelix/blob/main/LICENSE">MIT License</a>.
+            </p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                Byzantine-Resistant Federated Learning &bull; Built with care for the ML security community
+            </p>
+        </footer>
     </div>
 </body>
 </html>

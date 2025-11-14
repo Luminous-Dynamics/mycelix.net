@@ -14,37 +14,45 @@ This is the landing page for mycelix.net, focused on showcasing the PoGQ+Rep inn
 
 ## Deployment
 
-### Option 1: GitHub Pages (Recommended)
+### Option 1: Quick Deploy Script (Recommended)
 
-1. Create repository: `Luminous-Dynamics/mycelix.net`
-2. Push this directory to the repository
-3. Enable GitHub Pages in Settings → Pages
-4. Source: Deploy from branch `main` / `(root)`
+The `deploy.sh` script handles initialization, commits, and pushes with automatic retry logic:
+
+```bash
+chmod +x deploy.sh
+./deploy.sh
+```
+
+Features:
+- Automatic git initialization
+- Smart commit detection (skips if no changes)
+- Network retry with exponential backoff (2s, 4s, 8s)
+- Clear error messages and next steps
 
 ### Option 2: Manual Deployment
 
 ```bash
-# Navigate to this directory
-cd /srv/luminous-dynamics/Mycelix-Protocal-Framework/_websites/mycelix.net-pogq
-
-# Initialize git
+# Initialize git (if needed)
 git init
+
+# Stage and commit
 git add .
 git commit -m "🚀 Launch mycelix.net: Byzantine-Resistant Federated Learning"
 
 # Add remote (create repo first on GitHub)
 git remote add origin git@github.com:Luminous-Dynamics/mycelix.net.git
 
-# Push
+# Push to main branch
 git branch -M main
 git push -u origin main
 ```
 
-### Option 3: Quick Deploy Script
+### Option 3: GitHub Pages via Web UI
 
-```bash
-./deploy.sh
-```
+1. Create repository: `Luminous-Dynamics/mycelix.net`
+2. Push this directory to the repository
+3. Enable GitHub Pages in Settings → Pages
+4. Source: Deploy from branch `main` / `(root)`
 
 ## DNS Configuration
 
@@ -79,6 +87,29 @@ This landing page is **PoGQ-focused** (not full 5-layer protocol):
 3. **Healthcare IT** (Hospital CIOs, HIPAA compliance)
 4. **Open-Source Contributors** (GitHub community)
 
+## Technical Improvements
+
+This landing page includes:
+
+### SEO & Social Sharing
+- Open Graph and Twitter Card meta tags
+- Structured data (JSON-LD) for search engines
+- Comprehensive meta descriptions and keywords
+- `robots.txt` for search engine crawling
+
+### Accessibility
+- Semantic HTML5 elements (`<main>`, `<section>`, `<header>`, `<footer>`)
+- ARIA labels and roles
+- Skip-to-content link for keyboard navigation
+- Enhanced focus states for better keyboard accessibility
+- Responsive design with mobile-first approach
+
+### Performance & UX
+- Smooth scrolling for anchor links
+- Cross-browser gradient text fallbacks
+- Inline SVG favicon (no external requests)
+- Optimized CSS with minimal dependencies
+
 ## Related Links
 
 - **Main Repository**: https://github.com/Luminous-Dynamics/mycelix
@@ -87,5 +118,5 @@ This landing page is **PoGQ-focused** (not full 5-layer protocol):
 
 ---
 
-**Last Updated**: October 14, 2025
-**Status**: Ready for deployment
+**Last Updated**: November 14, 2025
+**Status**: Production ready
