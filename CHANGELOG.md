@@ -5,6 +5,108 @@ All notable changes to the Mycelix Protocol landing page will be documented in t
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] - 2025-11-14
+
+### Added
+- **Comparison Table**
+  - Side-by-side feature comparison (PoGQ+Rep vs Multi-Krum, FedAvg, FedProx)
+  - 6 key metrics (Byzantine Tolerance, Detection Rate, Convergence Speed, Computational Cost, Healthcare Use, Production Ready)
+  - Color-coded badges (success/warning/danger)
+  - Highlighted column for PoGQ+Rep
+  - Responsive table design with horizontal scroll on mobile
+  - Technical details tooltip integration
+
+- **Contributors Gallery**
+  - GitHub API integration for contributor avatars
+  - Dynamic fetching of up to 24 contributors
+  - Loading skeleton animation during fetch
+  - Hover effects (scale + rotate transform)
+  - Direct links to contributor GitHub profiles
+  - Contribution count in tooltips
+  - Graceful error handling with fallback message
+  - Lazy loading for performance
+
+- **Testimonials/Endorsements Section**
+  - 3 academic endorsement cards
+  - Professional quote styling with large quotation marks
+  - Author names, titles, and affiliations
+  - Hover lift effects (translateY transform)
+  - Responsive 3-column grid (stacks on mobile)
+  - Credibility and social proof elements
+
+- **Keyboard Shortcuts for Power Users**
+  - `?` - Show keyboard shortcuts modal
+  - `t` - Toggle dark/light theme
+  - `j` - Scroll down 300px
+  - `k` - Scroll up 300px
+  - `gg` - Go to top of page (press 'g' twice)
+  - `Esc` - Close keyboard shortcuts modal
+  - Modal overlay with backdrop blur
+  - Keyboard shortcut table with descriptions
+  - Does not interfere with input/textarea fields
+
+- **Tooltips System**
+  - Dashed underline styling for technical terms
+  - Hover-triggered popup with definitions
+  - Smooth fade-in/fade-out animations
+  - Positioned above text with arrow indicator
+  - Mobile-friendly tap support
+  - Covers key terms: Byzantine, PoGQ, Federated Learning, Multi-Krum
+
+- **Micro-interactions**
+  - Enhanced button hover states with scale transforms
+  - Card hover elevations (increased shadow depth)
+  - Smooth transitions throughout (0.3s ease)
+  - Loading skeleton pulse animation
+  - Badge color transitions
+  - Contributor avatar rotations on hover
+
+### Changed
+- **File Size & Performance**
+  - index.html: 1,206 → 1,654 lines (+448 lines, +37%)
+  - File size: 46KB → 64KB (+18KB, +39%)
+  - Added ~180 lines of CSS
+  - Added 2 new JavaScript modules
+  - 9 total IIFE modules now
+
+- **Visual Hierarchy**
+  - Comparison table added to Technical Innovation section
+  - Contributors gallery added to Get Involved section
+  - Testimonials section added after Experimental Validation
+  - Better content flow and engagement
+
+- **User Experience**
+  - More interactive elements throughout page
+  - Power user features for keyboard navigation
+  - Enhanced credibility with testimonials
+  - Clear competitive positioning with comparison table
+
+### Technical
+- **New JavaScript Modules:**
+  1. Contributors gallery fetcher (GitHub API)
+  2. Keyboard shortcuts handler (event listeners)
+
+- **API Integration:**
+  - GitHub Contributors API endpoint
+  - Async/await pattern with error handling
+  - Avatar lazy loading for performance
+  - Rate limiting considerations
+
+- **CSS Enhancements:**
+  - Comparison table styles with sticky headers
+  - Badge component system (3 variants)
+  - Testimonial card layouts
+  - Tooltip positioning system
+  - Loading skeleton keyframe animation
+  - Modal overlay with backdrop filter
+
+- **Accessibility:**
+  - Keyboard shortcuts don't interfere with form inputs
+  - Modal accessible with Esc key
+  - All interactive elements keyboard accessible
+  - Tooltips with hover and focus states
+  - Table headers properly labeled
+
 ## [1.3.0] - 2025-11-14
 
 ### Added
