@@ -1329,6 +1329,503 @@
         .stagger-animation.visible > *:nth-child(5) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
         .stagger-animation.visible > *:nth-child(6) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
 
+        /* Performance Benchmarks Chart */
+        .benchmarks-container {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .benchmark-chart {
+            width: 100%;
+            max-width: 800px;
+            height: 300px;
+            margin: 1.5rem auto;
+            display: block;
+        }
+        .benchmark-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .benchmark-metric {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 8px;
+        }
+        .benchmark-metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .benchmark-metric-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* Roadmap Timeline */
+        .roadmap-timeline {
+            position: relative;
+            padding: 2rem 0;
+            margin-top: 1.5rem;
+        }
+        .roadmap-item {
+            position: relative;
+            padding: 0 0 2rem 3rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        .roadmap-item:last-child {
+            border-left-color: transparent;
+        }
+        .roadmap-dot {
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 3px solid var(--card-bg);
+        }
+        .roadmap-dot.completed {
+            background: #4CAF50;
+        }
+        .roadmap-dot.in-progress {
+            background: #FFC107;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        .roadmap-phase {
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .roadmap-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+        .roadmap-description {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .roadmap-status {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .roadmap-status.completed {
+            background: #d4edda;
+            color: #155724;
+        }
+        .roadmap-status.in-progress {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .roadmap-status.planned {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        /* Use Cases */
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        .use-case-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: var(--transition);
+        }
+        .use-case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px var(--shadow);
+        }
+        .use-case-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .use-case-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        .use-case-domain {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        .use-case-content {
+            margin-bottom: 1.5rem;
+        }
+        .use-case-section {
+            margin-bottom: 1rem;
+        }
+        .use-case-section h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+        .use-case-section p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        .use-case-results {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 8px;
+        }
+        .use-case-result {
+            text-align: center;
+        }
+        .use-case-result-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        .use-case-result-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Integration Badges */
+        .integration-section {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+        .badges-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+            justify-content: center;
+        }
+        .badge-item {
+            padding: 0.5rem 1rem;
+            background: var(--card-border);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .badge-item:hover {
+            transform: translateY(-2px);
+            background: var(--primary-color);
+            color: white;
+        }
+        .install-commands {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .install-cmd {
+            background: rgba(0, 0, 0, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            position: relative;
+        }
+        [data-theme="dark"] .install-cmd {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .install-cmd-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        .install-cmd-text {
+            color: var(--text-color);
+            user-select: all;
+        }
+        .install-copy-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.4rem 0.8rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+        .install-copy-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Live Metrics Dashboard */
+        .metrics-dashboard {
+            background: linear-gradient(135deg, var(--primary-color), var(--bg-gradient-end));
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .metric-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+        [data-theme="dark"] .metric-card {
+            background: rgba(30, 30, 45, 0.95);
+        }
+        .metric-card:hover {
+            transform: scale(1.05);
+        }
+        .metric-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+        .metric-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+        .metric-change {
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            color: #4CAF50;
+        }
+
+        /* Code Playground */
+        .code-playground {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .code-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            border-bottom: 2px solid var(--card-border);
+        }
+        .code-tab {
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            color: var(--text-secondary);
+        }
+        .code-tab.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        .code-tab:hover {
+            color: var(--primary-color);
+        }
+        .code-example {
+            display: none;
+        }
+        .code-example.active {
+            display: block;
+        }
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            position: relative;
+        }
+        .code-block .keyword {
+            color: #ff79c6;
+        }
+        .code-block .string {
+            color: #f1fa8c;
+        }
+        .code-block .comment {
+            color: #6272a4;
+        }
+        .code-block .function {
+            color: #50fa7b;
+        }
+        .code-block .number {
+            color: #bd93f9;
+        }
+
+        /* Security & Compliance */
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .security-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .security-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .security-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--primary-color);
+        }
+        .security-description {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        .security-badge {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: #4CAF50;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        /* FAQ Search */
+        .faq-search-container {
+            margin-bottom: 2rem;
+        }
+        .faq-search-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            border: 2px solid var(--card-border);
+            border-radius: 50px;
+            background: var(--card-bg);
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+        .faq-search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        .faq-search-results {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        .faq-item.hidden {
+            display: none;
+        }
+        .faq-item mark {
+            background: #fff3cd;
+            color: #856404;
+            padding: 0.1rem 0.2rem;
+            border-radius: 3px;
+        }
+
+        /* Enhanced Footer */
+        footer {
+            background: var(--card-bg);
+            border-top: 1px solid var(--card-border);
+            padding: 3rem 0 1.5rem;
+            margin-top: 4rem;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-section h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .footer-social a {
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+        .footer-social a:hover {
+            transform: scale(1.2);
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
         @media (max-width: 768px) {
             .comparison-table {
                 font-size: 0.9rem;
@@ -1828,6 +2325,17 @@ safe_gradients = aggregator.aggregate(
         <section class="section" id="faq" aria-labelledby="faq-heading">
             <h2 id="faq-heading">Frequently Asked Questions</h2>
 
+            <div class="faq-search-container">
+                <input
+                    type="search"
+                    class="faq-search-input"
+                    id="faq-search"
+                    placeholder="🔍 Search FAQs..."
+                    aria-label="Search FAQs"
+                >
+                <div class="faq-search-results" id="faq-results"></div>
+            </div>
+
             <div class="faq-item">
                 <div class="faq-question">
                     <span>What is PoGQ and how does it work?</span>
@@ -2047,13 +2555,70 @@ safe_gradients = aggregator.aggregate(
         </main>
 
         <footer role="contentinfo">
-            <p>
-                &copy; 2025 <a href="https://github.com/Luminous-Dynamics">Luminous Dynamics</a>.
-                Open source under <a href="https://github.com/Luminous-Dynamics/mycelix/blob/main/LICENSE">MIT License</a>.
-            </p>
-            <p style="margin-top: 0.5rem; font-size: 0.9rem;">
-                Byzantine-Resistant Federated Learning &bull; Built with care for the ML security community
-            </p>
+            <div class="footer-content">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <h4>Mycelix Protocol</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            Byzantine-Resistant Federated Learning with Proof of Gradient Quality.
+                            Achieving 45% Byzantine tolerance with 100% detection rate.
+                        </p>
+                        <div class="footer-social">
+                            <a href="https://github.com/Luminous-Dynamics/mycelix" target="_blank" rel="noopener" aria-label="GitHub">🐙</a>
+                            <a href="https://twitter.com/intent/tweet?text=Check%20out%20Mycelix%20Protocol" target="_blank" rel="noopener" aria-label="Twitter">🐦</a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://mycelix.net" target="_blank" rel="noopener" aria-label="LinkedIn">💼</a>
+                            <a href="mailto:tristan.stoltz@evolvingresonantcocreationism.com" aria-label="Email">📧</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <ul class="footer-links">
+                            <li><a href="https://github.com/Luminous-Dynamics/mycelix">GitHub Repository</a></li>
+                            <li><a href="https://github.com/Luminous-Dynamics/mycelix/blob/main/README.md">Documentation</a></li>
+                            <li><a href="#cite-pogq">Cite This Work</a></li>
+                            <li><a href="https://github.com/Luminous-Dynamics/mycelix/discussions">Community Forum</a></li>
+                            <li><a href="https://github.com/Luminous-Dynamics/mycelix/blob/main/CONTRIBUTING.md">Contributing Guide</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Project</h4>
+                        <ul class="footer-links">
+                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="#team-heading">Team</a></li>
+                            <li><a href="#contact-heading">Contact</a></li>
+                            <li><a href="https://github.com/Luminous-Dynamics/mycelix/issues">Report Issues</a></li>
+                            <li><a href="https://github.com/Luminous-Dynamics/mycelix/blob/main/LICENSE">MIT License</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Stay Updated</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
+                            Get notified about research updates and major milestones
+                        </p>
+                        <ul class="footer-links">
+                            <li><a href="#newsletter-form">Newsletter</a></li>
+                            <li><a href="https://github.com/Luminous-Dynamics/mycelix/releases">Releases</a></li>
+                            <li><a href="https://github.com/Luminous-Dynamics/mycelix/blob/main/CHANGELOG.md">Changelog</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>
+                        &copy; 2025 <a href="https://github.com/Luminous-Dynamics" style="color: var(--primary-color);">Luminous Dynamics</a>.
+                        Open source under MIT License.
+                    </p>
+                    <p style="margin-top: 0.5rem;">
+                        Byzantine-Resistant Federated Learning &bull; Built with care for the ML security community
+                    </p>
+                    <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+                        Last Updated: November 14, 2025 &bull; v1.6.0
+                    </p>
+                </div>
+            </div>
         </footer>
     </div>
 
@@ -2830,13 +3395,85 @@ safe_gradients = aggregator.aggregate(
             staggerElements.forEach(el => observer.observe(el));
         })();
 
+        // FAQ Search Filter
+        (function() {
+            const searchInput = document.getElementById('faq-search');
+            const faqItems = document.querySelectorAll('.faq-item');
+            const resultsDiv = document.getElementById('faq-results');
+
+            if (!searchInput) return;
+
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase().trim();
+
+                if (query === '') {
+                    // Show all FAQ items
+                    faqItems.forEach(item => {
+                        item.classList.remove('hidden');
+                        // Remove any previous highlights
+                        const question = item.querySelector('.faq-question span:first-child');
+                        const answer = item.querySelector('.faq-answer');
+                        if (question) question.innerHTML = question.textContent;
+                        if (answer) answer.innerHTML = answer.textContent;
+                    });
+                    resultsDiv.textContent = '';
+                    return;
+                }
+
+                let visibleCount = 0;
+
+                faqItems.forEach(item => {
+                    const question = item.querySelector('.faq-question span:first-child');
+                    const answer = item.querySelector('.faq-answer');
+                    const questionText = question ? question.textContent.toLowerCase() : '';
+                    const answerText = answer ? answer.textContent.toLowerCase() : '';
+
+                    if (questionText.includes(query) || answerText.includes(query)) {
+                        item.classList.remove('hidden');
+                        visibleCount++;
+
+                        // Highlight matching text
+                        if (question) {
+                            question.innerHTML = highlightText(question.textContent, query);
+                        }
+                        if (answer) {
+                            answer.innerHTML = highlightText(answer.textContent, query);
+                        }
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+
+                // Update results count
+                if (visibleCount === 0) {
+                    resultsDiv.textContent = '❌ No FAQs found matching your search';
+                    resultsDiv.style.color = '#ff6b6b';
+                } else if (visibleCount === faqItems.length) {
+                    resultsDiv.textContent = '';
+                } else {
+                    resultsDiv.textContent = `✅ Found ${visibleCount} FAQ${visibleCount === 1 ? '' : 's'} matching "${query}"`;
+                    resultsDiv.style.color = 'var(--text-secondary)';
+                }
+            });
+
+            function highlightText(text, query) {
+                if (!query) return text;
+                const regex = new RegExp(`(${escapeRegex(query)})`, 'gi');
+                return text.replace(regex, '<mark>$1</mark>');
+            }
+
+            function escapeRegex(str) {
+                return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            }
+        })();
+
         // Performance: Log page load time
         window.addEventListener('load', () => {
             if (window.performance && window.performance.timing) {
                 const loadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
                 console.log(`⚡ Page loaded in ${loadTime}ms`);
                 console.log(`⌨️  Press '?' to see keyboard shortcuts`);
-                console.log(`🎨 v1.5.0: Community engagement & academic excellence`);
+                console.log(`🔍 v1.6.0: Enterprise features & data visualization`);
             }
         });
     </script>

@@ -4,7 +4,7 @@
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://mycelix.net)
 [![W3C Valid](https://img.shields.io/badge/W3C-Valid%20HTML-brightgreen)](https://validator.w3.org/)
 [![WCAG 2.1](https://img.shields.io/badge/WCAG-2.1%20AA-blue)](https://www.w3.org/WAI/WCAG21/quickref/)
-[![Version](https://img.shields.io/badge/version-1.5.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.6.0-blue.svg)](CHANGELOG.md)
 
 **Byzantine-Resistant Federated Learning with Proof of Gradient Quality (PoGQ)**
 
