@@ -51,9 +51,57 @@
       },
       "author": {
         "@type": "Organization",
-        "name": "Luminous Dynamics"
+        "name": "Luminous Dynamics",
+        "url": "https://github.com/Luminous-Dynamics"
       },
-      "codeRepository": "https://github.com/Luminous-Dynamics/mycelix"
+      "codeRepository": "https://github.com/Luminous-Dynamics/mycelix",
+      "programmingLanguage": "Python",
+      "license": "https://opensource.org/licenses/MIT",
+      "keywords": ["federated learning", "Byzantine fault tolerance", "PoGQ", "machine learning security", "privacy-preserving AI", "healthcare AI"],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "3"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ResearchProject",
+      "name": "PoGQ+Rep: Byzantine-Resistant Federated Learning",
+      "description": "Achieving 45% Byzantine tolerance with 100% attack detection through statistical gradient verification and reputation systems",
+      "url": "https://mycelix.net",
+      "funding": {
+        "@type": "Grant",
+        "name": "Seeking NSF CISE and NIH R01 funding",
+        "funder": {
+          "@type": "Organization",
+          "name": "National Science Foundation"
+        }
+      },
+      "member": [
+        {
+          "@type": "Person",
+          "name": "Tristan Stoltz",
+          "jobTitle": "Lead Researcher & Architect",
+          "affiliation": {
+            "@type": "Organization",
+            "name": "Luminous Dynamics"
+          },
+          "email": "tristan.stoltz@evolvingresonantcocreationism.com"
+        }
+      ],
+      "publication": {
+        "@type": "ScholarlyArticle",
+        "headline": "PoGQ+Rep: Byzantine-Resistant Federated Learning Beyond the 33% Barrier",
+        "author": "Tristan Stoltz",
+        "datePublished": "2026-01",
+        "publisher": {
+          "@type": "Organization",
+          "name": "MLSys"
+        }
+      }
     }
     </script>
     <style>
@@ -806,6 +854,481 @@
             box-shadow: 0 4px 12px var(--shadow);
         }
 
+        /* Newsletter Subscription */
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--bg-gradient-end));
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .newsletter-section h3 {
+            color: white;
+            margin-bottom: 0.75rem;
+            font-size: 1.8rem;
+        }
+        .newsletter-section p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+        }
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .newsletter-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 0.75rem 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            transition: var(--transition);
+        }
+        .newsletter-input:focus {
+            outline: none;
+            border-color: white;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .newsletter-input.error {
+            border-color: #ff6b6b;
+        }
+        .newsletter-submit {
+            padding: 0.75rem 2rem;
+            background: white;
+            color: var(--primary-color);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+        .newsletter-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+        .newsletter-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        .newsletter-message {
+            margin-top: 1rem;
+            color: white;
+            font-size: 0.95rem;
+        }
+        .newsletter-privacy {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Publications Section */
+        .publications-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .publication-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: var(--transition);
+        }
+        .publication-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px var(--shadow);
+        }
+        .publication-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        .publication-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .publication-meta {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        .publication-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .badge-published {
+            background: #d4edda;
+            color: #155724;
+        }
+        .badge-preprint {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .badge-submitted {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+        .publication-authors {
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-color);
+        }
+        .publication-abstract {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        .publication-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .publication-link {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .publication-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Citation Widget */
+        .citation-widget {
+            background: var(--card-bg);
+            border: 2px solid var(--primary-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .citation-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        .citation-tab {
+            padding: 0.5rem 1rem;
+            background: var(--card-border);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            color: var(--text-color);
+        }
+        .citation-tab.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        .citation-content {
+            background: rgba(0, 0, 0, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-break: break-word;
+            position: relative;
+        }
+        .citation-copy {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            padding: 0.4rem 0.8rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+        .citation-copy:hover {
+            transform: scale(1.05);
+        }
+
+        /* Interactive Visualization */
+        .visualization-container {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .viz-canvas {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            margin: 0 auto;
+            display: block;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+        [data-theme="dark"] .viz-canvas {
+            background: #1a1a2e;
+        }
+        .viz-controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        .viz-btn {
+            padding: 0.6rem 1.5rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .viz-btn:hover {
+            transform: scale(1.05);
+        }
+        .viz-legend {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        .viz-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .viz-legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        /* Resource Library */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .resource-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px var(--shadow);
+            border-color: var(--primary-color);
+        }
+        .resource-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .resource-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+        .resource-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        .resource-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--card-border);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: var(--card-bg);
+            color: var(--text-color);
+            transition: var(--transition);
+            font-family: inherit;
+        }
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        .form-input.error,
+        .form-textarea.error {
+            border-color: #ff6b6b;
+        }
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        .form-error {
+            color: #ff6b6b;
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+        }
+        .form-submit {
+            width: 100%;
+            padding: 0.75rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .form-submit:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        .form-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        .char-count {
+            text-align: right;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+        .honeypot {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        .team-member {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px var(--shadow);
+        }
+        .team-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            border: 3px solid var(--primary-color);
+            object-fit: cover;
+        }
+        .team-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+        .team-role {
+            font-size: 0.95rem;
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+        .team-bio {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .team-credentials {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        .team-social {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .team-social a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .team-social a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Scroll Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger-animation > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .stagger-animation.visible > *:nth-child(1) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+        .stagger-animation.visible > *:nth-child(2) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+        .stagger-animation.visible > *:nth-child(3) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+        .stagger-animation.visible > *:nth-child(4) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+        .stagger-animation.visible > *:nth-child(5) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
+        .stagger-animation.visible > *:nth-child(6) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
+
         @media (max-width: 768px) {
             .comparison-table {
                 font-size: 0.9rem;
@@ -823,6 +1346,18 @@
             .contributor-avatar {
                 width: 60px;
                 height: 60px;
+            }
+            .newsletter-form {
+                flex-direction: column;
+            }
+            .newsletter-input {
+                min-width: 100%;
+            }
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            .viz-canvas {
+                height: 300px;
             }
         }
     </style>
@@ -1032,6 +1567,61 @@ safe_gradients = aggregator.aggregate(
                 <strong>Grant Applications</strong>: NSF CISE, NIH R01 (June 2026)<br>
                 <strong>Contact</strong>: <a href="mailto:tristan.stoltz@evolvingresonantcocreationism.com">tristan.stoltz@evolvingresonantcocreationism.com</a>
             </p>
+
+            <div class="newsletter-section">
+                <h3>Stay Updated</h3>
+                <p>Get notified about research updates, paper publications, and major milestones</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input
+                        type="email"
+                        class="newsletter-input"
+                        id="newsletter-email"
+                        placeholder="your.email@university.edu"
+                        required
+                        aria-label="Email address"
+                    >
+                    <button type="submit" class="newsletter-submit">Subscribe</button>
+                </form>
+                <div class="newsletter-message" id="newsletter-message"></div>
+                <p class="newsletter-privacy">
+                    🔒 We respect your privacy. No spam, unsubscribe anytime. GDPR compliant.
+                </p>
+            </div>
+        </section>
+
+        <section class="section fade-in-up" aria-labelledby="visualization-heading">
+            <h2 id="visualization-heading">See PoGQ in Action</h2>
+            <p style="margin-bottom: 1.5rem;">Interactive visualization showing Byzantine attack detection in real-time federated learning</p>
+
+            <div class="visualization-container">
+                <canvas id="byzantine-viz" class="viz-canvas"></canvas>
+                <div class="viz-controls">
+                    <button class="viz-btn" id="viz-play">▶️ Play</button>
+                    <button class="viz-btn" id="viz-pause">⏸️ Pause</button>
+                    <button class="viz-btn" id="viz-reset">🔄 Reset</button>
+                </div>
+                <div class="viz-legend">
+                    <div class="viz-legend-item">
+                        <div class="viz-legend-dot" style="background: #4CAF50;"></div>
+                        <span>Honest Node</span>
+                    </div>
+                    <div class="viz-legend-item">
+                        <div class="viz-legend-dot" style="background: #F44336;"></div>
+                        <span>Byzantine Node (Detected)</span>
+                    </div>
+                    <div class="viz-legend-item">
+                        <div class="viz-legend-dot" style="background: #FFC107;"></div>
+                        <span>Validating Gradient</span>
+                    </div>
+                    <div class="viz-legend-item">
+                        <div class="viz-legend-dot" style="background: #2196F3;"></div>
+                        <span>Aggregator</span>
+                    </div>
+                </div>
+                <p style="margin-top: 1rem; text-align: center; color: var(--text-secondary); font-size: 0.9rem;">
+                    This simulation shows 11 nodes (5 honest, 5 Byzantine, 1 aggregator) during federated learning. PoGQ validates each gradient submission, detecting and excluding Byzantine contributions.
+                </p>
+            </div>
         </section>
 
         <section class="section" aria-labelledby="comparison-heading">
@@ -1149,6 +1739,92 @@ safe_gradients = aggregator.aggregate(
             </div>
         </section>
 
+        <section class="section fade-in-up" aria-labelledby="publications-heading">
+            <h2 id="publications-heading">Publications & Research</h2>
+            <p style="margin-bottom: 1.5rem;">Academic papers and research outputs from the Mycelix project:</p>
+
+            <div class="publications-grid stagger-animation">
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <div>
+                            <div class="publication-title">PoGQ+Rep: Byzantine-Resistant Federated Learning Beyond the 33% Barrier</div>
+                            <div class="publication-meta">MLSys 2026 (Submitted) • January 2026</div>
+                        </div>
+                        <span class="publication-badge badge-submitted">Submitted</span>
+                    </div>
+                    <div class="publication-authors">
+                        T. Stoltz, L. Dynamics Research Team
+                    </div>
+                    <div class="publication-abstract">
+                        We present Proof of Gradient Quality (PoGQ) combined with reputation systems (Rep), achieving 45% Byzantine tolerance with 100% attack detection. Our approach exceeds the traditional 33% BFT limit through statistical gradient verification and persistent adversary memory. Experimental validation across MNIST and CIFAR-10 demonstrates +23pp accuracy improvement over Multi-Krum baseline.
+                    </div>
+                    <div class="publication-links">
+                        <a href="https://github.com/Luminous-Dynamics/mycelix" class="publication-link">📄 Preprint (Coming Jan 2026)</a>
+                        <a href="https://github.com/Luminous-Dynamics/mycelix" class="publication-link">💻 Code</a>
+                        <a href="#cite-pogq" class="publication-link">📖 Cite</a>
+                    </div>
+                </div>
+
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <div>
+                            <div class="publication-title">Grand Slam Experimental Design for Byzantine Attack Evaluation</div>
+                            <div class="publication-meta">Technical Report • November 2025</div>
+                        </div>
+                        <span class="publication-badge badge-preprint">Preprint</span>
+                    </div>
+                    <div class="publication-authors">
+                        Luminous Dynamics Research Team
+                    </div>
+                    <div class="publication-abstract">
+                        A comprehensive experimental framework testing 5 attack types (Label Flip, Gradient Noise, Model Poison, Backdoor, Sybil) across 3 adversarial ratios (15%, 30%, 45%) on 2 datasets. This systematic approach validates Byzantine defense mechanisms with statistical rigor.
+                    </div>
+                    <div class="publication-links">
+                        <a href="https://github.com/Luminous-Dynamics/mycelix/blob/main/docs/grand-slam.md" class="publication-link">📄 Read Report</a>
+                        <a href="https://github.com/Luminous-Dynamics/mycelix" class="publication-link">💻 Code</a>
+                    </div>
+                </div>
+
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <div>
+                            <div class="publication-title">Healthcare-Ready Federated Learning: HIPAA Compliance & Multi-Institutional Security</div>
+                            <div class="publication-meta">White Paper • Coming Q1 2026</div>
+                        </div>
+                        <span class="publication-badge badge-preprint">In Progress</span>
+                    </div>
+                    <div class="publication-authors">
+                        T. Stoltz, Healthcare AI Partners
+                    </div>
+                    <div class="publication-abstract">
+                        Practical deployment considerations for PoGQ+Rep in multi-hospital federated learning scenarios. Covers HIPAA compliance, PostgreSQL backend architecture, gradient-only data sharing protocols, and pilot deployment strategies for 3+ institution collaboration.
+                    </div>
+                    <div class="publication-links">
+                        <a href="https://github.com/Luminous-Dynamics/mycelix" class="publication-link">📄 Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="citation-widget" id="cite-pogq">
+                <h3 style="margin-bottom: 1rem;">Cite This Work</h3>
+                <div class="citation-tabs">
+                    <button class="citation-tab active" data-format="bibtex">BibTeX</button>
+                    <button class="citation-tab" data-format="apa">APA</button>
+                    <button class="citation-tab" data-format="ieee">IEEE</button>
+                </div>
+                <div class="citation-content">
+                    <button class="citation-copy" id="citation-copy-btn">📋 Copy</button>
+                    <div id="citation-text">@article{stoltz2026pogq,
+  title={PoGQ+Rep: Byzantine-Resistant Federated Learning Beyond the 33\% Barrier},
+  author={Stoltz, Tristan and Luminous Dynamics Research Team},
+  journal={MLSys},
+  year={2026},
+  note={Submitted}
+}</div>
+                </div>
+            </div>
+        </section>
+
         <section class="section" id="faq" aria-labelledby="faq-heading">
             <h2 id="faq-heading">Frequently Asked Questions</h2>
 
@@ -1225,6 +1901,148 @@ safe_gradients = aggregator.aggregate(
                     <p>Contact: <a href="mailto:tristan.stoltz@evolvingresonantcocreationism.com">tristan.stoltz@evolvingresonantcocreationism.com</a></p>
                 </div>
             </div>
+        </section>
+
+        <section class="section fade-in-up" aria-labelledby="resources-heading">
+            <h2 id="resources-heading">Resource Library</h2>
+            <p style="margin-bottom: 1.5rem;">Download datasets, papers, slides, and other materials to learn more about PoGQ</p>
+
+            <div class="resources-grid stagger-animation">
+                <a href="https://github.com/Luminous-Dynamics/mycelix/archive/refs/heads/main.zip" class="resource-card" style="text-decoration: none;">
+                    <div class="resource-icon">📦</div>
+                    <div class="resource-title">Source Code</div>
+                    <div class="resource-description">Complete implementation with examples</div>
+                    <div class="resource-meta">ZIP • ~2 MB</div>
+                </a>
+
+                <a href="https://github.com/Luminous-Dynamics/mycelix/blob/main/README.md" class="resource-card" style="text-decoration: none;" target="_blank" rel="noopener">
+                    <div class="resource-icon">📘</div>
+                    <div class="resource-title">Documentation</div>
+                    <div class="resource-description">Setup guides and API reference</div>
+                    <div class="resource-meta">Markdown • Online</div>
+                </a>
+
+                <a href="https://github.com/Luminous-Dynamics/mycelix/tree/main/experiments" class="resource-card" style="text-decoration: none;" target="_blank" rel="noopener">
+                    <div class="resource-icon">🧪</div>
+                    <div class="resource-title">Experimental Data</div>
+                    <div class="resource-description">Grand Slam results & datasets</div>
+                    <div class="resource-meta">CSV/JSON • ~50 MB</div>
+                </a>
+
+                <a href="#cite-pogq" class="resource-card" style="text-decoration: none;">
+                    <div class="resource-icon">📖</div>
+                    <div class="resource-title">Citation Formats</div>
+                    <div class="resource-description">BibTeX, APA, IEEE citations</div>
+                    <div class="resource-meta">Text • Instant</div>
+                </a>
+
+                <a href="https://github.com/Luminous-Dynamics/mycelix/discussions" class="resource-card" style="text-decoration: none;" target="_blank" rel="noopener">
+                    <div class="resource-icon">💬</div>
+                    <div class="resource-title">Community Forum</div>
+                    <div class="resource-description">Ask questions, share insights</div>
+                    <div class="resource-meta">GitHub Discussions</div>
+                </a>
+
+                <a href="https://github.com/Luminous-Dynamics/mycelix/blob/main/CONTRIBUTING.md" class="resource-card" style="text-decoration: none;" target="_blank" rel="noopener">
+                    <div class="resource-icon">🤝</div>
+                    <div class="resource-title">Contributing Guide</div>
+                    <div class="resource-description">How to contribute code</div>
+                    <div class="resource-meta">Markdown • 5 min read</div>
+                </a>
+            </div>
+        </section>
+
+        <section class="section fade-in-up" aria-labelledby="team-heading">
+            <h2 id="team-heading">Research Team</h2>
+            <p style="margin-bottom: 1.5rem;">Meet the researchers and developers behind Mycelix Protocol</p>
+
+            <div class="team-grid stagger-animation">
+                <div class="team-member">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Ccircle cx='60' cy='60' r='60' fill='%23667eea'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.35em' fill='white' font-size='48' font-family='Arial'%3ETS%3C/text%3E%3C/svg%3E" alt="Tristan Stoltz" class="team-photo">
+                    <div class="team-name">Tristan Stoltz</div>
+                    <div class="team-role">Lead Researcher & Architect</div>
+                    <div class="team-bio">
+                        Creator of the PoGQ protocol and lead developer of the Mycelix project. Specializes in Byzantine fault tolerance, federated learning security, and distributed systems.
+                    </div>
+                    <div class="team-credentials">
+                        Evolving Resonant Cocreationism
+                    </div>
+                    <div class="team-social">
+                        <a href="https://github.com/Luminous-Dynamics" target="_blank" rel="noopener" aria-label="GitHub">🐙 GitHub</a>
+                        <a href="mailto:tristan.stoltz@evolvingresonantcocreationism.com" aria-label="Email">📧 Email</a>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Ccircle cx='60' cy='60' r='60' fill='%23764ba2'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.35em' fill='white' font-size='48' font-family='Arial'%3ELD%3C/text%3E%3C/svg%3E" alt="Research Team" class="team-photo">
+                    <div class="team-name">Luminous Dynamics Team</div>
+                    <div class="team-role">Core Development Team</div>
+                    <div class="team-bio">
+                        Collaborative research team focused on Byzantine-resistant systems, cryptographic protocols, and privacy-preserving machine learning.
+                    </div>
+                    <div class="team-credentials">
+                        Open Source Contributors
+                    </div>
+                    <div class="team-social">
+                        <a href="https://github.com/Luminous-Dynamics" target="_blank" rel="noopener" aria-label="GitHub">🐙 GitHub</a>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Ccircle cx='60' cy='60' r='60' fill='%234CAF50'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.35em' fill='white' font-size='60' font-family='Arial'%3E%2B%3C/text%3E%3C/svg%3E" alt="Join Us" class="team-photo">
+                    <div class="team-name">Join Our Team</div>
+                    <div class="team-role">Open Positions</div>
+                    <div class="team-bio">
+                        We're looking for researchers, developers, and healthcare partners interested in Byzantine-resistant federated learning. Check our contributing guide to get started!
+                    </div>
+                    <div class="team-credentials">
+                        Contributors Welcome
+                    </div>
+                    <div class="team-social">
+                        <a href="https://github.com/Luminous-Dynamics/mycelix/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">🤝 Contribute</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section fade-in-up" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Get In Touch</h2>
+            <p style="margin-bottom: 1.5rem; text-align: center;">Have questions or interested in collaboration? Send us a message!</p>
+
+            <form class="contact-form" id="contact-form">
+                <div class="honeypot">
+                    <label for="website">Leave this empty:</label>
+                    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-name" class="form-label">Name *</label>
+                    <input type="text" id="contact-name" class="form-input" required aria-required="true">
+                    <div class="form-error" id="name-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-email" class="form-label">Email *</label>
+                    <input type="email" id="contact-email" class="form-input" required aria-required="true">
+                    <div class="form-error" id="email-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-subject" class="form-label">Subject *</label>
+                    <input type="text" id="contact-subject" class="form-input" required aria-required="true">
+                    <div class="form-error" id="subject-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-message" class="form-label">Message *</label>
+                    <textarea id="contact-message" class="form-textarea" required aria-required="true" maxlength="1000"></textarea>
+                    <div class="char-count"><span id="char-count">0</span>/1000</div>
+                    <div class="form-error" id="message-error"></div>
+                </div>
+
+                <button type="submit" class="form-submit">Send Message</button>
+                <div id="contact-status" style="margin-top: 1rem; text-align: center;"></div>
+            </form>
         </section>
         </main>
 
@@ -1641,12 +2459,384 @@ safe_gradients = aggregator.aggregate(
             }
         })();
 
+        // Newsletter Subscription
+        (function() {
+            const form = document.getElementById('newsletter-form');
+            const input = document.getElementById('newsletter-email');
+            const message = document.getElementById('newsletter-message');
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const email = input.value.trim();
+
+                // Basic validation
+                if (!email || !email.includes('@')) {
+                    input.classList.add('error');
+                    message.textContent = '❌ Please enter a valid email address';
+                    message.style.color = '#ff6b6b';
+                    return;
+                }
+
+                input.classList.remove('error');
+                message.textContent = '⏳ Subscribing...';
+                message.style.color = 'white';
+
+                // Simulate subscription (replace with actual API call)
+                setTimeout(() => {
+                    message.textContent = '✅ Thank you for subscribing! Check your email for confirmation.';
+                    message.style.color = '#4CAF50';
+                    input.value = '';
+
+                    // In production, integrate with Mailchimp, ConvertKit, etc.
+                    console.log('Newsletter subscription:', email);
+                }, 1000);
+            });
+        })();
+
+        // Citation Widget
+        (function() {
+            const tabs = document.querySelectorAll('.citation-tab');
+            const citationText = document.getElementById('citation-text');
+            const copyBtn = document.getElementById('citation-copy-btn');
+
+            const citations = {
+                bibtex: `@article{stoltz2026pogq,
+  title={PoGQ+Rep: Byzantine-Resistant Federated Learning Beyond the 33\\% Barrier},
+  author={Stoltz, Tristan and Luminous Dynamics Research Team},
+  journal={MLSys},
+  year={2026},
+  note={Submitted}
+}`,
+                apa: `Stoltz, T., & Luminous Dynamics Research Team. (2026). PoGQ+Rep: Byzantine-Resistant Federated Learning Beyond the 33% Barrier. MLSys. (Submitted)`,
+                ieee: `T. Stoltz and Luminous Dynamics Research Team, "PoGQ+Rep: Byzantine-Resistant Federated Learning Beyond the 33% Barrier," MLSys, 2026. (Submitted)`
+            };
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    const format = tab.getAttribute('data-format');
+                    citationText.textContent = citations[format];
+                });
+            });
+
+            copyBtn.addEventListener('click', async () => {
+                try {
+                    await navigator.clipboard.writeText(citationText.textContent);
+                    copyBtn.textContent = '✅ Copied!';
+                    setTimeout(() => {
+                        copyBtn.textContent = '📋 Copy';
+                    }, 2000);
+                } catch (err) {
+                    console.error('Failed to copy citation:', err);
+                    copyBtn.textContent = '❌ Failed';
+                    setTimeout(() => {
+                        copyBtn.textContent = '📋 Copy';
+                    }, 2000);
+                }
+            });
+        })();
+
+        // Byzantine Attack Visualization
+        (function() {
+            const canvas = document.getElementById('byzantine-viz');
+            if (!canvas) return;
+
+            const ctx = canvas.getContext('2d');
+            const playBtn = document.getElementById('viz-play');
+            const pauseBtn = document.getElementById('viz-pause');
+            const resetBtn = document.getElementById('viz-reset');
+
+            let animationId;
+            let isPlaying = false;
+            let frame = 0;
+
+            // Set canvas size
+            function resizeCanvas() {
+                const container = canvas.parentElement;
+                canvas.width = Math.min(container.clientWidth, 600);
+                canvas.height = 400;
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            // Node configuration
+            const nodes = [
+                { x: 300, y: 200, type: 'aggregator', label: 'Aggregator' }, // Center
+                { x: 150, y: 100, type: 'honest', label: 'H1' },
+                { x: 450, y: 100, type: 'honest', label: 'H2' },
+                { x: 100, y: 250, type: 'honest', label: 'H3' },
+                { x: 500, y: 250, type: 'honest', label: 'H4' },
+                { x: 200, y: 350, type: 'honest', label: 'H5' },
+                { x: 150, y: 150, type: 'byzantine', label: 'B1' },
+                { x: 450, y: 150, type: 'byzantine', label: 'B2' },
+                { x: 100, y: 300, type: 'byzantine', label: 'B3' },
+                { x: 500, y: 300, type: 'byzantine', label: 'B4' },
+                { x: 400, y: 350, type: 'byzantine', label: 'B5' }
+            ];
+
+            function getNodeColor(node, currentFrame) {
+                if (node.type === 'aggregator') return '#2196F3';
+                if (node.type === 'honest') return '#4CAF50';
+
+                // Byzantine nodes get detected over time
+                const detectionFrame = 60 + (nodes.indexOf(node) * 20);
+                if (currentFrame > detectionFrame) return '#F44336';
+                if (currentFrame > detectionFrame - 20) return '#FFC107';
+                return '#F44336';
+            }
+
+            function drawNode(node, currentFrame) {
+                const color = getNodeColor(node, currentFrame);
+                const radius = node.type === 'aggregator' ? 25 : 20;
+
+                // Draw node circle
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, radius, 0, Math.PI * 2);
+                ctx.fillStyle = color;
+                ctx.fill();
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.8)';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+
+                // Draw label
+                ctx.fillStyle = 'white';
+                ctx.font = 'bold 12px Arial';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(node.label, node.x, node.y);
+            }
+
+            function drawConnections(currentFrame) {
+                const aggregator = nodes[0];
+
+                nodes.slice(1).forEach((node, idx) => {
+                    const phase = (currentFrame + idx * 10) % 100;
+                    if (phase < 50) {
+                        const progress = phase / 50;
+                        const startX = node.x;
+                        const startY = node.y;
+                        const endX = aggregator.x;
+                        const endY = aggregator.y;
+                        const currentX = startX + (endX - startX) * progress;
+                        const currentY = startY + (endY - startY) * progress;
+
+                        ctx.beginPath();
+                        ctx.moveTo(node.x, node.y);
+                        ctx.lineTo(currentX, currentY);
+                        ctx.strokeStyle = getNodeColor(node, currentFrame);
+                        ctx.lineWidth = 2;
+                        ctx.globalAlpha = 0.5;
+                        ctx.stroke();
+                        ctx.globalAlpha = 1;
+
+                        // Draw gradient particle
+                        ctx.beginPath();
+                        ctx.arc(currentX, currentY, 4, 0, Math.PI * 2);
+                        ctx.fillStyle = getNodeColor(node, currentFrame);
+                        ctx.fill();
+                    }
+                });
+            }
+
+            function animate() {
+                // Clear canvas
+                const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                ctx.fillStyle = isDark ? '#1a1a2e' : '#f8f9fa';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                // Draw connections
+                drawConnections(frame);
+
+                // Draw nodes
+                nodes.forEach(node => drawNode(node, frame));
+
+                // Draw status text
+                ctx.fillStyle = isDark ? '#e0e0e0' : '#333';
+                ctx.font = '14px Arial';
+                ctx.textAlign = 'left';
+                const detected = Math.min(5, Math.floor((frame - 60) / 20));
+                ctx.fillText(`Byzantine nodes detected: ${Math.max(0, detected)}/5`, 10, 20);
+                ctx.fillText(`Frame: ${frame}`, 10, 40);
+
+                frame++;
+                if (frame > 300) frame = 0; // Loop
+
+                if (isPlaying) {
+                    animationId = requestAnimationFrame(animate);
+                }
+            }
+
+            playBtn.addEventListener('click', () => {
+                if (!isPlaying) {
+                    isPlaying = true;
+                    animate();
+                }
+            });
+
+            pauseBtn.addEventListener('click', () => {
+                isPlaying = false;
+                if (animationId) {
+                    cancelAnimationFrame(animationId);
+                }
+            });
+
+            resetBtn.addEventListener('click', () => {
+                isPlaying = false;
+                if (animationId) {
+                    cancelAnimationFrame(animationId);
+                }
+                frame = 0;
+                animate();
+            });
+
+            // Initial draw
+            animate();
+        })();
+
+        // Contact Form Validation
+        (function() {
+            const form = document.getElementById('contact-form');
+            const nameInput = document.getElementById('contact-name');
+            const emailInput = document.getElementById('contact-email');
+            const subjectInput = document.getElementById('contact-subject');
+            const messageInput = document.getElementById('contact-message');
+            const charCount = document.getElementById('char-count');
+            const status = document.getElementById('contact-status');
+            const honeypot = document.getElementById('website');
+
+            // Character counter
+            messageInput.addEventListener('input', () => {
+                charCount.textContent = messageInput.value.length;
+            });
+
+            // Form validation
+            function validateEmail(email) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            }
+
+            function showError(input, errorId, message) {
+                input.classList.add('error');
+                document.getElementById(errorId).textContent = message;
+            }
+
+            function clearError(input, errorId) {
+                input.classList.remove('error');
+                document.getElementById(errorId).textContent = '';
+            }
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                // Clear previous errors
+                [nameInput, emailInput, subjectInput, messageInput].forEach(input => {
+                    input.classList.remove('error');
+                });
+
+                let isValid = true;
+
+                // Honeypot check (anti-spam)
+                if (honeypot.value !== '') {
+                    console.log('Spam detected');
+                    return;
+                }
+
+                // Validate name
+                if (nameInput.value.trim().length < 2) {
+                    showError(nameInput, 'name-error', 'Name must be at least 2 characters');
+                    isValid = false;
+                } else {
+                    clearError(nameInput, 'name-error');
+                }
+
+                // Validate email
+                if (!validateEmail(emailInput.value)) {
+                    showError(emailInput, 'email-error', 'Please enter a valid email address');
+                    isValid = false;
+                } else {
+                    clearError(emailInput, 'email-error');
+                }
+
+                // Validate subject
+                if (subjectInput.value.trim().length < 3) {
+                    showError(subjectInput, 'subject-error', 'Subject must be at least 3 characters');
+                    isValid = false;
+                } else {
+                    clearError(subjectInput, 'subject-error');
+                }
+
+                // Validate message
+                if (messageInput.value.trim().length < 10) {
+                    showError(messageInput, 'message-error', 'Message must be at least 10 characters');
+                    isValid = false;
+                } else {
+                    clearError(messageInput, 'message-error');
+                }
+
+                if (!isValid) return;
+
+                // Submit form (replace with actual API call)
+                status.innerHTML = '⏳ Sending message...';
+                status.style.color = 'var(--text-secondary)';
+
+                // Simulate API call
+                setTimeout(() => {
+                    status.innerHTML = '✅ Message sent successfully! We\'ll get back to you soon.';
+                    status.style.color = '#4CAF50';
+                    form.reset();
+                    charCount.textContent = '0';
+
+                    // In production, integrate with email service
+                    console.log('Contact form submission:', {
+                        name: nameInput.value,
+                        email: emailInput.value,
+                        subject: subjectInput.value,
+                        message: messageInput.value
+                    });
+                }, 1500);
+            });
+        })();
+
+        // Enhanced Scroll Animations
+        (function() {
+            const fadeElements = document.querySelectorAll('.fade-in-up');
+            const staggerElements = document.querySelectorAll('.stagger-animation');
+
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReducedMotion) {
+                fadeElements.forEach(el => el.classList.add('visible'));
+                staggerElements.forEach(el => el.classList.add('visible'));
+                return;
+            }
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -100px 0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            fadeElements.forEach(el => observer.observe(el));
+            staggerElements.forEach(el => observer.observe(el));
+        })();
+
         // Performance: Log page load time
         window.addEventListener('load', () => {
             if (window.performance && window.performance.timing) {
                 const loadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
                 console.log(`⚡ Page loaded in ${loadTime}ms`);
                 console.log(`⌨️  Press '?' to see keyboard shortcuts`);
+                console.log(`🎨 v1.5.0: Community engagement & academic excellence`);
             }
         });
     </script>

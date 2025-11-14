@@ -5,6 +5,132 @@ All notable changes to the Mycelix Protocol landing page will be documented in t
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] - 2025-11-14
+
+### Added
+- **Newsletter Subscription Form**
+  - Email capture with client-side validation
+  - Privacy-conscious design with GDPR notice
+  - Success/error state handling
+  - Integration-ready for Mailchimp/ConvertKit
+  - Gradient background styled section
+  - Responsive form layout
+
+- **Publications & Research Section**
+  - 3 publication cards (submitted, preprint, in-progress)
+  - Academic paper metadata (title, authors, abstract, venue)
+  - Status badges (published, preprint, submitted)
+  - Direct links to papers and code repositories
+  - Professional card-based layout with hover effects
+
+- **Citation Widget**
+  - Multi-format citation support (BibTeX, APA, IEEE)
+  - Tab-based format switcher
+  - One-click copy to clipboard
+  - Monospace font for proper formatting
+
+- **Interactive Byzantine Attack Visualization**
+  - Canvas-based real-time animation showing 11 nodes
+  - Visual gradient submission flow with particle effects
+  - Progressive Byzantine node detection over time
+  - Play/Pause/Reset controls
+  - Color-coded legend and dark mode support
+  - Frame-by-frame attack detection animation
+
+- **Resource Library Section**
+  - 6 downloadable resources (code, docs, data, citations, forum, guide)
+  - File size and format indicators
+  - Icon-based cards with hover effects
+  - Direct GitHub integration
+
+- **Contact Form**
+  - Full validation (name, email, subject, message)
+  - Character counter (1000 char limit)
+  - Honeypot anti-spam field
+  - Form state management
+  - Accessible with ARIA attributes
+
+- **Research Team Section**
+  - Team member cards with SVG avatars
+  - Role descriptions and credentials
+  - Social links (GitHub, Email)
+  - "Join Us" recruitment card
+
+- **Enhanced Scroll Animations**
+  - Fade-in-up for sections
+  - Stagger animations for grids (6-item progressive reveal)
+  - Intersection Observer optimization
+  - Respects prefers-reduced-motion
+
+- **Enhanced Schema.org Structured Data**
+  - ResearchProject schema type
+  - Person schema for team members
+  - ScholarlyArticle for publications
+  - Grant funding information
+  - Programming language, license, keywords metadata
+
+### Changed
+- **File Size & Performance**
+  - index.html: 1,654 → 2,844 lines (+1,190 lines, +72%)
+  - File size: 64KB → 111KB (+47KB, +73%)
+  - Added ~500 lines of CSS
+  - Added 5 new JavaScript modules (14 total IIFE modules)
+
+- **Page Structure**
+  - Newsletter after "Get Involved"
+  - Visualization before comparison table
+  - Publications after testimonials
+  - Resources, Team, and Contact before footer
+  - Better conversion funnel flow
+
+- **User Engagement**
+  - 2 conversion forms (newsletter + contact)
+  - 1 interactive canvas visualization
+  - 3 major new content sections (publications, resources, team)
+  - Enhanced academic credibility with citations
+
+### Technical
+- **New JavaScript Modules:**
+  1. Newsletter subscription handler (email validation)
+  2. Citation widget (tab switching + clipboard copy)
+  3. Byzantine visualization (Canvas API with requestAnimationFrame)
+  4. Contact form validation (regex patterns, character counting)
+  5. Enhanced scroll animations (IntersectionObserver for fade/stagger)
+
+- **Canvas Animation Features:**
+  - 60fps rendering with requestAnimationFrame
+  - 11-node network (5 honest, 5 Byzantine, 1 aggregator)
+  - Dynamic gradient particle system
+  - Progressive Byzantine detection (color state changes)
+  - Theme-aware backgrounds (light/dark mode)
+  - 300-frame loop cycle
+
+- **Form Enhancements:**
+  - Email regex validation
+  - Minimum length checks
+  - Real-time error display
+  - Honeypot spam prevention
+  - Client-side only (no backend required yet)
+
+- **Accessibility:**
+  - All forms with proper labels and ARIA attributes
+  - Keyboard accessible controls
+  - Error messages properly associated
+  - Screen reader friendly structure
+
+- **SEO Improvements:**
+  - Dual JSON-LD blocks (SoftwareApplication + ResearchProject)
+  - ScholarlyArticle metadata
+  - Enhanced team/person data
+  - Keywords, license, and rating information
+
+### Performance
+- Intersection Observer for efficient scroll animations
+- GPU-accelerated CSS transforms
+- Canvas rendering optimized
+- No additional HTTP requests (inline everything)
+- Self-contained SPA architecture
+
 ## [1.4.0] - 2025-11-14
 
 ### Added
