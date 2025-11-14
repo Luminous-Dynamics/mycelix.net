@@ -4,11 +4,8 @@
 User-agent: *
 Allow: /
 
-# Sitemap location (update when sitemap is generated)
-# Sitemap: https://mycelix.net/sitemap.xml
-
-# Crawl-delay (optional, in seconds)
-# Crawl-delay: 1
+# Sitemap location
+Sitemap: https://mycelix.net/sitemap.xml
 
 # Allow all search engines to index the entire site
 # This is a public-facing landing page for an open-source project

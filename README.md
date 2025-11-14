@@ -1,5 +1,11 @@
 # mycelix.net - Landing Page
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://mycelix.net)
+[![W3C Valid](https://img.shields.io/badge/W3C-Valid%20HTML-brightgreen)](https://validator.w3.org/)
+[![WCAG 2.1](https://img.shields.io/badge/WCAG-2.1%20AA-blue)](https://www.w3.org/WAI/WCAG21/quickref/)
+[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](CHANGELOG.md)
+
 **Byzantine-Resistant Federated Learning with Proof of Gradient Quality (PoGQ)**
 
 ## Overview
@@ -87,28 +93,59 @@ This landing page is **PoGQ-focused** (not full 5-layer protocol):
 3. **Healthcare IT** (Hospital CIOs, HIPAA compliance)
 4. **Open-Source Contributors** (GitHub community)
 
+## Project Structure
+
+```
+mycelix.net/
+├── index.html              # Main landing page
+├── 404.html               # Custom error page for GitHub Pages
+├── robots.txt             # Search engine crawling rules
+├── sitemap.xml            # Site structure for search engines
+├── LICENSE                # MIT License
+├── README.md              # This file
+├── CHANGELOG.md           # Version history
+├── CONTRIBUTING.md        # Contribution guidelines
+├── deploy.sh              # Deployment script with retry logic
+├── .gitignore             # Git ignore patterns
+└── .well-known/
+    └── security.txt       # Security policy (RFC 9116)
+```
+
 ## Technical Improvements
 
 This landing page includes:
 
 ### SEO & Social Sharing
-- Open Graph and Twitter Card meta tags
-- Structured data (JSON-LD) for search engines
+- Open Graph and Twitter Card meta tags for rich social previews
+- JSON-LD structured data for search engines
+- Canonical URL to prevent duplicate content
 - Comprehensive meta descriptions and keywords
-- `robots.txt` for search engine crawling
+- `sitemap.xml` for search engine discovery
+- `robots.txt` for crawling directives
+- Enhanced meta tags (language, robots, theme-color)
 
-### Accessibility
+### Accessibility (WCAG 2.1 AA Compliant)
 - Semantic HTML5 elements (`<main>`, `<section>`, `<header>`, `<footer>`)
-- ARIA labels and roles
+- ARIA labels and roles throughout
 - Skip-to-content link for keyboard navigation
-- Enhanced focus states for better keyboard accessibility
+- Enhanced focus states for keyboard accessibility
+- Proper heading hierarchy with unique IDs
 - Responsive design with mobile-first approach
 
 ### Performance & UX
+- DNS prefetch and preconnect hints for external resources
 - Smooth scrolling for anchor links
 - Cross-browser gradient text fallbacks
-- Inline SVG favicon (no external requests)
+- Inline SVG favicon (no external HTTP requests)
 - Optimized CSS with minimal dependencies
+- Custom 404 page with auto-redirect
+
+### Open Source Best Practices
+- MIT License with proper attribution
+- Comprehensive CONTRIBUTING.md guide
+- Security policy (`.well-known/security.txt`)
+- Version tracking (CHANGELOG.md)
+- Professional deployment script with retry logic
 
 ## Related Links
 
