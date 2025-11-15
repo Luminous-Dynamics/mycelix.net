@@ -5,6 +5,85 @@ All notable changes to the Mycelix Protocol landing page will be documented in t
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.0] - 2025-11-15
+
+### Added
+- **Security Mechanisms Deep Dive** 🔐
+  - 6 comprehensive security mechanism cards:
+    - Gradient Quality Validation (cryptographic proofs)
+    - Exponential Reputation System (EMA tracking)
+    - Weighted Aggregation (reputation-based weights)
+    - Statistical Detection (outlier metrics)
+    - Cryptographic Proofs (zkSNARKs roadmap)
+    - Adaptive Thresholds (dynamic detection)
+  - Each card includes:
+    - Technical method description
+    - Formulas and parameters
+    - Defense capabilities
+    - Specific thresholds and metrics
+  - Security Guarantees section with 4 key guarantees:
+    - 100% Detection at 45% adversarial ratio
+    - Zero False Positives (10,000+ test runs)
+    - Adaptive Defense (novel attack handling)
+    - Privacy Preserved (local data protection)
+  - ~150 lines of HTML content
+  - ~100 lines of CSS styling
+
+### Changed
+- **File Size & Growth**
+  - index.html: 7,855 → 8,090 lines (+235 lines, +3%)
+  - File size: 320KB → 332KB (+12KB, +4%)
+  - CSS: +100 lines (security cards, guarantee grid)
+  - No new JavaScript modules (static content section)
+  - Total modules: 34 IIFE functions (unchanged)
+
+- **Security Transparency**
+  - Detailed explanation of each security layer
+  - Mathematical formulas for reputation and weighting
+  - Specific attack types defended against
+  - Technical parameters exposed for evaluation
+
+- **User Education**
+  - Complex security made accessible
+  - Visual card-based presentation
+  - Hover effects for engagement
+  - Mobile-responsive grid layout
+
+### Technical
+- **New CSS Styles (~100 lines):**
+  - Security cards: Grid layout, hover effects, icon styling
+  - Security details: Dark background, bordered items
+  - Security summary: Gradient background, guarantee grid
+  - All mobile-responsive with breakpoints
+
+- **Content Structure:**
+  - 6 security mechanism cards with detailed specs
+  - 4 security guarantee cards
+  - Formulas using HTML subscripts
+  - Comprehensive "Defends Against" lists
+
+### Performance
+- Static content: Zero JavaScript overhead
+- CSS-only hover effects: GPU-accelerated
+- No API calls or external resources
+- Total bundle: 332KB (gzip: ~85KB estimated)
+
+### Accessibility
+- Semantic HTML structure
+- Proper heading hierarchy
+- All cards keyboard navigable
+- High contrast text
+- Screen reader friendly descriptions
+
+### Impact
+- **Security Understanding**: Developers can evaluate technical rigor
+- **Trust Building**: Transparent security mechanisms build confidence
+- **Technical Credibility**: Mathematical formulas and specific parameters
+- **Enterprise Sales**: Detailed security specs critical for procurement
+- **Academic Validation**: Clear methodology for peer review
+
+---
+
 ## [1.11.0] - 2025-11-15
 
 ### Added
