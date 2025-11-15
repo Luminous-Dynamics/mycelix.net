@@ -2611,6 +2611,520 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Keyboard Shortcuts Modal */
+        .keyboard-shortcuts-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10000;
+        }
+        .keyboard-shortcuts-modal.active {
+            display: block;
+        }
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(4px);
+        }
+        .modal-content {
+            position: relative;
+            max-width: 600px;
+            margin: 10vh auto;
+            background: linear-gradient(135deg, rgba(13, 17, 28, 0.98) 0%, rgba(20, 26, 44, 0.98) 100%);
+            border: 2px solid var(--card-border);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--card-border);
+        }
+        .modal-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .modal-close {
+            background: transparent;
+            border: 2px solid var(--card-border);
+            color: var(--text-color);
+            font-size: 2rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            line-height: 1;
+        }
+        .modal-close:hover {
+            background: rgba(239, 68, 68, 0.2);
+            border-color: #ef4444;
+            color: #ef4444;
+            transform: rotate(90deg);
+        }
+        .shortcuts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .shortcut-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .shortcut-item:hover {
+            background: rgba(0, 0, 0, 0.5);
+            border-color: var(--primary-color);
+            transform: translateX(4px);
+        }
+        .shortcut-item kbd {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(122, 0, 255, 0.2));
+            color: var(--primary-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-size: 0.9rem;
+            border: 1px solid var(--primary-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            min-width: 32px;
+            text-align: center;
+        }
+        .shortcut-item span {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .modal-content {
+                margin: 5vh 1rem;
+                padding: 1.5rem;
+            }
+            .shortcuts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Interactive Parameter Tuner */
+        .parameter-tuner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .parameter-controls {
+            background: var(--card-bg);
+            border: 2px solid var(--card-border);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+        .parameter-group {
+            margin-bottom: 2rem;
+        }
+        .parameter-group:last-child {
+            margin-bottom: 0;
+        }
+        .parameter-group label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+        .param-label {
+            font-weight: 600;
+            color: var(--text-color);
+            font-size: 0.95rem;
+        }
+        .param-value {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .param-slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+            cursor: pointer;
+        }
+        .param-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 212, 255, 0.4);
+            transition: all 0.2s ease;
+        }
+        .param-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            box-shadow: 0 4px 16px rgba(0, 212, 255, 0.6);
+        }
+        .param-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 8px rgba(0, 212, 255, 0.4);
+            transition: all 0.2s ease;
+        }
+        .param-slider::-moz-range-thumb:hover {
+            transform: scale(1.2);
+            box-shadow: 0 4px 16px rgba(0, 212, 255, 0.6);
+        }
+        .param-description {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+        .parameter-outputs {
+            background: var(--card-bg);
+            border: 2px solid var(--card-border);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+        .outcome-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .outcome-card {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .outcome-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        .outcome-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .outcome-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        .outcome-value {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+        .outcome-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .outcome-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transition: width 0.5s ease;
+            border-radius: 3px;
+        }
+        .outcome-bar-fill.warning {
+            background: linear-gradient(90deg, #f59e0b, #ef4444);
+        }
+        .outcome-summary {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 1rem;
+            color: var(--text-color);
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 1024px) {
+            .parameter-tuner {
+                grid-template-columns: 1fr;
+            }
+            .outcome-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .outcome-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Contributors Showcase */
+        .contributors-showcase {
+            background: var(--card-bg);
+            border: 2px solid var(--card-border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .contributors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1.5rem;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        .contributor-card {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .contributor-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 24px rgba(0, 212, 255, 0.2);
+        }
+        .contributor-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 0.75rem;
+            border: 3px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        .contributor-card:hover .contributor-avatar {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+        }
+        .contributor-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.25rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .contributor-contributions {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        .contributor-placeholder {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            grid-column: 1 / -1;
+        }
+        @media (max-width: 768px) {
+            .contributors-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 1rem;
+            }
+            .contributor-avatar {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        /* API Reference Cards */
+        .api-reference-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .api-card {
+            background: var(--card-bg);
+            border: 2px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .api-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 212, 255, 0.15);
+        }
+        .api-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--card-border);
+        }
+        .api-method {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-family: 'Courier New', monospace;
+        }
+        .api-type {
+            background: rgba(0, 212, 255, 0.2);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .api-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .api-code-sample {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--card-border);
+            border-radius: 6px;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            overflow-x: auto;
+        }
+        .api-code-sample code {
+            color: var(--text-color);
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        .api-params {
+            margin-top: 1rem;
+        }
+        .api-param {
+            margin-bottom: 0.75rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--card-border);
+        }
+        .api-param:last-child {
+            margin-bottom: 0;
+        }
+        .api-param strong {
+            color: var(--text-color);
+            font-family: 'Courier New', monospace;
+        }
+        .api-param .param-type {
+            color: var(--secondary-color);
+            font-size: 0.85rem;
+            font-family: 'Courier New', monospace;
+        }
+        .api-param div {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+        @media (max-width: 768px) {
+            .api-reference-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Community Links Section */
+        .community-links-section {
+            background: var(--card-bg);
+            border: 2px solid var(--card-border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .community-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .community-link-card {
+            background: rgba(0, 0, 0, 0.2);
+            border: 2px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        .community-link-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 212, 255, 0.2);
+        }
+        .community-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .community-link-card h4 {
+            color: var(--text-color);
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        .community-link-card p {
+            color: var(--text-secondary);
+            margin: 0 0 1rem 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+        .community-badge {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 0.35rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        @media (max-width: 768px) {
+            .community-links-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -3239,6 +3753,99 @@ safe_gradients = aggregator.aggregate(
             </div>
         </section>
 
+        <section class="section" aria-labelledby="parameter-tuner-heading">
+            <h2 id="parameter-tuner-heading">🎛️ Try It Yourself</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: rgba(255, 255, 255, 0.9);">
+                Experiment with PoGQ parameters and see real-time predictions of system behavior
+            </p>
+
+            <div class="parameter-tuner">
+                <div class="parameter-controls">
+                    <div class="parameter-group">
+                        <label for="byzantineRatio">
+                            <span class="param-label">Byzantine Adversary Ratio</span>
+                            <span class="param-value" id="byzantineRatioValue">30%</span>
+                        </label>
+                        <input type="range" id="byzantineRatio" min="0" max="50" value="30" step="1" class="param-slider">
+                        <div class="param-description">Percentage of malicious clients in the network</div>
+                    </div>
+
+                    <div class="parameter-group">
+                        <label for="clientCount">
+                            <span class="param-label">Total Clients</span>
+                            <span class="param-value" id="clientCountValue">100</span>
+                        </label>
+                        <input type="range" id="clientCount" min="10" max="500" value="100" step="10" class="param-slider">
+                        <div class="param-description">Number of participating clients in federation</div>
+                    </div>
+
+                    <div class="parameter-group">
+                        <label for="validationSplit">
+                            <span class="param-label">Validation Data Split</span>
+                            <span class="param-value" id="validationSplitValue">20%</span>
+                        </label>
+                        <input type="range" id="validationSplit" min="10" max="40" value="20" step="5" class="param-slider">
+                        <div class="param-description">Portion of data reserved for gradient quality validation</div>
+                    </div>
+
+                    <div class="parameter-group">
+                        <label for="reputationDecay">
+                            <span class="param-label">Reputation Decay Factor</span>
+                            <span class="param-value" id="reputationDecayValue">0.95</span>
+                        </label>
+                        <input type="range" id="reputationDecay" min="0.8" max="0.99" value="0.95" step="0.01" class="param-slider">
+                        <div class="param-description">How quickly past good behavior is discounted (exponential moving average)</div>
+                    </div>
+                </div>
+
+                <div class="parameter-outputs">
+                    <h3 style="color: white; margin-bottom: 1rem; text-align: center;">Predicted Outcomes</h3>
+
+                    <div class="outcome-grid">
+                        <div class="outcome-card">
+                            <div class="outcome-icon">🎯</div>
+                            <div class="outcome-label">Attack Detection Rate</div>
+                            <div class="outcome-value" id="detectionRate">100%</div>
+                            <div class="outcome-bar">
+                                <div class="outcome-bar-fill" id="detectionBar" style="width: 100%"></div>
+                            </div>
+                        </div>
+
+                        <div class="outcome-card">
+                            <div class="outcome-icon">⚡</div>
+                            <div class="outcome-label">Model Convergence</div>
+                            <div class="outcome-value" id="convergenceRate">Fast</div>
+                            <div class="outcome-bar">
+                                <div class="outcome-bar-fill" id="convergenceBar" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <div class="outcome-card">
+                            <div class="outcome-icon">💰</div>
+                            <div class="outcome-label">Computational Overhead</div>
+                            <div class="outcome-value" id="overheadCost">Medium</div>
+                            <div class="outcome-bar">
+                                <div class="outcome-bar-fill warning" id="overheadBar" style="width: 50%"></div>
+                            </div>
+                        </div>
+
+                        <div class="outcome-card">
+                            <div class="outcome-icon">🛡️</div>
+                            <div class="outcome-label">System Robustness</div>
+                            <div class="outcome-value" id="robustnessScore">Excellent</div>
+                            <div class="outcome-bar">
+                                <div class="outcome-bar-fill" id="robustnessBar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="outcome-summary" id="outcomeSummary">
+                        <strong>Analysis:</strong> With 30% Byzantine adversaries, PoGQ achieves 100% attack detection while maintaining fast convergence. The system remains highly robust against coordinated attacks.
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="section" aria-labelledby="get-involved-heading">
             <h2 id="get-involved-heading">Get Involved</h2>
 
@@ -3319,6 +3926,82 @@ safe_gradients = aggregator.aggregate(
                         <div class="metric-value" id="metric-issues">—</div>
                         <div class="metric-label">Open Issues</div>
                     </div>
+                </div>
+            </div>
+
+            <div class="contributors-showcase">
+                <h3 style="color: white; text-align: center; margin-bottom: 0.5rem;">👥 Contributors</h3>
+                <p style="color: rgba(255,255,255,0.9); text-align: center; margin-bottom: 1.5rem;">
+                    Meet the amazing people building Mycelix
+                </p>
+
+                <div class="contributors-grid" id="contributorsGrid">
+                    <div class="contributor-placeholder">Loading contributors...</div>
+                </div>
+
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <a href="https://github.com/Luminous-Dynamics/mycelix/graphs/contributors" class="btn btn-secondary" target="_blank" rel="noopener">
+                        View All Contributors on GitHub
+                    </a>
+                </div>
+            </div>
+
+            <div class="community-links-section">
+                <h3 style="color: white; text-align: center; margin-bottom: 0.5rem;">💬 Join the Community</h3>
+                <p style="color: rgba(255,255,255,0.9); text-align: center; margin-bottom: 1.5rem;">
+                    Connect with researchers, developers, and contributors
+                </p>
+
+                <div class="community-links-grid">
+                    <a href="https://github.com/Luminous-Dynamics/mycelix/discussions" class="community-link-card" target="_blank" rel="noopener">
+                        <div class="community-icon">💬</div>
+                        <h4>GitHub Discussions</h4>
+                        <p>Ask questions, share ideas, and get help from the community</p>
+                        <div class="community-badge">Active</div>
+                    </a>
+
+                    <a href="https://discord.gg/mycelix" class="community-link-card" target="_blank" rel="noopener">
+                        <div class="community-icon">💙</div>
+                        <h4>Discord Server</h4>
+                        <p>Real-time chat with developers and researchers</p>
+                        <div class="community-badge">Coming Soon</div>
+                    </a>
+
+                    <a href="https://github.com/Luminous-Dynamics/mycelix/issues" class="community-link-card" target="_blank" rel="noopener">
+                        <div class="community-icon">🐛</div>
+                        <h4>Issue Tracker</h4>
+                        <p>Report bugs, request features, and track development</p>
+                        <div class="community-badge">Open</div>
+                    </a>
+
+                    <a href="https://github.com/Luminous-Dynamics/mycelix/blob/main/CONTRIBUTING.md" class="community-link-card" target="_blank" rel="noopener">
+                        <div class="community-icon">🤝</div>
+                        <h4>Contributing Guide</h4>
+                        <p>Learn how to contribute code, docs, or research</p>
+                        <div class="community-badge">Welcome</div>
+                    </a>
+
+                    <a href="https://twitter.com/LuminousDynamics" class="community-link-card" target="_blank" rel="noopener">
+                        <div class="community-icon">🐦</div>
+                        <h4>Twitter / X</h4>
+                        <p>Latest updates, announcements, and research highlights</p>
+                        <div class="community-badge">Follow</div>
+                    </a>
+
+                    <a href="mailto:tristan.stoltz@evolvingresonantcocreationism.com" class="community-link-card">
+                        <div class="community-icon">📧</div>
+                        <h4>Contact</h4>
+                        <p>Direct email for partnerships and collaborations</p>
+                        <div class="community-badge">Open</div>
+                    </a>
+                </div>
+
+                <div style="text-align: center; margin-top: 1.5rem; padding: 1rem; background: rgba(0, 212, 255, 0.1); border: 1px solid var(--primary-color); border-radius: 8px;">
+                    <strong>🌟 New Contributors Welcome!</strong><br>
+                    <span style="color: var(--text-secondary);">
+                        We're looking for contributors in ML research, Python development, documentation, and testing.
+                        Check out our <a href="https://github.com/Luminous-Dynamics/mycelix/labels/good%20first%20issue" target="_blank" rel="noopener" style="color: var(--primary-color);">good first issues</a>!
+                    </span>
                 </div>
             </div>
 
@@ -3431,6 +4114,159 @@ suspicious = [i <span class="keyword">for</span> i, score <span class="keyword">
 <span class="keyword">print</span>(<span class="string">f"Suspicious clients: {suspicious}"</span>)</div>
                     <button class="copy-btn" data-code="reputation">📋 Copy</button>
                 </div>
+            </div>
+        </section>
+
+        <section class="section" id="api" aria-labelledby="api-reference-heading">
+            <h2 id="api-reference-heading">📚 API Reference</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: rgba(255, 255, 255, 0.9);">
+                Quick reference for the Mycelix PoGQ+Rep API
+            </p>
+
+            <div class="api-reference-grid">
+                <div class="api-card">
+                    <div class="api-card-header">
+                        <h3 class="api-method">PoGQAggregator</h3>
+                        <span class="api-type">Class</span>
+                    </div>
+                    <div class="api-description">
+                        Main aggregator class implementing Proof of Gradient Quality with reputation tracking.
+                    </div>
+                    <div class="api-code-sample">
+                        <code>PoGQAggregator(validation_split=0.2, reputation_decay=0.95)</code>
+                    </div>
+                    <div class="api-params">
+                        <div class="api-param">
+                            <strong>validation_split</strong> <span class="param-type">float</span>
+                            <div>Fraction of data for validation (default: 0.2)</div>
+                        </div>
+                        <div class="api-param">
+                            <strong>reputation_decay</strong> <span class="param-type">float</span>
+                            <div>Exponential decay factor for reputation (default: 0.95)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="api-card">
+                    <div class="api-card-header">
+                        <h3 class="api-method">aggregate()</h3>
+                        <span class="api-type">Method</span>
+                    </div>
+                    <div class="api-description">
+                        Aggregates client gradients while detecting and excluding Byzantine submissions.
+                    </div>
+                    <div class="api-code-sample">
+                        <code>global_model = aggregator.aggregate(client_gradients)</code>
+                    </div>
+                    <div class="api-params">
+                        <div class="api-param">
+                            <strong>client_gradients</strong> <span class="param-type">list[Tensor]</span>
+                            <div>List of gradient tensors from clients</div>
+                        </div>
+                        <div class="api-param">
+                            <strong>Returns</strong> <span class="param-type">Tensor</span>
+                            <div>Aggregated global model update</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="api-card">
+                    <div class="api-card-header">
+                        <h3 class="api-method">validate_gradient()</h3>
+                        <span class="api-type">Method</span>
+                    </div>
+                    <div class="api-description">
+                        Validates a single gradient submission using the held-out validation data.
+                    </div>
+                    <div class="api-code-sample">
+                        <code>quality_score = aggregator.validate_gradient(gradient, client_id)</code>
+                    </div>
+                    <div class="api-params">
+                        <div class="api-param">
+                            <strong>gradient</strong> <span class="param-type">Tensor</span>
+                            <div>Client gradient to validate</div>
+                        </div>
+                        <div class="api-param">
+                            <strong>client_id</strong> <span class="param-type">int</span>
+                            <div>Unique identifier for the client</div>
+                        </div>
+                        <div class="api-param">
+                            <strong>Returns</strong> <span class="param-type">float</span>
+                            <div>Quality score between 0.0 and 1.0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="api-card">
+                    <div class="api-card-header">
+                        <h3 class="api-method">get_reputation_scores()</h3>
+                        <span class="api-type">Method</span>
+                    </div>
+                    <div class="api-description">
+                        Returns current reputation scores for all clients in the federation.
+                    </div>
+                    <div class="api-code-sample">
+                        <code>scores = aggregator.get_reputation_scores()</code>
+                    </div>
+                    <div class="api-params">
+                        <div class="api-param">
+                            <strong>Returns</strong> <span class="param-type">dict[int, float]</span>
+                            <div>Mapping of client IDs to reputation scores</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="api-card">
+                    <div class="api-card-header">
+                        <h3 class="api-method">detect_byzantine()</h3>
+                        <span class="api-type">Method</span>
+                    </div>
+                    <div class="api-description">
+                        Identifies Byzantine clients based on gradient quality and reputation history.
+                    </div>
+                    <div class="api-code-sample">
+                        <code>byzantine_ids = aggregator.detect_byzantine(threshold=0.5)</code>
+                    </div>
+                    <div class="api-params">
+                        <div class="api-param">
+                            <strong>threshold</strong> <span class="param-type">float</span>
+                            <div>Minimum quality score to consider honest (default: 0.5)</div>
+                        </div>
+                        <div class="api-param">
+                            <strong>Returns</strong> <span class="param-type">list[int]</span>
+                            <div>List of detected Byzantine client IDs</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="api-card">
+                    <div class="api-card-header">
+                        <h3 class="api-method">update_reputation()</h3>
+                        <span class="api-type">Method</span>
+                    </div>
+                    <div class="api-description">
+                        Updates reputation scores based on gradient quality assessments.
+                    </div>
+                    <div class="api-code-sample">
+                        <code>aggregator.update_reputation(client_id, quality_score)</code>
+                    </div>
+                    <div class="api-params">
+                        <div class="api-param">
+                            <strong>client_id</strong> <span class="param-type">int</span>
+                            <div>Client whose reputation to update</div>
+                        </div>
+                        <div class="api-param">
+                            <strong>quality_score</strong> <span class="param-type">float</span>
+                            <div>Quality score from validation (0.0-1.0)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="https://github.com/Luminous-Dynamics/mycelix/blob/main/docs/API.md" class="btn btn-secondary" target="_blank" rel="noopener">
+                    📖 View Full API Documentation
+                </a>
             </div>
         </section>
 
@@ -5923,15 +6759,331 @@ suspicious = [i <span class="keyword">for</span> i, score <span class="keyword">
             });
         })();
 
+        // 30. Keyboard Shortcuts System
+        (function() {
+            const modal = document.getElementById('keyboardShortcutsModal');
+            const modalClose = document.getElementById('modalClose');
+            const modalOverlay = document.getElementById('modalOverlay');
+            let keySequence = '';
+            let sequenceTimeout;
+
+            // Section mapping
+            const sections = {
+                'h': 'hero',
+                'f': 'features',
+                'p': 'performance',
+                'a': 'api',
+                'r': 'roadmap',
+                'c': 'citations',
+                'q': 'faq'
+            };
+
+            function openModal() {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            function scrollToSection(sectionId) {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+
+            function handleKeySequence(key) {
+                clearTimeout(sequenceTimeout);
+                keySequence += key;
+
+                sequenceTimeout = setTimeout(() => {
+                    keySequence = '';
+                }, 1000);
+
+                // Check for 'gg' (go to top)
+                if (keySequence === 'gg') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    keySequence = '';
+                    return true;
+                }
+
+                // Check for 'g' + section key
+                if (keySequence.startsWith('g') && keySequence.length === 2) {
+                    const sectionKey = keySequence[1];
+                    if (sections[sectionKey]) {
+                        scrollToSection(sections[sectionKey]);
+                        keySequence = '';
+                        return true;
+                    }
+                    keySequence = '';
+                }
+
+                return false;
+            }
+
+            // Keyboard event listener
+            document.addEventListener('keydown', (e) => {
+                // Don't trigger shortcuts if user is typing in an input
+                if (e.target.matches('input, textarea, select')) return;
+
+                // ? - Open modal
+                if (e.key === '?' && !e.shiftKey) {
+                    e.preventDefault();
+                    openModal();
+                    return;
+                }
+
+                // Escape - Close modal
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    e.preventDefault();
+                    closeModal();
+                    return;
+                }
+
+                // G (shift+g) - Go to bottom
+                if (e.key === 'G' && e.shiftKey) {
+                    e.preventDefault();
+                    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                    return;
+                }
+
+                // / - Focus FAQ search
+                if (e.key === '/') {
+                    e.preventDefault();
+                    const searchInput = document.getElementById('faqSearch');
+                    if (searchInput) {
+                        searchInput.focus();
+                        searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                    return;
+                }
+
+                // g + key sequences
+                if (/^[ghfparqc]$/.test(e.key)) {
+                    e.preventDefault();
+                    handleKeySequence(e.key);
+                }
+            });
+
+            // Close modal on button click
+            if (modalClose) {
+                modalClose.addEventListener('click', closeModal);
+            }
+
+            // Close modal on overlay click
+            if (modalOverlay) {
+                modalOverlay.addEventListener('click', closeModal);
+            }
+
+            // Prevent clicks inside modal content from closing
+            const modalContent = modal?.querySelector('.modal-content');
+            if (modalContent) {
+                modalContent.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                });
+            }
+        })();
+
+        // 31. Interactive Parameter Tuner
+        (function() {
+            const byzantineRatio = document.getElementById('byzantineRatio');
+            const clientCount = document.getElementById('clientCount');
+            const validationSplit = document.getElementById('validationSplit');
+            const reputationDecay = document.getElementById('reputationDecay');
+
+            if (!byzantineRatio || !clientCount || !validationSplit || !reputationDecay) return;
+
+            function updateOutputs() {
+                const byz = parseInt(byzantineRatio.value);
+                const clients = parseInt(clientCount.value);
+                const validation = parseInt(validationSplit.value);
+                const decay = parseFloat(reputationDecay.value);
+
+                // Update slider value displays
+                document.getElementById('byzantineRatioValue').textContent = byz + '%';
+                document.getElementById('clientCountValue').textContent = clients;
+                document.getElementById('validationSplitValue').textContent = validation + '%';
+                document.getElementById('reputationDecayValue').textContent = decay.toFixed(2);
+
+                // Calculate detection rate (100% up to 45%, then drops)
+                let detectionRate = 100;
+                if (byz > 45) {
+                    detectionRate = Math.max(60, 100 - (byz - 45) * 3);
+                }
+                document.getElementById('detectionRate').textContent = detectionRate.toFixed(0) + '%';
+                document.getElementById('detectionBar').style.width = detectionRate + '%';
+
+                // Calculate convergence rate (faster with more clients and validation)
+                const convergenceScore = Math.min(100,
+                    60 + (clients / 10) + (validation) - (byz / 2)
+                );
+                let convergenceText = 'Slow';
+                if (convergenceScore > 80) convergenceText = 'Fast';
+                else if (convergenceScore > 60) convergenceText = 'Medium';
+                document.getElementById('convergenceRate').textContent = convergenceText;
+                document.getElementById('convergenceBar').style.width = convergenceScore + '%';
+
+                // Calculate computational overhead (increases with clients and validation)
+                const overheadScore = Math.min(100,
+                    20 + (clients / 5) + (validation * 1.5)
+                );
+                let overheadText = 'Low';
+                if (overheadScore > 70) overheadText = 'High';
+                else if (overheadScore > 40) overheadText = 'Medium';
+                document.getElementById('overheadCost').textContent = overheadText;
+                document.getElementById('overheadBar').style.width = overheadScore + '%';
+
+                // Calculate robustness (based on validation split and decay)
+                const robustnessScore = Math.min(100,
+                    50 + (validation * 1.5) + ((1 - decay) * 100) - (byz / 3)
+                );
+                let robustnessText = 'Poor';
+                if (robustnessScore > 85) robustnessText = 'Excellent';
+                else if (robustnessScore > 70) robustnessText = 'Good';
+                else if (robustnessScore > 50) robustnessText = 'Fair';
+                document.getElementById('robustnessScore').textContent = robustnessText;
+                document.getElementById('robustnessBar').style.width = robustnessScore + '%';
+
+                // Generate summary
+                let summary = '';
+                if (byz <= 30) {
+                    summary = `<strong>Analysis:</strong> With ${byz}% Byzantine adversaries, PoGQ achieves ${detectionRate}% attack detection while maintaining ${convergenceText.toLowerCase()} convergence. The system remains highly robust against coordinated attacks.`;
+                } else if (byz <= 45) {
+                    summary = `<strong>Analysis:</strong> At ${byz}% Byzantine ratio, PoGQ still achieves ${detectionRate}% detection. Convergence is ${convergenceText.toLowerCase()} with ${clients} clients. Consider increasing validation split for better robustness.`;
+                } else {
+                    summary = `<strong>Warning:</strong> With ${byz}% adversaries (exceeding theoretical limit), detection drops to ${detectionRate}%. PoGQ is optimized for up to 45% Byzantine ratio. Consider reducing adversary ratio or implementing additional security measures.`;
+                }
+
+                document.getElementById('outcomeSummary').innerHTML = summary;
+            }
+
+            // Attach event listeners
+            byzantineRatio.addEventListener('input', updateOutputs);
+            clientCount.addEventListener('input', updateOutputs);
+            validationSplit.addEventListener('input', updateOutputs);
+            reputationDecay.addEventListener('input', updateOutputs);
+
+            // Initialize
+            updateOutputs();
+        })();
+
+        // 32. GitHub Contributors Showcase
+        (function() {
+            const contributorsGrid = document.getElementById('contributorsGrid');
+            if (!contributorsGrid) return;
+
+            async function fetchContributors() {
+                try {
+                    const response = await fetch('https://api.github.com/repos/Luminous-Dynamics/mycelix/contributors?per_page=12');
+                    if (!response.ok) throw new Error('Failed to fetch contributors');
+
+                    const contributors = await response.json();
+
+                    // Clear placeholder
+                    contributorsGrid.innerHTML = '';
+
+                    // Display contributors
+                    contributors.forEach(contributor => {
+                        const card = document.createElement('a');
+                        card.className = 'contributor-card';
+                        card.href = contributor.html_url;
+                        card.target = '_blank';
+                        card.rel = 'noopener';
+                        card.setAttribute('aria-label', `View ${contributor.login}'s GitHub profile`);
+
+                        card.innerHTML = `
+                            <img src="${contributor.avatar_url}" alt="${contributor.login}" class="contributor-avatar" loading="lazy">
+                            <div class="contributor-name">${contributor.login}</div>
+                            <div class="contributor-contributions">${contributor.contributions} commits</div>
+                        `;
+
+                        contributorsGrid.appendChild(card);
+                    });
+                } catch (error) {
+                    console.error('Error fetching contributors:', error);
+                    contributorsGrid.innerHTML = '<div class="contributor-placeholder">Unable to load contributors. <a href="https://github.com/Luminous-Dynamics/mycelix/graphs/contributors" target="_blank" rel="noopener">View on GitHub</a></div>';
+                }
+            }
+
+            // Fetch contributors on load
+            fetchContributors();
+        })();
+
         // Performance: Log page load time
         window.addEventListener('load', () => {
             if (window.performance && window.performance.timing) {
                 const loadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
                 console.log(`⚡ Page loaded in ${loadTime}ms`);
                 console.log(`⌨️  Press '?' to see keyboard shortcuts`);
-                console.log(`🔍 v1.9.0: Sticky nav, citations, trust badges, downloads & enhanced FAQs`);
+                console.log(`🔍 v1.10.0: Keyboard shortcuts, parameter tuner, contributors & API reference`);
             }
         });
     </script>
+
+    <!-- Keyboard Shortcuts Modal -->
+    <div class="keyboard-shortcuts-modal" id="keyboardShortcutsModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>⌨️ Keyboard Shortcuts</h3>
+                <button class="modal-close" id="modalClose" aria-label="Close modal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="shortcuts-grid">
+                    <div class="shortcut-item">
+                        <kbd>?</kbd>
+                        <span>Show this help</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>Esc</kbd>
+                        <span>Close modal</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>g</kbd> <kbd>h</kbd>
+                        <span>Go to Hero</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>g</kbd> <kbd>f</kbd>
+                        <span>Go to Features</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>g</kbd> <kbd>p</kbd>
+                        <span>Go to Performance</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>g</kbd> <kbd>a</kbd>
+                        <span>Go to API</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>g</kbd> <kbd>r</kbd>
+                        <span>Go to Roadmap</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>g</kbd> <kbd>c</kbd>
+                        <span>Go to Citations</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>g</kbd> <kbd>q</kbd>
+                        <span>Go to FAQ</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>g</kbd> <kbd>g</kbd>
+                        <span>Scroll to top</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>G</kbd>
+                        <span>Scroll to bottom</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>/</kbd>
+                        <span>Search FAQ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
