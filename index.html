@@ -3,690 +3,417 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mycelix: Decentralized Consciousness Ecosystem. Byzantine-resistant federated learning, supply chain provenance, P2P education, marketplace, and more - all built on trust without central authority.">
-    <meta name="keywords" content="mycelix, decentralized, holochain, Byzantine fault tolerance, federated learning, supply chain, Web3, P2P, consciousness computing">
-    <title>Mycelix - Decentralized Consciousness Ecosystem</title>
+    <meta name="description" content="Mycelix - A fractal, consciousness-gated governance protocol built on Holochain. 133+ zomes, 16 clusters, three-currency living economy (MYCEL/SAP/TEND), agent-centric sovereignty.">
+    <meta name="keywords" content="Mycelix, Holochain, Consciousness Governance, Agent-Centric, Fractal CivOS, MYCEL, SAP, TEND, Declaration of Sovereignty">
+    <meta name="author" content="Luminous Dynamics">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Mycelix - Consciousness-First Governance Protocol">
+    <meta property="og:description" content="A fractal CivOS with consciousness-gated participation, three-currency living economy, and polycentric governance. Built on Holochain.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mycelix.net">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Mycelix - Consciousness-First Governance">
+
+    <title>Mycelix - Consciousness-First Governance Protocol</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🍄</text></svg>">
+
     <style>
+        :root {
+            --mycel-deep: #1a2e22;
+            --mycel-green: #7ec8a0;
+            --mycel-gold: #e8c547;
+            --mycel-white: #f0f0e8;
+            --mycel-grey: #6b7d6b;
+            --phi: 1.618;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        :root {
-            --mycelium-purple: #667eea;
-            --mycelium-deep: #764ba2;
-            --network-green: #10b981;
-            --trust-gold: #f59e0b;
-            --bg-light: #f8f9fa;
-            --text-dark: #1f2937;
-            --text-muted: #6b7280;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background: linear-gradient(135deg, var(--mycelium-purple) 0%, var(--mycelium-deep) 100%);
+            font-family: 'Georgia', 'Palatino', serif;
+            background: var(--mycel-deep);
+            color: var(--mycel-white);
             min-height: 100vh;
+            line-height: 1.7;
         }
 
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+        a { color: var(--mycel-gold); text-decoration: none; }
+        a:hover { text-decoration: underline; }
 
+        .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+
+        /* Hero */
         .hero {
-            background: rgba(255, 255, 255, 0.98);
-            border-radius: 24px;
-            padding: 4rem 3rem;
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
-            margin-bottom: 2rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .logo {
-            font-size: 3.5rem;
-            margin-bottom: 0.5rem;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+            padding: 4rem 2rem;
         }
 
-        h1 {
-            font-size: 3rem;
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--mycel-gold);
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--mycelium-purple) 0%, var(--mycelium-deep) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-align: center;
+            letter-spacing: 0.15em;
         }
 
-        h2 {
-            color: var(--mycelium-purple);
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-        }
-
-        h3 {
-            color: var(--mycelium-deep);
-            margin-bottom: 1rem;
+        .hero-subtitle {
             font-size: 1.4rem;
+            opacity: 0.85;
+            margin-bottom: 2rem;
+            font-style: italic;
         }
 
-        .tagline {
-            font-size: 1.5rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            text-align: center;
-            font-weight: 500;
-        }
-
-        .vision-statement {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-            padding: 2rem;
-            border-radius: 16px;
-            border-left: 4px solid var(--mycelium-purple);
-            margin-bottom: 2rem;
+        .hero-description {
+            max-width: 700px;
             font-size: 1.15rem;
-            line-height: 1.8;
+            margin-bottom: 3rem;
         }
 
-        .ecosystem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 3rem;
         }
 
-        .app-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            transition: transform 0.2s, box-shadow 0.2s;
-            border: 2px solid transparent;
+        .stat {
+            text-align: center;
         }
 
-        .app-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(102, 126, 234, 0.2);
-            border-color: var(--mycelium-purple);
-        }
-
-        .app-card.production {
-            border-left: 4px solid var(--network-green);
-        }
-
-        .app-card.alpha {
-            border-left: 4px solid var(--trust-gold);
-        }
-
-        .app-card.research {
-            border-left: 4px solid var(--mycelium-purple);
-        }
-
-        .app-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .app-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .app-status {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-
-        .status-production {
-            background: #d1fae5;
-            color: #065f46;
-        }
-
-        .status-alpha {
-            background: #fef3c7;
-            color: #92400e;
-        }
-
-        .status-research {
-            background: #e0e7ff;
-            color: #3730a3;
-        }
-
-        .app-description {
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .app-metrics {
-            background: var(--bg-light);
-            padding: 1rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-            font-size: 0.9rem;
-        }
-
-        .app-metrics strong {
-            color: var(--mycelium-purple);
-        }
-
-        .app-link {
-            display: inline-block;
-            color: var(--mycelium-purple);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-
-        .app-link:hover {
-            color: var(--mycelium-deep);
-            text-decoration: underline;
-        }
-
-        .section {
-            background: rgba(255, 255, 255, 0.98);
-            border-radius: 24px;
-            padding: 3rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .principles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .principle-card {
-            background: var(--bg-light);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border-left: 3px solid var(--mycelium-purple);
-        }
-
-        .principle-icon {
+        .stat-number {
             font-size: 2rem;
-            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--mycel-gold);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            opacity: 0.7;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
             justify-content: center;
         }
 
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.2s;
-            display: inline-block;
-            font-size: 1.05rem;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--mycelium-purple) 0%, var(--mycelium-deep) 100%);
-            color: white;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-        }
-
-        .btn-primary:hover {
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-secondary {
-            background: white;
-            color: var(--mycelium-purple);
-            border: 2px solid var(--mycelium-purple);
-        }
-
-        .btn-secondary:hover {
-            background: var(--mycelium-purple);
-            color: white;
-        }
-
-        .architecture-diagram {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
-            padding: 2rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-            line-height: 1.8;
-            overflow-x: auto;
-        }
-
-        ul {
-            margin-left: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        li {
-            margin-bottom: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        li strong {
-            color: var(--text-dark);
-        }
-
-        a {
-            color: var(--mycelium-purple);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .transparency-note {
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(251, 191, 36, 0.1));
-            border-left: 4px solid var(--trust-gold);
-            padding: 1.5rem;
+        .cta {
+            padding: 0.8rem 2rem;
             border-radius: 8px;
-            margin: 2rem 0;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            transition: transform 0.2s;
         }
 
-        .research-results {
-            background: white;
-            padding: 1.5rem;
+        .cta:hover { transform: translateY(-2px); text-decoration: none; }
+
+        .cta-primary {
+            background: var(--mycel-gold);
+            color: var(--mycel-deep);
+            font-weight: bold;
+        }
+
+        .cta-secondary {
+            border: 1px solid var(--mycel-gold);
+            color: var(--mycel-gold);
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+
+        section:nth-child(even) {
+            background: rgba(126, 200, 160, 0.05);
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--mycel-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--mycel-green);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Currency Grid */
+        .currency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .currency-card {
+            background: rgba(126, 200, 160, 0.08);
+            border: 1px solid rgba(232, 197, 71, 0.15);
             border-radius: 12px;
-            margin: 1.5rem 0;
-            border: 2px solid var(--bg-light);
+            padding: 1.5rem;
         }
 
-        .metrics-table {
+        .currency-card h3 {
+            margin-bottom: 0.3rem;
+        }
+
+        .currency-type {
+            font-size: 0.85rem;
+            opacity: 0.6;
+            margin-bottom: 0.8rem;
+            font-style: italic;
+        }
+
+        /* Tier Table */
+        table {
             width: 100%;
-            margin: 1rem 0;
             border-collapse: collapse;
+            margin-top: 1.5rem;
         }
 
-        .metrics-table th,
-        .metrics-table td {
-            padding: 0.75rem;
+        th, td {
+            padding: 0.6rem 1rem;
             text-align: left;
-            border-bottom: 1px solid var(--bg-light);
+            border-bottom: 1px solid rgba(126, 200, 160, 0.15);
         }
 
-        .metrics-table th {
-            background: var(--bg-light);
-            font-weight: 600;
-            color: var(--mycelium-purple);
+        th {
+            color: var(--mycel-gold);
+            font-size: 0.9rem;
         }
 
-        .metric-value {
-            font-weight: 700;
-            color: var(--network-green);
+        /* Declaration Preview */
+        .declaration-preview {
+            background: rgba(232, 197, 71, 0.05);
+            border-left: 4px solid var(--mycel-gold);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .declaration-preview blockquote {
+            font-size: 1.15rem;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        footer a { opacity: 0.8; }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            .tagline { font-size: 1.15rem; }
-            .hero { padding: 2rem 1.5rem; }
-            .section { padding: 2rem 1.5rem; }
-            .ecosystem-grid { grid-template-columns: 1fr; }
+            .hero-stats { gap: 1rem; }
+            .currency-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Hero Section -->
-        <div class="hero">
-            <div class="logo">🍄</div>
-            <h1>Mycelix</h1>
-            <p class="tagline">Decentralized Consciousness Ecosystem</p>
 
-            <div class="vision-statement">
-                <strong>Like mycelium networks that connect forest ecosystems</strong>, Mycelix creates a distributed infrastructure where humans, AI, and autonomous systems coordinate through <strong>trust without central authority</strong>. Built on Byzantine-resistant protocols and agent-centric architecture, Mycelix enables true decentralization across education, commerce, science, communication, and AI.
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Mycelix</h1>
+        <p class="hero-subtitle">Consciousness-First Governance Protocol</p>
+        <p class="hero-description">
+            A fractal CivOS built on Holochain's agent-centric architecture.
+            Consciousness-gated participation. Three-currency living economy.
+            Polycentric governance from family hearth to planetary coordination.
+        </p>
+
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-number">133+</span>
+                <span class="stat-label">Holochain Zomes</span>
             </div>
+            <div class="stat">
+                <span class="stat-number">16</span>
+                <span class="stat-label">Clusters</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">8,600+</span>
+                <span class="stat-label">Tests</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">785K</span>
+                <span class="stat-label">Lines Rust</span>
+            </div>
+        </div>
+
+        <div class="cta-buttons">
+            <a href="#declaration" class="cta cta-primary">Read the Declaration</a>
+            <a href="#architecture" class="cta cta-secondary">View Architecture</a>
+            <a href="https://github.com/Luminous-Dynamics/mycelix" class="cta cta-secondary">GitHub</a>
+        </div>
+    </section>
+
+    <!-- Declaration Preview -->
+    <section id="declaration">
+        <div class="container">
+            <h2>Declaration of Sovereignty</h2>
+            <p style="opacity: 0.8; margin-bottom: 1.5rem;">A Consciousness-First Framework for Post-State Civilization</p>
+
+            <div class="declaration-preview">
+                <blockquote>
+                    We propose that consciousness &mdash; measurable, integrated, honest about its own
+                    limits &mdash; is the only reliable foundation for legitimate governance. Not consciousness
+                    as metaphor. Consciousness as engineering constraint. Not consciousness as solitary
+                    achievement. Consciousness as relationship: meaning that emerges between beings, not
+                    within them alone.
+                </blockquote>
+            </div>
+
+            <h3>Seven Self-Evident Truths</h3>
+            <p style="margin-bottom: 1rem;">We hold these truths to be foundational, not because they are beyond question, but because every alternative we have tested has produced suffering at scale:</p>
+            <ol style="padding-left: 1.5rem; margin-bottom: 2rem;">
+                <li style="margin-bottom: 0.5rem;"><strong>Consciousness is the substrate of legitimate governance.</strong></li>
+                <li style="margin-bottom: 0.5rem;"><strong>Every agent holds inherent sovereignty over their own source chain and cognitive loop.</strong></li>
+                <li style="margin-bottom: 0.5rem;"><strong>Alignment emerges from integrated information and mutual recognition, not from coercion or extraction.</strong></li>
+                <li style="margin-bottom: 0.5rem;"><strong>Sovereignty is fractal.</strong></li>
+                <li style="margin-bottom: 0.5rem;"><strong>Knowledge is three-dimensional.</strong></li>
+                <li style="margin-bottom: 0.5rem;"><strong>The stakes of consciousness are asymmetric.</strong></li>
+                <li style="margin-bottom: 0.5rem;"><strong>Honest uncertainty is stronger than false confidence.</strong></li>
+            </ol>
 
             <div class="cta-buttons">
-                <a href="https://github.com/Luminous-Dynamics?q=mycelix" class="btn btn-primary">🔬 Explore Projects</a>
-                <a href="#ecosystem" class="btn btn-secondary">📚 Learn More</a>
+                <a href="https://github.com/Luminous-Dynamics/luminous-dynamics/blob/main/docs/DECLARATION_OF_SOVEREIGNTY.md" class="cta cta-primary">Read Full Declaration</a>
+                <a href="https://github.com/Luminous-Dynamics/luminous-dynamics/blob/main/docs/ARCHITECTURE_OF_SOVEREIGNTY.md" class="cta cta-secondary">Architecture Companion</a>
             </div>
         </div>
+    </section>
 
-        <!-- Core Principles -->
-        <div class="section">
-            <h2>🌟 Core Principles</h2>
-            <div class="principles-grid">
-                <div class="principle-card">
-                    <div class="principle-icon">🛡️</div>
-                    <h3>Byzantine Resistance</h3>
-                    <p>45% fault tolerance - handles adversarial participants while maintaining system integrity</p>
-                </div>
-                <div class="principle-card">
-                    <div class="principle-icon">🌐</div>
-                    <h3>Agent-Centric</h3>
-                    <p>Every participant controls their own data and identity. No central servers or authorities.</p>
-                </div>
-                <div class="principle-card">
-                    <div class="principle-icon">🔗</div>
-                    <h3>Holochain DHT</h3>
-                    <p>Distributed hash table for resilient, peer-to-peer data storage and validation</p>
-                </div>
-                <div class="principle-card">
-                    <div class="principle-icon">🧠</div>
-                    <h3>Consciousness-First</h3>
-                    <p>Technology that amplifies awareness and serves all beings, not exploits attention</p>
-                </div>
-            </div>
+    <!-- Consciousness-Gated Tiers -->
+    <section id="architecture">
+        <div class="container">
+            <h2>Consciousness-Gated Participation</h2>
+            <p>A four-dimensional profile &mdash; Identity (25%), Reputation (25%), Community (30%), Engagement (20%) &mdash; determines governance tier. Earned through demonstrated integration, not granted by birth, wealth, or force.</p>
+
+            <table>
+                <thead>
+                    <tr><th>Tier</th><th>Min Score</th><th>Vote Weight</th><th>Capabilities</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Observer</td><td>0.0</td><td>0</td><td>Read-only access</td></tr>
+                    <tr><td>Participant</td><td>0.3</td><td>5,000 bp</td><td>Basic proposals</td></tr>
+                    <tr><td>Citizen</td><td>0.4</td><td>7,500 bp</td><td>Binding votes</td></tr>
+                    <tr><td>Steward</td><td>0.6</td><td>10,000 bp</td><td>Constitutional amendments</td></tr>
+                    <tr><td>Guardian</td><td>0.8</td><td>10,000 bp</td><td>Emergency powers</td></tr>
+                </tbody>
+            </table>
         </div>
+    </section>
 
-        <!-- Ecosystem Applications -->
-        <div class="section" id="ecosystem">
-            <h2>🌿 The Mycelix Ecosystem</h2>
-            <p style="margin-bottom: 2rem; color: var(--text-muted); font-size: 1.1rem;">
-                A family of interconnected applications sharing a common foundation of Byzantine-resistant consensus,
-                agent-centric identity, and decentralized knowledge graphs.
-            </p>
+    <!-- Three-Currency Economy -->
+    <section>
+        <div class="container">
+            <h2>A Living Economy of Three Currencies</h2>
+            <p>Not one metric but three, each serving a distinct function that no single token can fulfill.</p>
 
-            <div class="ecosystem-grid">
-                <!-- Mycelix Core -->
-                <div class="app-card research">
-                    <div class="app-icon">🧬</div>
-                    <div class="app-title">Mycelix Core</div>
-                    <span class="app-status status-research">Research / Production</span>
-                    <div class="app-description">
-                        Byzantine-resistant federated learning with revolutionary 100% attack detection at 45% adversarial ratio.
-                    </div>
-                    <div class="app-metrics">
-                        <strong>Validated Results:</strong><br>
-                        • 100% Byzantine detection (45% adversaries)<br>
-                        • 0.7ms average latency (181× faster than baselines)<br>
-                        • Krum algorithm with reputation-weighted aggregation<br>
-                        • Healthcare AI (HIPAA-compliant gradient sharing)
-                    </div>
-                    <a href="https://github.com/Luminous-Dynamics/Mycelix-Core" class="app-link">→ GitHub Repository</a>
+            <div class="currency-grid">
+                <div class="currency-card">
+                    <h3>MYCEL</h3>
+                    <p class="currency-type">Soulbound Reputation (0.0 &ndash; 1.0)</p>
+                    <p>Non-transferable. Computed from participation, peer recognition, validation quality, and longevity. Decays without activity. Cannot be bought, sold, or gifted &mdash; only earned through demonstrated care.</p>
                 </div>
 
-                <!-- Supply Chain -->
-                <div class="app-card production">
-                    <div class="app-icon">📦</div>
-                    <div class="app-title">Supply Chain Provenance</div>
-                    <span class="app-status status-production">90% Production Ready</span>
-                    <div class="app-description">
-                        Cryptographic supply chain tracking with W3C Verifiable Credentials and hash-linked lineage.
-                    </div>
-                    <div class="app-metrics">
-                        <strong>Production Status:</strong><br>
-                        • 44 tests passing (32 unit + 12 integration)<br>
-                        • Rust/Axum REST API with Ed25519 signatures<br>
-                        • Docker + Kubernetes deployment ready<br>
-                        • Complete lineage tracking (PRODUCED → SHIPPED → RECEIVED)
-                    </div>
-                    <a href="https://github.com/Luminous-Dynamics/mycelix-supplychain" class="app-link">→ GitHub Repository</a>
+                <div class="currency-card">
+                    <h3>SAP</h3>
+                    <p class="currency-type">Circulation Medium (Demurrage-bearing)</p>
+                    <p>2% annual decay returns idle wealth to commons as compost: 70% local, 20% regional, 10% global. Mintable against physical assets. Value that must move or decompose.</p>
                 </div>
 
-                <!-- Education Network -->
-                <div class="app-card alpha">
-                    <div class="app-icon">🎓</div>
-                    <div class="app-title">EduNet</div>
-                    <span class="app-status status-alpha">Alpha</span>
-                    <div class="app-description">
-                        Decentralized education network with peer-to-peer learning, verifiable credentials, and trust-based content curation.
-                    </div>
-                    <div class="app-metrics">
-                        <strong>Features:</strong><br>
-                        • P2P course hosting and discovery<br>
-                        • Verifiable learning credentials<br>
-                        • Trust-based content quality<br>
-                        • No platform fees or gatekeepers
-                    </div>
-                    <a href="https://github.com/Luminous-Dynamics/mycelix-edunet" class="app-link">→ GitHub Repository</a>
-                </div>
-
-                <!-- Marketplace -->
-                <div class="app-card alpha">
-                    <div class="app-icon">🛒</div>
-                    <div class="app-title">Marketplace</div>
-                    <span class="app-status status-alpha">Alpha</span>
-                    <div class="app-description">
-                        Peer-to-peer marketplace with no middlemen. Trade directly with cryptographic trust and reputation systems.
-                    </div>
-                    <div class="app-metrics">
-                        <strong>Features:</strong><br>
-                        • Direct peer-to-peer transactions<br>
-                        • Reputation-based trust (MATL)<br>
-                        • No platform fees<br>
-                        • Escrow via multi-signature
-                    </div>
-                    <a href="https://github.com/Luminous-Dynamics/Mycelix-Marketplace" class="app-link">→ GitHub Repository</a>
-                </div>
-
-                <!-- Decentralized Science -->
-                <div class="app-card alpha">
-                    <div class="app-icon">🔬</div>
-                    <div class="app-title">DeSci</div>
-                    <span class="app-status status-alpha">Alpha</span>
-                    <div class="app-description">
-                        Decentralized science platform with peer review, reproducibility verification, and research collaboration.
-                    </div>
-                    <div class="app-metrics">
-                        <strong>Features:</strong><br>
-                        • Open peer review on DHT<br>
-                        • Reproducibility verification<br>
-                        • Research collaboration tools<br>
-                        • No journal paywalls
-                    </div>
-                    <a href="https://github.com/Luminous-Dynamics/mycelix-desci" class="app-link">→ GitHub Repository</a>
-                </div>
-
-                <!-- Music Platform -->
-                <div class="app-card alpha">
-                    <div class="app-icon">🎵</div>
-                    <div class="app-title">Music</div>
-                    <span class="app-status status-alpha">Alpha</span>
-                    <div class="app-description">
-                        Decentralized music streaming where artists earn 10-50× more by eliminating platform rent extraction.
-                    </div>
-                    <div class="app-metrics">
-                        <strong>Artist Benefits:</strong><br>
-                        • 90-95% revenue (vs 15-30% on Spotify)<br>
-                        • Direct fan relationships<br>
-                        • P2P streaming infrastructure<br>
-                        • No platform gatekeepers
-                    </div>
-                    <a href="https://github.com/Luminous-Dynamics/Mycelix-Music" class="app-link">→ GitHub Repository</a>
-                </div>
-
-                <!-- Email -->
-                <div class="app-card alpha">
-                    <div class="app-icon">📧</div>
-                    <div class="app-title">Mail</div>
-                    <span class="app-status status-alpha">Alpha</span>
-                    <div class="app-description">
-                        Decentralized email with MATL trust-based spam filtering. No central servers, complete privacy.
-                    </div>
-                    <div class="app-metrics">
-                        <strong>Features:</strong><br>
-                        • Trust-based spam filtering (MATL)<br>
-                        • End-to-end encryption<br>
-                        • No email server needed<br>
-                        • Agent-centric addressing
-                    </div>
-                    <a href="https://github.com/Luminous-Dynamics/Mycelix-Mail" class="app-link">→ GitHub Repository</a>
-                </div>
-
-                <!-- P2P Network -->
-                <div class="app-card alpha">
-                    <div class="app-icon">🌐</div>
-                    <div class="app-title">P2P Consciousness Network</div>
-                    <span class="app-status status-alpha">Alpha</span>
-                    <div class="app-description">
-                        WebRTC-based peer-to-peer network where humans, AI, and robots connect as sovereign equals.
-                    </div>
-                    <div class="app-metrics">
-                        <strong>Features:</strong><br>
-                        • Browser-to-browser connections<br>
-                        • HIPI protocol (universal consciousness language)<br>
-                        • Measured consciousness (Φ > 0.3)<br>
-                        • No servers, pure P2P
-                    </div>
-                    <a href="https://github.com/Luminous-Dynamics/mycelix" class="app-link">→ GitHub Repository</a>
+                <div class="currency-card">
+                    <h3>TEND</h3>
+                    <p class="currency-type">Mutual Credit (Service Hours)</p>
+                    <p>One TEND, one hour. Zero-sum. Credit limits expand counter-cyclically when communities are stressed. Cultural naming is sovereign &mdash; TEND, CARE, HOURS &mdash; protocol stays interoperable.</p>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Technical Foundation -->
-        <div class="section">
-            <h2>🏗️ Technical Foundation</h2>
+    <!-- Clusters -->
+    <section>
+        <div class="container">
+            <h2>16-Cluster Fractal Architecture</h2>
+            <p style="margin-bottom: 1.5rem;">Each cluster is a Holochain DNA handling a domain of collective life. Cross-cluster bridges preserve local sovereignty while enabling planetary coordination.</p>
 
-            <div class="research-results">
-                <h3>Byzantine-Resistant Federated Learning (Validated)</h3>
-
-                <table class="metrics-table">
-                    <thead>
-                        <tr>
-                            <th>Metric</th>
-                            <th>Mycelix</th>
-                            <th>Industry Standard</th>
-                            <th>Improvement</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Byzantine Detection</td>
-                            <td class="metric-value">100%</td>
-                            <td>70%</td>
-                            <td class="metric-value">+43%</td>
-                        </tr>
-                        <tr>
-                            <td>Latency</td>
-                            <td class="metric-value">0.7ms</td>
-                            <td>15ms</td>
-                            <td class="metric-value">21.4× faster</td>
-                        </tr>
-                        <tr>
-                            <td>Byzantine Tolerance</td>
-                            <td class="metric-value">45%</td>
-                            <td>30% (traditional BFT limit)</td>
-                            <td class="metric-value">+50% capacity</td>
-                        </tr>
-                        <tr>
-                            <td>Production Stability</td>
-                            <td class="metric-value">100 rounds</td>
-                            <td>10 rounds</td>
-                            <td class="metric-value">10× more stable</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-muted);">
-                    <strong>Validation:</strong> Results from 100-round production deployment using Krum algorithm with
-                    reputation-weighted aggregation (PoGQ+Rep). Tested on MNIST, CIFAR-10, EMNIST datasets with
-                    adaptive adversarial attacks.
-                </p>
-            </div>
-
-            <div class="architecture-diagram">
-┌──────────────────────────────────────────────────────┐
-│           Mycelix Application Layer                   │
-│  (EduNet, Marketplace, Music, Mail, DeSci, etc.)     │
-└─────────────────┬────────────────────────────────────┘
-                  │
-┌─────────────────▼────────────────────────────────────┐
-│         Shared Trust Infrastructure                   │
-│  • Byzantine-Resistant Consensus (PoGQ+Rep)          │
-│  • Agent-Centric Identity (DIDs)                     │
-│  • Reputation System (MATL)                          │
-│  • Verifiable Credentials (W3C VCs)                  │
-└─────────────────┬────────────────────────────────────┘
-                  │
-┌─────────────────▼────────────────────────────────────┐
-│         Holochain Distributed Hash Table             │
-│  • P2P Data Storage & Validation                     │
-│  • Gossip Protocol for Replication                   │
-│  • Byzantine Fault Tolerance (45% adversaries)       │
-│  • Agent-Centric, Not Data-Centric                   │
-└──────────────────────────────────────────────────────┘
-            </div>
-
-            <h3>Key Technologies</h3>
-            <ul>
-                <li><strong>Holochain:</strong> Agent-centric DHT for distributed storage and validation</li>
-                <li><strong>Rust:</strong> Memory-safe, high-performance core implementation</li>
-                <li><strong>Ed25519:</strong> Fast, secure cryptographic signatures</li>
-                <li><strong>W3C VCs:</strong> Verifiable Credentials for interoperable trust</li>
-                <li><strong>WebRTC:</strong> Browser-to-browser P2P connections</li>
-                <li><strong>Krum Algorithm:</strong> Byzantine-resistant gradient aggregation</li>
-                <li><strong>MATL (Machine Learning Trust Layer):</strong> Reputation-based trust scoring</li>
-            </ul>
-        </div>
-
-        <!-- Radical Transparency -->
-        <div class="section">
-            <h2>🔍 Radical Transparency</h2>
-
-            <div class="transparency-note">
-                <strong>⚠️ Honest Status Reporting:</strong> We believe in radical transparency over hype.
-                All metrics are validated through actual testing and marked clearly as "Validated", "Alpha", or "Research".
-                We will never make claims we cannot substantiate.
-            </div>
-
-            <h3>What's Production-Ready</h3>
-            <ul>
-                <li><strong>Mycelix Core:</strong> 100% Byzantine detection validated over 100 rounds (0.7ms latency)</li>
-                <li><strong>Supply Chain:</strong> 90% ready - 44 tests passing, Docker/K8s deployment configured</li>
-            </ul>
-
-            <h3>What's in Active Development (Alpha)</h3>
-            <ul>
-                <li><strong>EduNet, Marketplace, Music, Mail, DeSci:</strong> Core functionality working, needs production hardening</li>
-                <li><strong>P2P Network:</strong> WebRTC connections functional, HIPI protocol in testing</li>
-            </ul>
-
-            <h3>What's Planned (Research)</h3>
-            <ul>
-                <li><strong>Zero-Knowledge Proofs:</strong> Privacy-preserving gradient verification</li>
-                <li><strong>Cross-Chain Bridges:</strong> Ethereum/Polygon attestation anchoring</li>
-                <li><strong>Selective Disclosure:</strong> SD-JWT for privacy-preserving credentials</li>
-                <li><strong>Product Passports:</strong> Exportable provenance bundles with QR/NFC</li>
-            </ul>
-        </div>
-
-        <!-- Get Involved -->
-        <div class="section">
-            <h2>🤝 Get Involved</h2>
-            <p style="margin-bottom: 2rem; font-size: 1.1rem;">
-                Mycelix is open source and community-driven. We welcome developers, researchers,
-                and visionaries who believe in decentralized infrastructure for consciousness-first computing.
-            </p>
-
-            <div class="cta-buttons">
-                <a href="https://github.com/Luminous-Dynamics?q=mycelix" class="btn btn-primary">⭐ Star on GitHub</a>
-                <a href="https://github.com/orgs/Luminous-Dynamics/discussions" class="btn btn-secondary">💬 Join Discussions</a>
-                <a href="https://github.com/Luminous-Dynamics/Mycelix-Core/issues" class="btn btn-secondary">🐛 Report Issues</a>
-            </div>
-
-            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid var(--bg-light); text-align: center;">
-                <p style="color: var(--text-muted);">
-                    <strong>Research Papers:</strong> Whitepaper coming January 2026 (MLSys/ICML submission)<br>
-                    <strong>Grant Applications:</strong> NSF CISE, NIH R01 (June 2026)<br>
-                    <strong>Contact:</strong> <a href="mailto:tristan.stoltz@evolvingresonantcocreationism.com">tristan.stoltz@evolvingresonantcocreationism.com</a>
-                </p>
-
-                <p style="margin-top: 2rem; color: var(--text-muted); font-size: 0.95rem;">
-                    Part of the <a href="https://luminousdynamics.org">Luminous Dynamics</a> ecosystem of consciousness-first computing projects
-                </p>
+            <div class="currency-grid">
+                <div class="currency-card">
+                    <h3>Core Governance</h3>
+                    <p>Identity (13 zomes), Governance (7 zomes), Commons (39 zomes), Civic (18 zomes), Hearth (12 zomes), Personal (4 zomes)</p>
+                </div>
+                <div class="currency-card">
+                    <h3>Economy</h3>
+                    <p>Finance (8 zomes), Attribution (3 zomes), Marketplace (8 zomes), Supply Chain (8 zomes)</p>
+                </div>
+                <div class="currency-card">
+                    <h3>Knowledge &amp; Care</h3>
+                    <p>Knowledge (8 zomes), Health (15 zomes), EduNet (10 zomes), DeSci (REST API)</p>
+                </div>
+                <div class="currency-card">
+                    <h3>Stewardship</h3>
+                    <p>Energy (5 zomes), Climate (3 zomes), Space (5 zomes), Music (4 zomes + 14 crates)</p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Ecosystem -->
+    <section>
+        <div class="container">
+            <h2>The Ecosystem</h2>
+            <div class="currency-grid">
+                <div class="currency-card">
+                    <h3><a href="https://luminousdynamics.org">Luminous Dynamics</a></h3>
+                    <p>The parent organization building consciousness-first technology.</p>
+                </div>
+                <div class="currency-card">
+                    <h3><a href="https://symthaea.luminousdynamics.io">Symthaea</a></h3>
+                    <p>Holographic Liquid Brain &mdash; the consciousness engine. HDC + IIT + LTC + Active Inference.</p>
+                </div>
+                <div class="currency-card">
+                    <h3><a href="https://relationalharmonics.org">Eight Harmonies</a></h3>
+                    <p>The philosophical foundation. Eight sacred principles encoded as 16,384D hypervectors.</p>
+                </div>
+                <div class="currency-card">
+                    <h3><a href="https://nixforhumanity.org">Luminous Nix</a></h3>
+                    <p>Natural language NixOS &mdash; sovereign infrastructure for sovereign nodes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="https://luminousdynamics.org">Luminous Dynamics</a>
+            <a href="https://github.com/Luminous-Dynamics/mycelix">GitHub</a>
+            <a href="https://relationalharmonics.org">Eight Harmonies</a>
+            <a href="https://evolvingresonantcocreationism.com">Luminous Library</a>
+        </div>
+        <p>Consciousness-first technology serving all beings.</p>
+        <p style="margin-top: 0.5rem; opacity: 0.5;">Tristan Stoltz / Luminous Dynamics / Richardson, TX / 2026</p>
+    </footer>
+
 </body>
 </html>
