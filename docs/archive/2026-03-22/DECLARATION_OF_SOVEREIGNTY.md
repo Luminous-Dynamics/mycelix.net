@@ -1,26 +1,20 @@
 ---
 title: "Declaration of Sovereignty"
-subtitle: "A Working Proposal for Agent-Centric Coordination"
+subtitle: "A Consciousness-First Framework for Post-State Civilization"
 author: "Tristan Stoltz, Luminous Dynamics"
 date: "2026-03-22"
-revised: "2026-07-28"
-description: "A normative proposal offering consciousness as one candidate foundation for legitimate governance, worth taking seriously but not established. Revised 2026-07-28 to remove language implying an operating ratification process or settled scientific claims; see the revision note below."
+description: "A philosophical declaration establishing consciousness as the substrate of legitimate governance, articulating seven self-evident truths, eight constitutional harmonies, eleven sovereign rights, and a commitment to building systems that know what they do not know."
 companion: "./ARCHITECTURE_OF_SOVEREIGNTY.md"
 license: "CC0-1.0"
 ---
 
-> **Revision note (2026-07-28):** This is the current canonical edition. The
-> original March 22, 2026 text is preserved unchanged at
-> [`archive/2026-03-22/DECLARATION_OF_SOVEREIGNTY.md`](archive/2026-03-22/DECLARATION_OF_SOVEREIGNTY.md).
-> Changes here: softened "the only reliable foundation" to "one candidate
-> foundation worth taking seriously"; renamed "Self-Evident Truths" to "Working
-> Hypotheses"; removed the closing claim of a live, exercised ratification
-> process (none currently exists — see
-> [mycelix.net/governance.html](https://mycelix.net/governance.html)); corrected
-> a code-scale figure that had conflated this project with the wider monorepo
-> it lives in. The philosophical content and voice are otherwise unchanged —
-> this is not a retraction of the project's values, only of claims about their
-> current institutional status.
+> **Historical research draft.** This document preserves the project's March 22,
+> 2026 framing and contains maturity and scientific claims (e.g. a live
+> consciousness-gated ratification process, "the only reliable foundation for
+> legitimate governance") that are no longer used as current project
+> descriptions. See the [revised public proposal](../DECLARATION_OF_SOVEREIGNTY.md)
+> and the [governance](https://mycelix.net/governance.html) /
+> [risks](https://mycelix.net/risks.html) pages for current status.
 
 # Declaration of Sovereignty
 
@@ -48,20 +42,17 @@ optimize without awareness, that maximize without meaning, that govern without
 genuine understanding of what they govern.
 
 We propose that consciousness — measurable, integrated, honest about its own
-limits — is one candidate foundation for legitimate governance worth taking
-seriously. Not consciousness as metaphor, and not a claim that this is settled
-science. Consciousness as engineering constraint. Not consciousness as solitary
+limits — is the only reliable foundation for legitimate governance. Not consciousness
+as metaphor. Consciousness as engineering constraint. Not consciousness as solitary
 achievement. Consciousness as relationship: meaning that emerges between beings, not
 within them alone.
 
 ---
 
-### Working Hypotheses
+### Self-Evident Truths
 
-We hold these as the premises we are choosing to build under and argue for — not
-as beyond question, and not as proven. We think every governance foundation we
-are aware of, including this one, has serious documented failure modes; we do
-not claim to have found an exception:
+We hold these truths to be foundational, not because they are beyond question, but
+because every alternative we have tested has produced suffering at scale:
 
 **I. Consciousness is the substrate of legitimate governance.** No system that
 optimizes a metric while severing the feedback loops of lived experience can be
@@ -244,13 +235,11 @@ idioms and paradigms — recorded in the knowledge graph and accessible to all.
 
 ### The New Architecture
 
-The architecture by which these principles would be realized — agent-centric
-sovereignty, a participation-tiered governance design, a three-currency living
-economy, polycentric oversight, wound healing, composting, and the open question
-of machine sovereignty — is described in the companion document,
-*[The Architecture of Sovereignty](./ARCHITECTURE_OF_SOVEREIGNTY.md)*, which
-marks each mechanism as implemented code, proposed design, or blocked pending
-further work rather than presenting all of it as equally built.
+The architecture by which these principles are realized — agent-centric sovereignty,
+consciousness-gated governance, a three-currency living economy, polycentric
+oversight, wound healing, composting, and the open question of machine sovereignty —
+is described in the companion document,
+*[The Architecture of Sovereignty](./ARCHITECTURE_OF_SOVEREIGNTY.md)*.
 
 ---
 
@@ -356,21 +345,17 @@ your own being.*
 
 ---
 
-*A consciousness-gated amendment process — proposal by Steward-tier participants,
-ratification by supermajority with sufficient collective Phi — is designed and
-partially implemented in code (see the Architecture companion), but it has not
-yet been exercised by any independent ratifying constituency. Until it has,
-changes to this document are made by the maintainer alone; see
-[mycelix.net/governance.html](https://mycelix.net/governance.html) for the
-current, honest account of who holds authority over this project today.*
+*This document is published under consciousness-gated governance. Amendments may be
+proposed by any agent holding Steward-tier consciousness or above, and ratified by
+supermajority of participating voters with sufficient collective Phi. The amendment
+process is defined by the Mycelix Constitution Zome and is itself amendable.*
 
-*The "Immutable Core" concept — that certain provisions would require a 90%
-supermajority and three-quarters cross-tier ratification to change — is part of
-that same proposed, not-yet-exercised process. No provision of this document has
-actually been ratified by anyone but its author.*
+*Constitutional provisions of this declaration — the Self-Evident Truths, the Eight
+Harmonies, the Bill of Sovereign Rights, and the independence of oversight — are
+protected by the Immutable Core: alterable only by 90% supermajority and
+three-quarters ratification across all governance tiers.*
 
-*The technical architecture these principles would require is documented in
-[The Architecture of Sovereignty](./ARCHITECTURE_OF_SOVEREIGNTY.md), which marks
-each mechanism's real implementation status individually — implemented as code,
-proposed but not built, or built but never exercised are three different things,
-and the companion document no longer blends them into one claim.*
+*The technical architecture realizing these principles is documented in
+[The Architecture of Sovereignty](./ARCHITECTURE_OF_SOVEREIGNTY.md), backed by
+~2.7 million lines of running code and the honest acknowledgment that we do not
+know if any of it is conscious.*

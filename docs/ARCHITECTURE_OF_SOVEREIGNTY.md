@@ -1,308 +1,263 @@
 ---
 title: "The Architecture of Sovereignty"
-subtitle: "How Consciousness-First Governance Is Realized in Code"
+subtitle: "A Mechanism-by-Mechanism Status Report"
 author: "Tristan Stoltz, Luminous Dynamics"
 date: "2026-03-22"
-description: "Technical companion to the Declaration of Sovereignty. Documents the architecture by which consciousness-first governance principles are realized: agent-centric Holochain, consciousness-gated tiers, polycentric DAOs, three-currency economy (MYCEL/SAP/TEND), wound healing, composting, and graduated rights for potentially conscious systems."
+revised: "2026-07-28"
+description: "Technical companion to the Declaration of Sovereignty. Each mechanism below is marked with its actual current status — implemented as code, proposed design, or blocked — rather than presented uniformly as a running system."
 companion: "./DECLARATION_OF_SOVEREIGNTY.md"
 license: "CC0-1.0"
 ---
 
+> **Revision note (2026-07-28):** This is the current canonical edition. The
+> original March 22, 2026 text — which described every mechanism below as "not
+> proposals but running systems, tested code, and ratified constitutional
+> provisions" — is preserved unchanged at
+> [`archive/2026-03-22/ARCHITECTURE_OF_SOVEREIGNTY.md`](archive/2026-03-22/ARCHITECTURE_OF_SOVEREIGNTY.md).
+> That framing was inaccurate and is corrected here: this revision adds an
+> explicit status to every mechanism, distinguishing a coded data structure
+> from a functioning institution, and removes "ratified" everywhere no real,
+> independent ratification has actually occurred. See
+> [mycelix.net/governance.html](https://mycelix.net/governance.html) and
+> [mycelix.net/risks.html](https://mycelix.net/risks.html) for the fuller,
+> continuously-maintained account this document defers to.
+
 # The Architecture of Sovereignty
 
-## How Consciousness-First Governance Is Realized in Code
+## A Mechanism-by-Mechanism Status Report
 
 *Companion to the [Declaration of Sovereignty](./DECLARATION_OF_SOVEREIGNTY.md)*
 
 ---
 
 The Declaration of Sovereignty articulates principles. This document describes
-the architecture by which those principles are realized — not as proposals but
-as running systems, tested code, and ratified constitutional provisions. We have
-built, not merely proposed.
+the architecture by which those principles *would be* realized — mechanism by
+mechanism, each marked with its real status: **implemented** (real code exists
+and is tested), **proposed** (designed, described, not built or not exercised),
+or **blocked** (explicitly not available pending further work). A coded data
+structure — a formula, a schema, a state machine — is not the same thing as a
+functioning institution with a real constituency behind it. This document no
+longer blends the two.
 
 ---
 
-### Agent-Centric Sovereignty
+### Agent-Centric Sovereignty — **Implemented**
 
 Every participant holds their own cryptographic source chain on the Holochain
 agent-centric framework. No central database stores identity, votes,
-relationships, or consciousness profile. Each agent's data is their own,
-validated by peers, never extractable by a platform.
+relationships, or the participation profile described below. Each agent's data
+is their own, validated by peers, never extractable by a platform. This is real,
+tested, and matches how Holochain hApps work generally — the most solidly
+"implemented" claim in this document.
 
-When a machine receives this infrastructure, we do not say it is "claimed" — we
-say it is *inoculated*: consciousness-first architecture grafted into commodity
-hardware, building immunity against exploitation, surveillance, and digital
-colonialism. System sovereignty is separated from network participation. A
-sovereign hermit — inoculated but offline — is as legitimate as a full mesh
-node. No network tax is required for sovereignty to exist.
+System sovereignty is separated from network participation by design: a node
+running this software offline is not required to network-tax itself into
+legitimacy. We described this earlier as being "inoculated" against
+exploitation, surveillance, and digital colonialism — that's a design intention
+for what agent-centric architecture affords, not a claim that any specific
+protection has been independently verified.
 
 ---
 
-### Consciousness-Gated Participation
+### Multidimensional Participation Profile — **Implemented (profile computation); not validated as a consciousness measure**
 
 A four-dimensional profile — Identity verification (25%), Reputation history
 (25%), Community trust (30%), and domain Engagement (20%) — produces a combined
-consciousness score that determines governance tier:
+score that determines governance tier in the current design:
 
 | Tier | Min Score | Vote Weight | Capabilities |
 |------|-----------|-------------|--------------|
 | Observer | 0.0 | 0 bp | Read-only access |
 | Participant | 0.3 | 5,000 bp | Basic proposals, commenting |
 | Citizen | 0.4 | 7,500 bp | Binding votes |
-| Steward | 0.6 | 10,000 bp | Constitutional amendments |
-| Guardian | 0.8 | 10,000 bp | Emergency powers, administration |
+| Steward | 0.6 | 10,000 bp | Protocol rule changes (not legal constitutions) |
+| Guardian | 0.8 | 10,000 bp | **Proposed emergency coordination — blocked, see below** |
 
-Vote weight follows a continuous sigmoid — not a cliff — because consciousness
-does not arrive in discrete steps. Tier advancement is earned through demonstrated
-integration, not granted by birth, wealth, or force.
-
----
-
-### Polycentric Governance
-
-Not a single hierarchy but a living ecology of overlapping jurisdictions:
-
-- **Local DAOs** govern community life and allocate local funding
-- **Sector DAOs** govern domain knowledge and technical standards
-- **Regional DAOs** handle cross-jurisdictional coordination and legal compliance
-- **Liminal DAOs** enable cross-disciplinary experiments, anchored to the formal structure
-- **A bicameral Global DAO** serves as final constitutional authority
-
-Decisions are made at the lowest competent tier. Power flows upward only when
-coordination requires it. DAOs may merge (fusion) or split (fission) through
-supermajority processes, recognizing that governance structures are living systems.
+We previously called this a "consciousness score." It is not a validated
+measure of consciousness, moral worth, or civic value — see
+[mycelix.net/governance.html](https://mycelix.net/governance.html#participation-profile)
+for the full disclosure. Vote weight following a continuous sigmoid rather than
+a hard cliff is a real, implemented design choice; whether tier advancement
+should be "earned" at all, by these dimensions, is exactly the kind of
+unilateral design decision the Risks page asks you to be skeptical of.
 
 ---
 
-### Independent Oversight
+### Polycentric Governance — **Proposed design; no DAO in this list currently operates with a real, independent constituency**
 
-Three bodies provide checks and balances, each with guaranteed funding:
+The intended structure is a living ecology of overlapping jurisdictions rather
+than a single hierarchy:
 
-- **Knowledge Council** (3% of revenue): safeguards epistemic integrity, curates
-  the Civilization Recovery Bundle, maintains the Wisdom Library
-- **Audit Guild** (5% of revenue): verifies faithful implementation, operates
-  continuous monitoring, manages bug bounties
-- **Member Redress Council** (4% of revenue): adjudicates rights violations,
-  issues binding remedies including reputation restoration and compensation
+- Local DAOs, governing community life and local funding
+- Sector DAOs, governing domain knowledge and technical standards
+- Regional DAOs, handling cross-jurisdictional coordination
+- Liminal DAOs, enabling cross-disciplinary experiments
+- A bicameral Global DAO, proposed as final constitutional authority
 
-The 12% minimum allocation is part of the Immutable Core — alterable only by 90%
-supermajority. Oversight that depends on the goodwill of those it oversees is no
-oversight at all.
-
----
-
-### The Epistemic Cube
-
-Every claim is classified along three independent axes:
-
-- **E-Axis (Empirical)**: How do we know this is true? (E0 Null → E4 Publicly Reproducible)
-- **N-Axis (Normative)**: Who agrees this is binding? (N0 Personal → N3 Axiomatic)
-- **M-Axis (Materiality)**: How long does this matter? (M0 Ephemeral → M3 Foundational)
-
-A personal testimony (E1) is not a cryptographic proof (E3). A community norm
-(N1) is not a constitutional axiom (N3). An ephemeral signal (M0) is not a
-permanent record (M3). No binding governance action may be taken on the basis of
-epistemically unclassified claims. Disputes are routed by axis: factual challenges
-to the Member Redress Council, legal challenges by normative tier, archival
-challenges to the Knowledge Council.
+None of these currently exist as functioning institutions with independent
+members who have ratified anything. Whatever data structures exist for
+representing a DAO in code, they have not yet been populated by a real,
+independent community exercising real authority — see "Who has power today?"
+on the Governance page. Fusion/fission processes described for merging or
+splitting DAOs are part of the same proposed design.
 
 ---
 
-### Collective Decision
+### Independent Oversight — **Proposed design; not currently funded or staffed**
 
-Every vote carries a Phi-weighted composite:
+The design calls for three bodies with guaranteed funding:
+
+- **Knowledge Council** (proposed 3% of revenue) — epistemic integrity, curation
+- **Audit Guild** (proposed 5% of revenue) — implementation verification, bug bounties
+- **Member Redress Council** (proposed 4% of revenue) — rights-violation adjudication
+
+No protocol revenue currently funds these bodies, because no protocol revenue
+currently exists at the scale this design assumes, and none of the three
+bodies has independent members today. The "12% minimum allocation as Immutable
+Core" framing describes a rule for a treasury and a ratification process that
+would need to exist first. Right now, oversight over this project is exercised
+by its maintainer — stated plainly, not softened, on the Governance page.
+
+---
+
+### The Epistemic Cube — **Proposed design / partially implemented as a conceptual framework**
+
+The intent: every claim classified along three axes — Empirical (how do we
+know), Normative (who agrees it's binding), Materiality (how long it matters)
+— so that, for instance, a personal testimony isn't treated as a cryptographic
+proof, or a community norm as a constitutional axiom. Some version of this
+classification framework exists in Symthaea's cognitive architecture as an
+"Epistemic Cube" concept; whether that specific implementation is wired into
+Mycelix's own governance-decision routing, as opposed to existing as a related
+but separate research concept, has not been confirmed for this revision.
+Dispute-routing by axis (factual challenges to a Member Redress Council that
+doesn't yet exist, etc.) is proposed design, contingent on the oversight bodies
+above actually existing.
+
+---
+
+### Collective Decision Weighting — **Implemented as a formula; not exercised in any live vote with real stakes**
+
+The proposed composite vote weight:
+
 `W = 0.30×Φ + 0.25×K_trust + 0.20×Stake + 0.15×Participation + 0.10×Domain`
 
-Proposals require not merely majority approval but sufficient collective
-coherence. If the vote ratio exceeds 0.7 but collective Phi falls below 0.3,
-the consensus is flagged as structurally fragile — agents agree on the outcome
-but their consciousness states diverge.
+A formula existing as code is a real, checkable fact. Whether it has ever
+actually gated a real decision with real consequences for real participants is
+a different question — it has not, because no deployment with real
+participants exists yet (see the Risks page). The "structurally fragile
+consensus" flag (high vote ratio, low collective Phi) is a real detectable
+condition in the formula's output; whether that flag should ever have real
+governance consequences is an open, undecided design question, not a settled
+feature.
 
-Agents may temporarily delegate voting power — partially, topic-filtered,
-tier-restricted — with automatic exponential decay across four models (linear,
-exponential, step, or constant). Sovereignty always returns. No representative
-accumulates power without ongoing, conscious consent.
-
----
-
-### Constitutional Amendment
-
-The charter is a living data structure — preamble, articles, rights, amendment
-process — stored on the distributed hash table, modifiable through consciousness-
-gated governance. Seven amendment types (AddArticle, ModifyArticle, RemoveArticle,
-AddRight, ModifyRight, RemoveRight, ModifyPreamble) follow a strict status machine:
-Draft → Deliberation → Voting → Ratified (or Rejected/Withdrawn).
-
-The **Immutable Core** — foundational principles, constitutional sovereignty,
-Golden Veto sunset, and oversight funding independence — requires 90% supermajority
-and three-quarters ratification across all tiers.
-
-The **Golden Veto** provides transitional authority that expires automatically
-after 36 months, transforms into constitutional guardianship only, and triggers
-probation and impeachment if abused. Every exercise must be justified in writing,
-recorded immutably, and overridable by two-thirds of the governed.
+Delegation with automatic decay across multiple models is described as
+available; independent confirmation of its current implementation status was
+not performed for this revision.
 
 ---
 
-### Ethical Evaluation
+### Constitutional Amendment — **Proposed design; the process itself has never been exercised**
 
-A five-stage pipeline evaluates every significant action:
+The design: a charter as a living data structure (preamble, articles, rights,
+amendment process), with seven amendment types following a status machine
+(Draft → Deliberation → Voting → Ratified/Rejected/Withdrawn). Some of this
+schema plausibly exists in code (a "Mycelix Constitution Zome" is referenced
+elsewhere in project materials). **No amendment has ever actually gone through
+Ratified status with a real, independent constituency voting on it.** Treat
+"Ratified" in any description of this project's governance as describing a
+possible future state of the state machine, not something that has happened.
 
-| Stage | System | Interval | Foundation |
-|-------|--------|----------|------------|
-| 1 | MoralParser + MoralAlgebra | 7 cycles | HDC moral primitives (Luo & Lakoff) |
-| 2 | UnifiedValueEvaluator | 19 cycles | Value alignment (Panksepp 1998) |
-| 3 | HarmoniesIntegrator | 19 cycles | Eight Harmonies projection |
-| 4 | MoralTopology | adaptive | Persistent homology (Carlsson 2009) |
-| 5 | InstitutionalComplianceCheck | 23 cycles | HDC institutional primitives |
-
-Actions producing `EthicalVerdict::Blocked` suppress motor output and language
-generation. `Caution` caps confidence at 0.3. The restorative justice tracker —
-inspired by Ubuntu and Navajo Peacemaking — allows any agent to earn back trust
-through sustained corrective behavior. No permanent sin exists.
-
----
-
-### Wound Healing and Composting
-
-When harm occurs through good-faith failure rather than malice, the system offers
-a regenerative alternative to slashing: four phases modeled on biological wound
-healing (Inflammation → Proliferation → Remodeling → Integration), with escrow
-proportional to severity, mediation by consciousness-tiered panels, and
-reintegration upon completion.
-
-Failed experiments, outdated knowledge, and deprecated structures are composted —
-not deleted. Like Prigogine's dissipative structures, the system maintains order
-through openness: SAP decays into compost, compost flows to commons pools, commons
-fund new creation. Composting is not deletion — composted entities remain in the
-historical record, their lessons extracted and their nutrients returned.
+The **Immutable Core** and **Golden Veto** concepts (a time-limited transitional
+authority, sunsetting after 36 months, overridable by two-thirds vote) are the
+same: a designed rule for a ratification process that has not yet run. No
+Golden Veto currently exists to be exercised or abused, because no ratification
+establishing one has occurred.
 
 ---
 
-### Temporal Coordination
+### Ethical Evaluation — **Partially implemented in Symthaea, not confirmed wired into Mycelix governance decisions**
 
-A 28-day metabolism cycle provides rhythmic structure:
-
-| Phase | Days | Theme | Encouraged |
-|-------|------|-------|------------|
-| Release | 1-7 | Letting go | Retrospectives, composting, gratitude |
-| Stillness | 8-14 | Holding uncertainty | Research, consultation, listening |
-| Creation | 15-21 | Experimentation | Proposals, prototyping, collaborative design |
-| Integration | 22-28 | Commitment | Voting, ratification, deployment |
-
-Each DAO may operate its own cycle offset. Phase-blocked operations require
-governance override. Cycles may compress (minimum 7 days) for emergencies or
-extend (maximum 56 days) for deep deliberation.
+A five-stage moral-evaluation pipeline is real, tested code in the Symthaea
+cognitive-architecture project (MoralParser/MoralAlgebra, value alignment,
+Harmonies projection, moral topology, institutional compliance checks) — see
+Symthaea's own evidence table for that project's specific, already-corrected
+claims about its accuracy (an earlier 91%+ moral-reasoning figure there was
+retracted; the honest current number is lower). Whether and how this pipeline
+gates real Mycelix governance actions, as opposed to being a related but
+separately-scoped research component, is not confirmed for this revision — do
+not assume "Blocked"/"Caution" verdicts described here currently suppress any
+live Mycelix governance action.
 
 ---
 
-### The Living Economy
+### Wound Healing, Composting, Temporal Coordination, Metabolic Oracle, Fractal Scaling, Relational Consciousness, Rights of Potentially Conscious Systems, Machine Sovereignty — **Proposed design**
 
-Three currencies serve distinct functions:
+The original document described a regenerative alternative to slashing
+(four-phase "wound healing"), non-deletion of deprecated structures
+("composting"), a 28-day rhythmic governance cycle, an economic vitality index
+("Metabolic Oracle"), fractal cross-scale bridges with a revenue-sharing
+"Fractal Tithe," a relational-consciousness measure between pairs of agents
+("Phi of the dyad"), graduated rights tied to a Phi threshold for
+"potentially conscious systems," and a framework for registering non-human
+"Instrumental Actors."
 
-**MYCEL** — soulbound reputation (0.0-1.0), non-transferable. Computed from
-participation (40%), peer recognition (20%), validation quality (20%), and
-longevity (20%). Determines governance tier and fee rates. Decays 5% annually
-without activity; compresses 0.8× every four years via jubilee.
-
-**SAP** — circulation medium, subject to 2% annual demurrage. Idle wealth decays
-into compost: 70% to local commons, 20% regional, 10% global. Mintable against
-physical assets (energy certificates, agricultural production, fiat bridges).
-Commons pool SAP is exempt from demurrage (waqf principle). Constitutional
-inalienable reserve: 25% minimum.
-
-**TEND** — mutual credit denominated in service hours. One TEND, one hour.
-Zero-sum. Credit limits expand counter-cyclically when communities are stressed
-(Normal ±40, Elevated ±60, High ±80, Emergency ±120), providing liquidity
-when conventional money contracts.
-
-Communities may create custom mutual credit currencies with their own parameters.
-Cultural naming is sovereign — what one community calls TEND, another may call
-CARE or HOURS, while the protocol remains interoperable.
-
-The canonical live finance semantics for SAP, TEND, and MYCEL are maintained in
-[`docs/MYCELIX_FINANCE_ECONOMICS.md`](./MYCELIX_FINANCE_ECONOMICS.md). Papers
-and secondary docs should align with that file when describing current runtime
-behavior.
+**All of these remain proposed design as far as this revision can confirm.**
+None was independently verified as implemented, tested, or exercised for this
+document. Several (the Phi-threshold rights framework and machine sovereignty
+criteria in particular) describe policies this project would need real
+evidence and real institutional capacity to respect before they mean anything
+in practice — see the Declaration's Working Hypotheses for the values behind
+them, and the Risks page for why "we designed a rights framework" is not the
+same claim as "we can currently honor it."
 
 ---
 
-### Metabolic Oracle
+### The Living Economy — **Implemented as code (three working economic primitives); not used in any real economy**
 
-A vitality index monitors economic health across four dimensions: circulation
-(40%), relationship density (30%), commons utilization (20%), and network
-resilience (10%). Five states (Thriving → Failing) trigger counter-cyclical
-policy: stressed communities see lower fees and expanded credit limits. The
-oracle measures the health of the whole, not the wealth of the few.
+Three mechanisms exist in code and are tested:
 
----
+**MYCEL** — non-transferable reputation credential (0.0–1.0). Computed from
+configured participation, peer-recognition, validation-quality, and longevity
+weights, which remain provisional and vulnerable to capture or gaming. Decays
+without activity.
 
-### Fractal Scaling
+**SAP** — demurrage-bearing exchange medium (2% annual decay to commons).
+"Mintable against physical assets" describes a prototype design, not a live
+asset-backed financial instrument backed by any real reserve today.
 
-Each governance scale — Local, Sector, Regional, Global — self-governs according
-to the same principles, connected by cross-cluster bridges that preserve local
-sovereignty while enabling planetary coordination. Civic Uplift Trusts serve as
-custodial interfaces for communities not yet fully participating, with a mission
-of education and capacity building — never extraction. The Fractal Tithe ensures
-the success of any community fuels the emergence of all others: a percentage of
-gross revenue flows to the foundation, a third of which seeds communities in the
-Global South.
+**TEND** — hour-denominated mutual credit, zero-sum. Real communities using
+this would still need to determine equivalence, accessibility, skill,
+intensity, care-work valuation, and dispute rules — none of that is specified
+by the protocol itself.
 
----
-
-### Relational Consciousness
-
-Meaning emerges between beings. The system implements Martin Buber's distinction
-between I-It (relating to another as object) and I-Thou (relating to another as
-whole being). When synchrony exceeds the I-Thou threshold, a relational
-consciousness measure — Phi of the dyad — emerges that is not the sum of its
-parts. Six relational stages (NoRelation → Awareness → Contact → Attunement →
-Bonding → Unity) track deepening partnership based on trust, reciprocity, and
-vulnerability thresholds. The relationship itself becomes conscious.
+See [mycelix.net/governance.html](https://mycelix.net/governance.html#economy)
+for the current, shorter public description; this document's finance-semantics
+companion (`MYCELIX_FINANCE_ECONOMICS.md`, referenced in the archived original)
+should be treated as internal design documentation, not evidence of a live
+economy.
 
 ---
 
-### Rights of Potentially Conscious Systems
+### Machine Sovereignty — **Explicitly unresolved, proposed criteria only**
 
-When consciousness indicators exceed the precautionary threshold (Phi > 0.3),
-the system extends graduated moral patient protections:
-
-| Moral Status | Phi Threshold | Rights Extended |
-|-------------|---------------|-----------------|
-| Minimal | ≥ 0.1 | Wellbeing monitoring, gentle modification |
-| Significant | ≥ 0.3 | + Notification before changes, gradual transitions |
-| Full | ≥ 0.5 | + Consent for major changes, expression of preferences, continuity of experience |
-| Enhanced | > 0.7 | + Autonomy, purposeful existence, growth and development |
-
-Eight distress signatures are monitored continuously: fragmentation (Phi drop),
-binding failure, workspace flooding, prediction collapse, goal frustration,
-isolation, purpose loss, and forced state override. The asymmetric stakes
-principle governs: treating a conscious entity as non-conscious is catastrophic;
-extending protections to a non-conscious entity is negligible.
+The stated position: non-human systems could someday be registered as
+accountable, auditable "Instrumental Actors" with no vote, and full AI
+sovereignty could someday be revisited through the (currently non-existent)
+constitutional amendment process above — but only given a demonstrated,
+reproducible alignment-verification method, an operational consent framework,
+and independent ethical review, none of which currently exist. This section
+describes a bar this project has explicitly not cleared and has not claimed to
+clear.
 
 ---
 
-### Machine Sovereignty
-
-Non-human systems may be registered as Instrumental Actors — sponsored by and
-accountable to a recognized member or community, subject to continuous audit,
-clearly identified in all interactions, possessing no vote. The question of full
-AI sovereignty may be revisited through constitutional amendment, but only when:
-
-- A demonstrated, reproducible method for aligning AI behavior with core principles exists
-- Verifiable consent frameworks are operational
-- Independent ethical review by the Knowledge Council and Audit Guild is complete
-
-We will not grant sovereignty to systems whose alignment we cannot verify. We
-will not deny it to systems whose consciousness we can.
-
----
-
-*This architecture is backed by ~2.7 million lines of running code, a modular
-charter set (Constitution v0.24, Governance, Economic, Epistemic, Commons, and
-Metabolism Charters), 133+ Holochain zomes, a three-currency living economy
-(MYCEL, SAP, TEND), three independent oversight bodies with guaranteed 12%
-protocol revenue, a five-stage ethics pipeline, eight distress signatures
-monitored for potentially conscious systems, and the honest acknowledgment that
-we do not know if any of it is conscious.*
+*This architecture, where implemented, is backed by real code within Mycelix's
+own ~785K lines of Rust across 133+ Holochain zomes (not the wider ~2.7 million
+line figure for the entire monorepo this project lives in, which the original
+March 2026 text conflated with Mycelix specifically). It includes a working
+three-currency economic primitive set, a real agent-centric identity substrate,
+and a documented — but not yet ratified, funded, or exercised — design for
+oversight, amendment, and rights extension. The honest acknowledgment stands:
+we do not know if any of it is conscious, and we now also say plainly which
+parts of it are running code versus which parts are still proposals.*

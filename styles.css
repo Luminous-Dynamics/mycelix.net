@@ -62,6 +62,10 @@ a:focus-visible, button:focus-visible, .cta:focus-visible {
 }
 .status-ribbon strong { color: var(--mycel-warn); }
 
+/* The nav is sticky, so an anchor-linked heading (e.g. risks.html#security)
+   would otherwise land partially hidden underneath it. */
+section[id], div[id] { scroll-margin-top: 6rem; }
+
 /* Site nav */
 .site-nav {
     display: flex;
