@@ -1,0 +1,241 @@
+/* Mycelix.net shared stylesheet — used by all pages so status vocabulary,
+   colors, and components can't drift out of sync between pages. */
+:root {
+    --mycel-deep: #1a2e22;
+    --mycel-green: #7ec8a0;
+    --mycel-gold: #e8c547;
+    --mycel-white: #f0f0e8;
+    --mycel-grey: #6b7d6b;
+    --mycel-warn: #e8925a;
+    --mycel-warn-bg: rgba(232, 146, 90, 0.08);
+    --mycel-badge-bg: #cfe0d3; /* lighter grey-green, for dark-text badges (contrast fix) */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+body {
+    font-family: 'Georgia', 'Palatino', serif;
+    background: var(--mycel-deep);
+    color: var(--mycel-white);
+    min-height: 100vh;
+    line-height: 1.7;
+}
+
+a { color: var(--mycel-gold); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible, .cta:focus-visible {
+    outline: 3px solid var(--mycel-green);
+    outline-offset: 2px;
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--mycel-gold);
+    color: var(--mycel-deep);
+    padding: 0.6rem 1rem;
+    z-index: 100;
+    font-weight: bold;
+}
+.skip-link:focus { left: 0.5rem; top: 0.5rem; }
+
+.container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+
+/* Sans-serif for technical/status content — philosophy stays serif/editorial,
+   evidence and risk content reads in a distinct, cooler, more precise register. */
+.tech { font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; }
+
+/* Status ribbon */
+.status-ribbon {
+    background: var(--mycel-warn-bg);
+    border-bottom: 1px solid rgba(232, 146, 90, 0.3);
+    padding: 0.85rem 2rem;
+    text-align: center;
+    font-size: 0.92rem;
+}
+.status-ribbon strong { color: var(--mycel-warn); }
+
+/* The nav is sticky, so an anchor-linked heading (e.g. risks.html#security)
+   would otherwise land partially hidden underneath it. */
+section[id], div[id] { scroll-margin-top: 6rem; }
+
+/* Site nav */
+.site-nav {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(126, 200, 160, 0.15);
+    font-size: 0.9rem;
+    position: sticky;
+    top: 0;
+    background: var(--mycel-deep);
+    z-index: 10;
+}
+.site-nav a { color: var(--mycel-white); opacity: 0.85; }
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--mycel-gold); opacity: 1; }
+.site-nav .security-link { color: var(--mycel-warn); opacity: 1; font-weight: bold; }
+.site-nav .security-link:hover { text-decoration: underline; }
+
+/* Hero */
+.hero {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: var(--mycel-gold);
+    margin-bottom: 1rem;
+    letter-spacing: 0.15em;
+}
+
+.hero-subtitle { font-size: 1.4rem; opacity: 0.85; margin-bottom: 2rem; font-style: italic; }
+.hero-description { max-width: 700px; font-size: 1.15rem; margin-bottom: 3rem; }
+
+.readiness-grid {
+    display: grid;
+    width: min(100%, 860px);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin: 1.5rem 0 1rem;
+    text-align: left;
+}
+@media (max-width: 900px) { .readiness-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .readiness-grid { grid-template-columns: 1fr; } }
+
+.readiness-item {
+    background: rgba(240, 240, 232, 0.05);
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    border-left: 3px solid var(--mycel-grey);
+}
+.readiness-item.status-implemented { border-left-color: var(--mycel-green); }
+.readiness-item.status-partial { border-left-color: var(--mycel-gold); }
+.readiness-item.status-none, .readiness-item.status-not-established { border-left-color: var(--mycel-warn); }
+.readiness-item .area { font-size: 0.8rem; opacity: 0.7; }
+.readiness-item .value { font-weight: bold; }
+
+.hero-stats-caption { width: min(100%, 760px); font-size: 0.8rem; opacity: 0.55; margin: 0.5rem auto; font-style: italic; }
+
+.blocker-list { width: min(100%, 760px); text-align: left; margin: 1.5rem auto; }
+.blocker-list li { margin-bottom: 0.5rem; }
+
+.cta-buttons { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+.cta { padding: 0.8rem 2rem; border-radius: 8px; font-size: 1rem; transition: transform 0.2s; }
+@media (prefers-reduced-motion: reduce) { .cta { transition: none; } }
+.cta:hover { transform: translateY(-2px); text-decoration: none; }
+.cta-primary { background: var(--mycel-gold); color: var(--mycel-deep); font-weight: bold; }
+.cta-secondary { border: 1px solid var(--mycel-gold); color: var(--mycel-gold); }
+
+/* Sections */
+section { padding: 4rem 0; }
+section:nth-child(even) { background: rgba(126, 200, 160, 0.05); }
+h2 { font-size: 2rem; color: var(--mycel-gold); margin-bottom: 1.5rem; text-wrap: balance; }
+h3 { font-size: 1.3rem; color: var(--mycel-green); margin-bottom: 0.5rem; }
+.section-lede { opacity: 0.85; max-width: 700px; margin-bottom: 2rem; }
+
+.status-tag-inline {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.55rem;
+    border-radius: 999px;
+    background: var(--mycel-badge-bg);
+    color: var(--mycel-deep);
+    font-weight: bold;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+.status-tag-inline.warn { background: var(--mycel-warn); color: var(--mycel-deep); }
+.status-tag-inline.null { background: var(--mycel-grey); color: var(--mycel-white); }
+
+/* Three-way split cards */
+.split-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+.split-card { border-radius: 12px; padding: 1.5rem; border: 1px solid rgba(232, 197, 71, 0.15); }
+.split-card.implemented { background: rgba(126, 200, 160, 0.1); border-color: rgba(126, 200, 160, 0.3); }
+.split-card.experimental { background: rgba(232, 197, 71, 0.07); border-color: rgba(232, 197, 71, 0.25); }
+.split-card.philosophical { background: rgba(107, 125, 107, 0.1); border-color: rgba(107, 125, 107, 0.3); }
+.split-card .eyebrow {
+    display: inline-block; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.2rem 0.6rem; border-radius: 999px; margin-bottom: 0.8rem;
+}
+.implemented .eyebrow { background: var(--mycel-green); color: var(--mycel-deep); }
+.experimental .eyebrow { background: var(--mycel-gold); color: var(--mycel-deep); }
+.philosophical .eyebrow { background: var(--mycel-badge-bg); color: var(--mycel-deep); }
+.split-card ul { padding-left: 1.2rem; margin-top: 0.6rem; font-size: 0.95rem; }
+.split-card li { margin-bottom: 0.3rem; }
+
+/* Currency / generic card grid */
+.currency-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.currency-card { background: rgba(126, 200, 160, 0.08); border: 1px solid rgba(232, 197, 71, 0.15); border-radius: 12px; padding: 1.5rem; }
+.currency-card h3 { margin-bottom: 0.3rem; }
+.currency-type { font-size: 0.85rem; opacity: 0.6; margin-bottom: 0.8rem; font-style: italic; }
+
+/* Tables */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; min-width: 480px; }
+caption { text-align: left; font-size: 0.85rem; opacity: 0.7; margin-bottom: 0.5rem; caption-side: top; }
+th, td { padding: 0.6rem 1rem; text-align: left; border-bottom: 1px solid rgba(126, 200, 160, 0.15); }
+th { color: var(--mycel-gold); font-size: 0.9rem; }
+td { font-variant-numeric: tabular-nums; }
+
+/* Declaration Preview */
+.declaration-preview { background: rgba(232, 197, 71, 0.05); border-left: 4px solid var(--mycel-gold); padding: 2rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+.declaration-preview blockquote { font-size: 1.15rem; font-style: italic; line-height: 1.8; }
+
+/* Research-status callout */
+.research-status-box {
+    background: rgba(232, 146, 90, 0.1);
+    border: 1px solid rgba(232, 146, 90, 0.4);
+    border-left: 4px solid var(--mycel-warn);
+    border-radius: 0 8px 8px 0;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+}
+.research-status-box .label { color: var(--mycel-warn); font-weight: bold; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.06em; display: block; margin-bottom: 0.5rem; }
+
+/* Who-has-power panel */
+.power-panel { background: rgba(232, 197, 71, 0.06); border: 1px solid rgba(232, 197, 71, 0.25); border-radius: 12px; padding: 1.75rem 2rem; margin: 1.5rem 0; }
+.power-qlist { margin-top: 1rem; }
+.power-qlist dt { color: var(--mycel-green); font-weight: bold; margin-top: 0.9rem; }
+.power-qlist dd { margin-left: 0; opacity: 0.9; }
+
+/* Rights list */
+.rights-list { columns: 2; column-gap: 2rem; margin-top: 1rem; }
+.rights-list li { break-inside: avoid; margin-bottom: 0.6rem; }
+@media (max-width: 640px) { .rights-list { columns: 1; } }
+
+.scale-stats { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; font-size: 0.85rem; opacity: 0.65; margin-top: 0.5rem; }
+.scale-stats b { color: var(--mycel-gold); font-variant-numeric: tabular-nums; }
+
+/* Evidence-status legend */
+.legend { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0 2rem; }
+.legend-tag { font-size: 0.75rem; padding: 0.25rem 0.7rem; border-radius: 999px; border: 1px solid rgba(240,240,232,0.25); opacity: 0.85; }
+
+/* Risk register table gets its own zebra striping for readability at length */
+.risk-table tbody tr:nth-child(even) { background: rgba(240,240,232,0.03); }
+.risk-table td, .risk-table th { vertical-align: top; }
+
+footer { padding: 3rem 2rem; text-align: center; font-size: 0.9rem; opacity: 0.6; }
+footer a { opacity: 0.8; }
+.footer-links { display: flex; gap: 2rem; justify-content: center; margin-bottom: 1.5rem; flex-wrap: wrap; }
+
+@media (max-width: 768px) {
+    .currency-grid, .split-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mycelix Risks — the full Rights &amp; Abuse Analysis risk register, disclosed defect status, and security posture. Pre-alpha, not validated for civic deployment.">
+    <meta property="og:title" content="Mycelix — Risks and Security Posture">
+    <meta property="og:description" content="Full risk register, disclosed defect status, and security posture for Mycelix's experimental governance mechanisms.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mycelix.net/risks.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mycelix — Risks and Security Posture">
+    <meta name="twitter:description" content="Full risk register, disclosed defect status, and security posture for Mycelix's experimental governance mechanisms.">
+    <title>Mycelix — Risks and Security Posture</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🍄</text></svg>">
+    <link rel="canonical" href="https://mycelix.net/risks.html">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <div class="status-ribbon tech">
+        <strong>PRE-ALPHA RESEARCH PROTOTYPE · NOT VALIDATED FOR CIVIC DEPLOYMENT.</strong> This page discloses failure modes; it is not a certification that they're resolved.
+    </div>
+    <header>
+        <nav aria-label="Primary" class="site-nav tech">
+            <a href="/">Overview</a>
+            <a href="/governance.html">Governance</a>
+            <a href="/risks.html" aria-current="page">Risks</a>
+            <a href="/philosophy.html">Philosophy</a>
+            <a href="https://github.com/Luminous-Dynamics/mycelix">Source</a>
+            <a href="/risks.html#security" class="security-link">🛡 Security</a>
+        </nav>
+    </header>
+
+    <main id="main-content">
+    <!-- Rights & Abuse Analysis -->
+    <section id="rights-and-abuse">
+        <div class="container" style="padding-top: 2rem;">
+            <h2>Rights &amp; Abuse Analysis</h2>
+            <p class="section-lede">
+                A system that gates political capability by a computed score is a real
+                power structure with real failure modes. Answered honestly, not
+                reassuringly — most rows below are open problems, not solved ones. A
+                risk is only ever marked resolved once a safeguard actually exists, is
+                tested, and covers the canonical execution path — not because a
+                document proposes one.
+            </p>
+
+            <div class="table-wrap">
+            <table class="tech risk-table">
+                <caption>Rights &amp; Abuse questions, current answers, and deployment consequence</caption>
+                <thead>
+                    <tr><th scope="col">Question</th><th scope="col">Current answer</th><th scope="col">Status</th><th scope="col">Deployment consequence</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Who defines the score?</td><td>Initial dimensions, weights and thresholds were authored by the project maintainer. They have not been approved by an independent community, standards body, or democratic process.</td><td>Unresolved</td><td>Blocks legitimate civic use</td></tr>
+                    <tr><td>Can a score be appealed?</td><td>No complete public process exists</td><td>Missing</td><td>Blocks deployment</td></tr>
+                    <tr><td>Can rules change retroactively?</td><td>Needs an explicit prohibition and formula/weight versioning; not yet specified</td><td>Open</td><td>High risk</td></tr>
+                    <tr><td>Is participation anonymous?</td><td>Not guaranteed — identity binding (DID) is integral to the current design</td><td>Partial</td><td>Requires its own threat model before relying on it</td></tr>
+                    <tr><td>Are Guardian powers constrained?</td><td>No approved, complete mechanism (scope/quorum/duration/audit/revocation/appeal all unspecified)</td><td>Missing</td><td>Must remain disabled / unimplemented</td></tr>
+                    <tr><td>Is the profile scientifically validated?</td><td>No</td><td>Not validated; consciousness-measure interpretation rejected</td><td>Must not be described as a consciousness measurement</td></tr>
+                    <tr><td>Can collusion or capture alter outcomes?</td><td>Sybil-resistance is a stated goal, not a demonstrated property. See the disclosed defect class below.</td><td>Open</td><td>Results are not authoritative</td></tr>
+                    <tr><td>Can users leave or fork?</td><td>Data export, exit, and constitutional-fork rights need explicit specification — not yet written down</td><td>Needs specification</td><td>A required sovereignty property, currently missing</td></tr>
+                </tbody>
+            </table>
+            </div>
+
+            <div class="research-status-box tech" style="margin-top:2rem;" id="security">
+                <span class="label">Disclosed defect class — impact and scope, not an exploit guide</span>
+                <p>A known authorization-binding defect class could permit actions to be attributed to the wrong agent under affected code paths (DHT entries not cryptographically bound to the real acting agent). <strong>Until the relevant invariant is repaired and independently tested on a given path, any governance-relevant result on that path must not be treated as trustworthy.</strong></p>
+                <p style="margin-top:0.75rem;">Scope, honestly bounded: this defect class has been found and mostly fixed across this codebase, tracked cluster-by-cluster. The Governance cluster's threshold-signing piece is confirmed still open (blocked on an external dependency); the rest of the Governance cluster's status hasn't been independently reconciled for this page. <strong>Don't infer "affects everything" or "already fixed everywhere."</strong></p>
+                <p style="margin-top:0.75rem;"><a href="https://github.com/Luminous-Dynamics/mycelix/blob/main/SECURITY_STATUS.md">SECURITY_STATUS.md — the canonical, maintained, cluster-by-cluster remediation record</a>. No request payloads, bypass sequences, or exploitation steps are published there or here; that level of detail belongs in coordinated security documentation once remediation is confirmed, not on a public page.</p>
+            </div>
+
+            <p class="tech" style="margin-top:1.5rem; opacity:0.85;">Why anyone should trust this with real governance authority: right now, they shouldn't — not yet. The honest pitch is real code, real tests, a real (if unfinished) attempt to think through failure modes before deployment, and a policy of disclosing gaps rather than smoothing over them. That's a reason to watch this project, not a reason to hand it authority today.</p>
+        </div>
+    </section>
+
+    <!-- Security posture -->
+    <section id="security-posture">
+        <div class="container">
+            <h2>Security Posture</h2>
+            <div class="currency-grid">
+                <div class="currency-card">
+                    <h3>Threat model</h3>
+                    <p>No formal, published threat model exists for the governance mechanisms yet — the disclosed defect class above is the most concrete finding to date. Individual clusters vary in how far their own validation logic has been reviewed; see <a href="https://github.com/Luminous-Dynamics/mycelix/blob/main/SECURITY_STATUS.md">SECURITY_STATUS.md</a>.</p>
+                </div>
+                <div class="currency-card">
+                    <h3>Supported / unsupported use</h3>
+                    <p>Supported: local development, protocol research, code review, reproduction of stated claims. Not supported: any deployment affecting real people's governance rights, finances, health, or legal status.</p>
+                </div>
+                <div class="currency-card">
+                    <h3>Vulnerability disclosure</h3>
+                    <p>GitHub private vulnerability reporting is enabled on this org's active repositories. See the <a href="https://github.com/Luminous-Dynamics/.github/blob/main/SECURITY.md">org-wide security policy</a> for target response times and scope. Do not open a public issue for an unfixed vulnerability.</p>
+                </div>
+                <div class="currency-card">
+                    <h3>Audit status</h3>
+                    <p>Internal only. No independent third-party security review has been performed on any Mycelix cluster as of this page's last-reviewed date (footer).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publication gates -->
+    <section id="publication-gates">
+        <div class="container">
+            <h2>What would have to be true before real-world use</h2>
+            <p class="section-lede">A concrete research roadmap, not a generic "not ready yet" disclaimer:</p>
+            <ul class="rights-list tech">
+                <li>Canonical end-to-end multi-agent tests, not just unit tests</li>
+                <li>Author-binding invariant fully closed, independently tested, across all clusters</li>
+                <li>A published, formal threat model</li>
+                <li>An independent (non-self) security assessment</li>
+                <li>Sybil and collusion testing</li>
+                <li>Appeals and remedies actually implemented, not just specified</li>
+                <li>An accessible participation study</li>
+                <li>A community-controlled parameter-change process</li>
+                <li>A privacy impact assessment</li>
+                <li>Legal review for the intended jurisdiction</li>
+                <li>Adversarial simulation</li>
+                <li>A limited, opt-in pilot before any general deployment</li>
+                <li>A published incident-response plan</li>
+            </ul>
+        </div>
+    </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://luminousdynamics.org">Luminous Dynamics</a>
+            <a href="https://github.com/Luminous-Dynamics/mycelix">GitHub</a>
+            <a href="https://relationalharmonics.org">Eight Harmonies</a>
+            <a href="https://evolvingresonantcocreationism.com">Luminous Library</a>
+        </div>
+        <p>An independent research studio, built with disciplined claims and disclosed limitations.</p>
+        <p style="margin-top: 0.5rem; opacity: 0.5;">Tristan Stoltz · Luminous Dynamics · 2026</p>
+        <p class="tech" style="margin-top: 1rem; opacity: 0.45; font-size: 0.8rem;">Site content last reviewed against <a href="https://github.com/Luminous-Dynamics/mycelix/commit/bd97865e8cffb730a284b8a386c613df9ed58db9">Mycelix commit bd97865e</a> on 2026-07-28. Technical statuses on this site are internal assessments unless explicitly marked independently reproduced.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mycelix Governance — who has power today, the Multidimensional Participation Profile, baseline participation rights, and the three experimental economic mechanisms. Pre-alpha, not validated for civic deployment.">
+    <meta property="og:title" content="Mycelix — Governance Mechanisms and Rights">
+    <meta property="og:description" content="Who has power today, the participation profile, baseline rights, and economic mechanisms — all pre-alpha, not validated for civic deployment.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mycelix.net/governance.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mycelix — Governance Mechanisms and Rights">
+    <meta name="twitter:description" content="Who has power today, the participation profile, baseline rights, and economic mechanisms — all pre-alpha, not validated for civic deployment.">
+    <title>Mycelix — Governance Mechanisms and Rights</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🍄</text></svg>">
+    <link rel="canonical" href="https://mycelix.net/governance.html">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <div class="status-ribbon tech">
+        <strong>PRE-ALPHA RESEARCH PROTOTYPE · NOT VALIDATED FOR CIVIC DEPLOYMENT.</strong> Nothing on this page governs a real community today.
+    </div>
+    <header>
+        <nav aria-label="Primary" class="site-nav tech">
+            <a href="/">Overview</a>
+            <a href="/governance.html" aria-current="page">Governance</a>
+            <a href="/risks.html">Risks</a>
+            <a href="/philosophy.html">Philosophy</a>
+            <a href="https://github.com/Luminous-Dynamics/mycelix">Source</a>
+            <a href="/risks.html#security" class="security-link">🛡 Security</a>
+        </nav>
+    </header>
+
+    <main id="main-content">
+    <section>
+        <div class="container" style="padding-top: 2rem;">
+            <h2 class="tech">Governance: Mechanisms and Rights</h2>
+            <p class="section-lede">Every section below distinguishes <strong>implemented protocol behavior</strong> from <strong>proposed governance rules</strong> — the two are not the same maturity level, even when described next to each other.</p>
+        </div>
+    </section>
+
+    <!-- Who has power -->
+    <section id="power">
+        <div class="container">
+            <h2 class="tech">Who has power today?</h2>
+            <div class="power-panel tech">
+                <p><strong>Current authority:</strong> Mycelix is presently designed and maintained primarily by its founder. Profile dimensions, weights, thresholds, and constitutional proposals have not been ratified by an independent community. No public institution or civic population has delegated governing authority to the system.</p>
+                <dl class="power-qlist">
+                    <dt>Who can change the code?</dt><dd>The maintainer, and anyone with a merged PR — there is no separate approval body. <span class="status-tag-inline">Current project governance</span></dd>
+                    <dt>Who can change scoring parameters?</dt><dd>The maintainer, unilaterally, today. <span class="status-tag-inline">Current project governance</span></dd>
+                    <dt>Who decides which evidence is valid?</dt><dd>The maintainer's own internal review, disclosed on this site — not independently audited. <span class="status-tag-inline">Current project governance</span></dd>
+                    <dt>Who can approve a real-world deployment?</dt><dd>No approval process exists; none is recommended today. <span class="status-tag-inline warn">Proposed — missing</span></dd>
+                    <dt>Who handles appeals?</dt><dd>No appeals process exists for participation-profile decisions today — a disclosed gap, not a hidden one. <span class="status-tag-inline warn">Proposed — missing</span></dd>
+                    <dt>Who can disable dangerous functionality?</dt><dd>No deployment-wide suspension, rollback, or community-controlled emergency mechanism is currently specified. <span class="status-tag-inline warn">Proposed — missing</span></dd>
+                    <dt>Who is accountable when the system causes harm?</dt><dd>No deployment accountability framework exists today. The maintainer is responsible for the project's current design, publication, and research decisions. Any real deployment would additionally require a named operating entity, applicable jurisdiction, incident response, appeal, remedy, insurance or liability arrangements, and clear responsibility for local operators. <span class="status-tag-inline warn">Proposed — missing</span></dd>
+                </dl>
+            </div>
+        </div>
+    </section>
+
+    <!-- Participation Profile -->
+    <section id="participation-profile">
+        <div class="container">
+            <h2>Multidimensional Participation Profile</h2>
+            <p>An experimental, four-dimensional profile &mdash; Identity (25%), Reputation (25%), Community (30%), Engagement (20%) &mdash; that this protocol uses to gate governance-tier capabilities. <strong>This profile is not a validated measure of consciousness</strong>, moral worth, or a person's civic value. Its dimensions are design choices, not discovered natural facts, and a global composite score should not be treated as authoritative. It was renamed from "Consciousness-Gated Participation" because that name implied a settled measurement this protocol doesn't actually make. <span class="status-tag-inline">Implemented</span></p>
+
+            <div class="research-status-box tech">
+                <span class="label">Research status</span>
+                This mechanism is not validated for real-world civic governance, public elections, employment, healthcare, credit, access control, or allocation of legal rights. It is an experimental simulation and protocol-design mechanism. The risk isn't only the old "consciousness" label — <strong>any unilateral multidimensional score controlling political participation can become a mechanism of exclusion</strong>, regardless of what it's named.
+            </div>
+
+            <p class="tech" style="opacity:0.75; font-size:0.9rem;">Role names below (Citizen, Steward, Guardian) are this protocol's internal design vocabulary, not a claim about real civic citizenship or constitutional authority — those terms are reserved for the <a href="/philosophy.html">Philosophy</a> page unless a real legal/institutional context someday applies.</p>
+
+            <div class="table-wrap">
+            <table>
+                <caption>Participation tiers as currently coded — a design, not a live deployment</caption>
+                <thead>
+                    <tr><th scope="col">Tier</th><th scope="col">Min Score</th><th scope="col">Vote Weight</th><th scope="col">Capabilities</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Observer</td><td>0.0</td><td>0</td><td>Read-only access</td></tr>
+                    <tr><td>Participant</td><td>0.3</td><td>5,000 bp</td><td>Basic proposals</td></tr>
+                    <tr><td>Citizen</td><td>0.4</td><td>7,500 bp</td><td>Binding votes</td></tr>
+                    <tr><td>Steward</td><td>0.6</td><td>10,000 bp</td><td>Protocol rule changes (not legal constitutions)</td></tr>
+                    <tr><td>Guardian</td><td>0.8</td><td>10,000 bp</td><td><em>Proposed emergency coordination — unimplemented and governance-blocked</em> <span class="status-tag-inline warn">Blocked</span></td></tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="research-status-box tech">
+                <span class="label">Guardian tier — precise status</span>
+                No deployable Guardian emergency-power mechanism is currently approved. The public design does not yet define adequate scope, quorum, duration, audit, revocation, or appeal constraints. This blocks real-world deployment. Any future implementation would require strict scope, automatic expiry, quorum, auditability, appeal, override, conflict-of-interest controls, and independent review before being presented as available — not just designed.
+            </div>
+            <p style="margin-top:1rem; opacity:0.75; font-size:0.95rem;">This table describes the code's design, not a live deployment with real "Guardians" holding real emergency power over real people. Full risk register: <a href="/risks.html">Risks page</a>.</p>
+
+            <h3 style="margin-top:2.5rem;">Baseline participation rights</h3>
+            <p style="opacity:0.85;">A reputation-gated system risks implying that all participation must be earned. These are meant as a non-negotiable floor, not something a low score can remove — a design commitment, not yet independently enforced in code. <span class="status-tag-inline warn">Proposed</span></p>
+            <ul class="rights-list tech">
+                <li>Right to inspect decisions affecting oneself</li>
+                <li>Right to challenge evidence used against you</li>
+                <li>Right to correct identity data</li>
+                <li>Right to appeal sanctions</li>
+                <li>Right to leave</li>
+                <li>Right to export your own data</li>
+                <li>Right to fork, where legally and technically possible</li>
+                <li>Right to communicate criticism</li>
+                <li>Right not to be assigned a secret score</li>
+                <li>Right not to have unrelated domain history reused against you</li>
+                <li>Right to know which rule version produced a decision</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Economic mechanisms -->
+    <section id="economy">
+        <div class="container">
+            <h2>Three Experimental Economic Primitives</h2>
+            <p>Not one metric but three, each serving a distinct function that no single token can fulfill. Implemented and tested; not yet used in any real economy. <span class="status-tag-inline">Implemented</span></p>
+
+            <div class="currency-grid">
+                <div class="currency-card">
+                    <h3>MYCEL</h3>
+                    <p class="currency-type">Non-transferable reputation credential (0.0 &ndash; 1.0)</p>
+                    <p>Non-transferable by protocol design. Its value is computed from configured participation and attestation rules, which remain provisional and vulnerable to capture or gaming. Decays without activity.</p>
+                </div>
+                <div class="currency-card">
+                    <h3>SAP</h3>
+                    <p class="currency-type">Demurrage-bearing exchange medium</p>
+                    <p>2% annual decay returns idle wealth to commons as compost: 70% local, 20% regional, 10% global. "Mintable against physical assets" is a prototype design, not a live asset-backed financial instrument.</p>
+                </div>
+                <div class="currency-card">
+                    <h3>TEND</h3>
+                    <p class="currency-type">Hour-denominated mutual credit</p>
+                    <p>TEND is currently modeled as hour-denominated mutual credit, zero-sum. Real communities would still need to determine equivalence, accessibility, skill, intensity, care work, and dispute rules — none of that is specified yet. Cultural naming is sovereign (TEND, CARE, HOURS); protocol stays interoperable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://luminousdynamics.org">Luminous Dynamics</a>
+            <a href="https://github.com/Luminous-Dynamics/mycelix">GitHub</a>
+            <a href="https://relationalharmonics.org">Eight Harmonies</a>
+            <a href="https://evolvingresonantcocreationism.com">Luminous Library</a>
+        </div>
+        <p>An independent research studio, built with disciplined claims and disclosed limitations.</p>
+        <p style="margin-top: 0.5rem; opacity: 0.5;">Tristan Stoltz · Luminous Dynamics · 2026</p>
+        <p class="tech" style="margin-top: 1rem; opacity: 0.45; font-size: 0.8rem;">Site content last reviewed against <a href="https://github.com/Luminous-Dynamics/mycelix/commit/bd97865e8cffb730a284b8a386c613df9ed58db9">Mycelix commit bd97865e</a> on 2026-07-28. Technical statuses on this site are internal assessments unless explicitly marked independently reproduced.</p>
+    </footer>
+</body>
+</html>
