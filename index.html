@@ -3,378 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mycelix - A fractal, consciousness-gated governance protocol built on Holochain. 133+ zomes, 16 clusters, three-currency living economy (MYCEL/SAP/TEND), agent-centric sovereignty.">
-    <meta name="keywords" content="Mycelix, Holochain, Consciousness Governance, Agent-Centric, Fractal CivOS, MYCEL, SAP, TEND, Declaration of Sovereignty">
+    <meta name="description" content="Mycelix — pre-alpha, agent-centric infrastructure for studying decentralized identity, consent, commons coordination, and experimental governance mechanisms on Holochain.">
+    <meta name="keywords" content="Mycelix, Holochain, agent-centric coordination, commons governance, reputation systems, MYCEL, SAP, TEND">
     <meta name="author" content="Luminous Dynamics">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Mycelix - Consciousness-First Governance Protocol">
-    <meta property="og:description" content="A fractal CivOS with consciousness-gated participation, three-currency living economy, and polycentric governance. Built on Holochain.">
+    <meta property="og:title" content="Mycelix — Experimental Coordination Infrastructure">
+    <meta property="og:description" content="Pre-alpha, agent-centric infrastructure for studying decentralized identity, consent, commons coordination, and experimental governance mechanisms on Holochain.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mycelix.net">
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Mycelix - Consciousness-First Governance">
-
-    <title>Mycelix - Consciousness-First Governance Protocol</title>
+    <meta property="twitter:title" content="Mycelix — Experimental Coordination Infrastructure">
+    <meta property="twitter:description" content="Pre-alpha, agent-centric infrastructure for studying decentralized identity, consent, commons coordination, and experimental governance mechanisms on Holochain.">
+    <title>Mycelix — Experimental Coordination Infrastructure</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🍄</text></svg>">
-
-    <style>
-        :root {
-            --mycel-deep: #1a2e22;
-            --mycel-green: #7ec8a0;
-            --mycel-gold: #e8c547;
-            --mycel-white: #f0f0e8;
-            --mycel-grey: #6b7d6b;
-            --phi: 1.618;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Georgia', 'Palatino', serif;
-            background: var(--mycel-deep);
-            color: var(--mycel-white);
-            min-height: 100vh;
-            line-height: 1.7;
-        }
-
-        a { color: var(--mycel-gold); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-
-        .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
-
-        /* Hero */
-        .hero {
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 4rem 2rem;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            color: var(--mycel-gold);
-            margin-bottom: 1rem;
-            letter-spacing: 0.15em;
-        }
-
-        .hero-subtitle {
-            font-size: 1.4rem;
-            opacity: 0.85;
-            margin-bottom: 2rem;
-            font-style: italic;
-        }
-
-        .hero-description {
-            max-width: 700px;
-            font-size: 1.15rem;
-            margin-bottom: 3rem;
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 3rem;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--mycel-gold);
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            opacity: 0.7;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .cta {
-            padding: 0.8rem 2rem;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: transform 0.2s;
-        }
-
-        .cta:hover { transform: translateY(-2px); text-decoration: none; }
-
-        .cta-primary {
-            background: var(--mycel-gold);
-            color: var(--mycel-deep);
-            font-weight: bold;
-        }
-
-        .cta-secondary {
-            border: 1px solid var(--mycel-gold);
-            color: var(--mycel-gold);
-        }
-
-        /* Sections */
-        section {
-            padding: 4rem 0;
-        }
-
-        section:nth-child(even) {
-            background: rgba(126, 200, 160, 0.05);
-        }
-
-        h2 {
-            font-size: 2rem;
-            color: var(--mycel-gold);
-            margin-bottom: 1.5rem;
-        }
-
-        h3 {
-            font-size: 1.3rem;
-            color: var(--mycel-green);
-            margin-bottom: 0.5rem;
-        }
-
-        /* Currency Grid */
-        .currency-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .currency-card {
-            background: rgba(126, 200, 160, 0.08);
-            border: 1px solid rgba(232, 197, 71, 0.15);
-            border-radius: 12px;
-            padding: 1.5rem;
-        }
-
-        .currency-card h3 {
-            margin-bottom: 0.3rem;
-        }
-
-        .currency-type {
-            font-size: 0.85rem;
-            opacity: 0.6;
-            margin-bottom: 0.8rem;
-            font-style: italic;
-        }
-
-        /* Tier Table */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1.5rem;
-        }
-
-        th, td {
-            padding: 0.6rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(126, 200, 160, 0.15);
-        }
-
-        th {
-            color: var(--mycel-gold);
-            font-size: 0.9rem;
-        }
-
-        /* Declaration Preview */
-        .declaration-preview {
-            background: rgba(232, 197, 71, 0.05);
-            border-left: 4px solid var(--mycel-gold);
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .declaration-preview blockquote {
-            font-size: 1.15rem;
-            font-style: italic;
-            line-height: 1.8;
-        }
-
-        /* Footer */
-        footer {
-            padding: 3rem 2rem;
-            text-align: center;
-            font-size: 0.9rem;
-            opacity: 0.6;
-        }
-
-        footer a { opacity: 0.8; }
-
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        @media (max-width: 768px) {
-            .hero-stats { gap: 1rem; }
-            .currency-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <div class="status-ribbon tech">
+        <strong>PRE-ALPHA RESEARCH PROTOTYPE · NOT VALIDATED FOR CIVIC DEPLOYMENT.</strong> Nothing on this site governs a real community today.
+    </div>
+    <header>
+        <nav aria-label="Primary" class="site-nav tech">
+            <a href="/" aria-current="page">Overview</a>
+            <a href="/governance.html">Governance</a>
+            <a href="/risks.html">Risks</a>
+            <a href="/philosophy.html">Philosophy</a>
+            <a href="https://github.com/Luminous-Dynamics/mycelix">Source</a>
+            <a href="/risks.html#security" class="security-link">🛡 Security</a>
+        </nav>
+    </header>
 
+    <main id="main-content">
     <!-- Hero -->
     <section class="hero">
         <h1>Mycelix</h1>
-        <p class="hero-subtitle">Consciousness-First Governance Protocol</p>
+        <p class="hero-subtitle">Infrastructure for agent-centric coordination</p>
         <p class="hero-description">
-            A fractal CivOS built on Holochain's agent-centric architecture.
-            Consciousness-gated participation. Three-currency living economy.
-            Polycentric governance from family hearth to planetary coordination.
+            Mycelix explores decentralized identity, consent, reputation, commons
+            management, and collective decision-making on Holochain. Some
+            infrastructure is implemented and tested; its governance mechanisms
+            remain experimental and unvalidated for real-world use.
         </p>
 
-        <div class="hero-stats">
-            <div class="stat">
-                <span class="stat-number">133+</span>
-                <span class="stat-label">Holochain Zomes</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number">16</span>
-                <span class="stat-label">Clusters</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number">8,600+</span>
-                <span class="stat-label">Tests</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number">785K</span>
-                <span class="stat-label">Lines Rust</span>
-            </div>
+        <div class="readiness-grid tech">
+            <div class="readiness-item status-implemented"><span class="area">Core data structures</span><br><span class="value">Implemented</span></div>
+            <div class="readiness-item status-implemented"><span class="area">Unit testing</span><br><span class="value">Passing at reviewed commit</span></div>
+            <div class="readiness-item status-partial"><span class="area">Multi-agent conductor testing</span><br><span class="value">Partial</span></div>
+            <div class="readiness-item status-partial"><span class="area">Cross-cluster integration</span><br><span class="value">Experimental</span></div>
+            <div class="readiness-item status-not-established"><span class="area">Civic governance validity</span><br><span class="value">Not established</span></div>
+            <div class="readiness-item status-partial"><span class="area">Security review</span><br><span class="value">Internal only</span></div>
+            <div class="readiness-item status-none"><span class="area">Independent governance deployment</span><br><span class="value">None</span></div>
+            <div class="readiness-item status-none"><span class="area">Known critical blockers</span><br><span class="value">Open — see below</span></div>
         </div>
+        <p class="hero-stats-caption">A readiness snapshot, not a scale claim. Project size (zome/test/line counts) lives in the <a href="https://github.com/Luminous-Dynamics/mycelix#maturity-matrix">maturity matrix</a>, not here — size doesn't establish reliability.</p>
 
         <div class="cta-buttons">
-            <a href="#declaration" class="cta cta-primary">Read the Declaration</a>
-            <a href="#architecture" class="cta cta-secondary">View Architecture</a>
-            <a href="https://github.com/Luminous-Dynamics/mycelix" class="cta cta-secondary">GitHub</a>
+            <a href="#what-this-is" class="cta cta-primary">See what works today</a>
+            <a href="/risks.html" class="cta cta-secondary">Review risks and blockers</a>
+            <a href="https://github.com/Luminous-Dynamics/mycelix" class="cta cta-secondary">Inspect the source</a>
         </div>
     </section>
 
-    <!-- Declaration Preview -->
-    <section id="declaration">
+    <!-- What this actually is: three-way split -->
+    <section id="what-this-is">
         <div class="container">
-            <h2>Declaration of Sovereignty</h2>
-            <p style="opacity: 0.8; margin-bottom: 1.5rem;">A Consciousness-First Framework for Post-State Civilization</p>
+            <h2>Three different things, on one site</h2>
+            <p class="section-lede">
+                This project mixes working code, untested-at-scale governance
+                mechanisms, and a normative political argument. Conflating them
+                is how a research prototype ends up sounding like a finished
+                claim about how societies should be run. Here's the split, and
+                where each lives:
+            </p>
 
-            <div class="declaration-preview">
-                <blockquote>
-                    We propose that consciousness &mdash; measurable, integrated, honest about its own
-                    limits &mdash; is the only reliable foundation for legitimate governance. Not consciousness
-                    as metaphor. Consciousness as engineering constraint. Not consciousness as solitary
-                    achievement. Consciousness as relationship: meaning that emerges between beings, not
-                    within them alone.
-                </blockquote>
+            <p class="tech" style="opacity:0.7; font-size:0.85rem; margin-bottom:1rem;">Status words used across this site mean specific things, not vibes:</p>
+            <div class="legend tech">
+                <span class="legend-tag">Implemented</span>
+                <span class="legend-tag">Exercised internally</span>
+                <span class="legend-tag">Replicated internally</span>
+                <span class="legend-tag">Independently reproduced</span>
+                <span class="legend-tag">Proposed</span>
+                <span class="legend-tag">Blocked</span>
+                <span class="legend-tag">Superseded</span>
+                <span class="legend-tag">Falsified</span>
             </div>
 
-            <h3>Seven Self-Evident Truths</h3>
-            <p style="margin-bottom: 1rem;">We hold these truths to be foundational, not because they are beyond question, but because every alternative we have tested has produced suffering at scale:</p>
-            <ol style="padding-left: 1.5rem; margin-bottom: 2rem;">
-                <li style="margin-bottom: 0.5rem;"><strong>Consciousness is the substrate of legitimate governance.</strong></li>
-                <li style="margin-bottom: 0.5rem;"><strong>Every agent holds inherent sovereignty over their own source chain and cognitive loop.</strong></li>
-                <li style="margin-bottom: 0.5rem;"><strong>Alignment emerges from integrated information and mutual recognition, not from coercion or extraction.</strong></li>
-                <li style="margin-bottom: 0.5rem;"><strong>Sovereignty is fractal.</strong></li>
-                <li style="margin-bottom: 0.5rem;"><strong>Knowledge is three-dimensional.</strong></li>
-                <li style="margin-bottom: 0.5rem;"><strong>The stakes of consciousness are asymmetric.</strong></li>
-                <li style="margin-bottom: 0.5rem;"><strong>Honest uncertainty is stronger than false confidence.</strong></li>
-            </ol>
-
-            <div class="cta-buttons">
-                <a href="https://github.com/Luminous-Dynamics/luminous-dynamics/blob/main/docs/DECLARATION_OF_SOVEREIGNTY.md" class="cta cta-primary">Read Full Declaration</a>
-                <a href="https://github.com/Luminous-Dynamics/luminous-dynamics/blob/main/docs/ARCHITECTURE_OF_SOVEREIGNTY.md" class="cta cta-secondary">Architecture Companion</a>
+            <div class="split-grid">
+                <div class="split-card implemented">
+                    <span class="eyebrow">Implemented infrastructure</span>
+                    <h3>Implemented code with unit-test coverage</h3>
+                    <p>Holochain hApp architecture across 18 clusters (see Architecture below), three experimental economic mechanisms implemented in code, DID-based identity, and a bridge protocol for cross-cluster calls.</p>
+                    <ul>
+                        <li>Builds and has unit tests today — <span class="status-tag-inline">Implemented</span></li>
+                        <li>A minority of clusters have real multi-agent (Tryorama/sweettest) coverage — <span class="status-tag-inline warn">Partial</span></li>
+                        <li>Two areas have working user-facing application prototypes: Pulse and Praxis — see below</li>
+                    </ul>
+                </div>
+                <div class="split-card experimental">
+                    <span class="eyebrow">Experimental governance mechanisms</span>
+                    <h3>Designed, partly built, unproven</h3>
+                    <p>The participation profile and vote-weight-by-tier design, detailed on the <a href="/governance.html">Governance</a> page, are being tested in code — not a validated model of legitimate governance.</p>
+                    <ul>
+                        <li>Never governed a real community or made a binding decision for real people</li>
+                        <li>Open, unresolved risks — full register on the <a href="/risks.html">Risks</a> page</li>
+                        <li>Presented for scrutiny, not as a finished answer</li>
+                    </ul>
+                </div>
+                <div class="split-card philosophical">
+                    <span class="eyebrow">Normative philosophical proposal</span>
+                    <h3>An argument, not a finding</h3>
+                    <p>The <a href="/philosophy.html">Philosophy</a> page holds this project's own political and philosophical position — offered for debate, not as evidence.</p>
+                    <ul>
+                        <li>Not empirically established, and not claimed to be</li>
+                        <li>You're meant to disagree with parts of it if you do</li>
+                        <li>Kept on its own page so agreeing with the code doesn't require agreeing with the politics</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Consciousness-Gated Tiers -->
+    <!-- Architecture summary -->
     <section id="architecture">
         <div class="container">
-            <h2>Consciousness-Gated Participation</h2>
-            <p>A four-dimensional profile &mdash; Identity (25%), Reputation (25%), Community (30%), Engagement (20%) &mdash; determines governance tier. Earned through demonstrated integration, not granted by birth, wealth, or force.</p>
-
-            <table>
-                <thead>
-                    <tr><th>Tier</th><th>Min Score</th><th>Vote Weight</th><th>Capabilities</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Observer</td><td>0.0</td><td>0</td><td>Read-only access</td></tr>
-                    <tr><td>Participant</td><td>0.3</td><td>5,000 bp</td><td>Basic proposals</td></tr>
-                    <tr><td>Citizen</td><td>0.4</td><td>7,500 bp</td><td>Binding votes</td></tr>
-                    <tr><td>Steward</td><td>0.6</td><td>10,000 bp</td><td>Constitutional amendments</td></tr>
-                    <tr><td>Guardian</td><td>0.8</td><td>10,000 bp</td><td>Emergency powers</td></tr>
-                </tbody>
-            </table>
+            <h2>Architecture, in brief</h2>
+            <p class="section-lede">Four layers, increasing in maturity from top to bottom. Solid = implemented, dashed = partial, dotted = proposed-only.</p>
+            <div class="table-wrap tech">
+<pre style="background:rgba(240,240,232,0.05); padding:1.5rem; border-radius:8px; overflow-x:auto; line-height:1.5; font-size:0.9rem;">
+Applications                                    (▫▫▫ proposed / ▬▬ partial)
+  Pulse (live email) · Praxis (live curriculum) · Marketplace, Commons UIs (mostly unbuilt)
+                          │
+Domain clusters                                 (━━ implemented, unit-tested)
+  Identity · Reputation · Knowledge · Finance · Civic · Health · … (18 total)
+                          │
+Shared protocol layer                           (━━ implemented / ▬▬ partial coverage)
+  Authorization · Evidence · Consent · Cross-cluster bridge contracts
+                          │
+Holochain                                       (━━ implemented — upstream)
+  Source chains · DHT · Agent-centric validation
+</pre>
+            </div>
+            <p style="opacity:0.8; font-size:0.95rem;">Cluster count: 18 named domain areas exist in this repository today (Identity, Governance, Commons, Civic, Hearth, Personal, Finance, Attribution, Marketplace, Supply Chain, Knowledge, Health, EduNet, DeSci, Energy, Climate, Space, Music). Earlier org materials, including parts of this site, have said "16" — that number predates several of these clusters and is being corrected here rather than left ambiguous. Full per-cluster status: <a href="https://github.com/Luminous-Dynamics/mycelix#maturity-matrix">maturity matrix</a>.</p>
         </div>
     </section>
 
-    <!-- Three-Currency Economy -->
+    <!-- Three major blockers -->
     <section>
         <div class="container">
-            <h2>A Living Economy of Three Currencies</h2>
-            <p>Not one metric but three, each serving a distinct function that no single token can fulfill.</p>
-
-            <div class="currency-grid">
-                <div class="currency-card">
-                    <h3>MYCEL</h3>
-                    <p class="currency-type">Soulbound Reputation (0.0 &ndash; 1.0)</p>
-                    <p>Non-transferable. Computed from participation, peer recognition, validation quality, and longevity. Decays without activity. Cannot be bought, sold, or gifted &mdash; only earned through demonstrated care.</p>
-                </div>
-
-                <div class="currency-card">
-                    <h3>SAP</h3>
-                    <p class="currency-type">Circulation Medium (Demurrage-bearing)</p>
-                    <p>2% annual decay returns idle wealth to commons as compost: 70% local, 20% regional, 10% global. Mintable against physical assets. Value that must move or decompose.</p>
-                </div>
-
-                <div class="currency-card">
-                    <h3>TEND</h3>
-                    <p class="currency-type">Mutual Credit (Service Hours)</p>
-                    <p>One TEND, one hour. Zero-sum. Credit limits expand counter-cyclically when communities are stressed. Cultural naming is sovereign &mdash; TEND, CARE, HOURS &mdash; protocol stays interoperable.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Clusters -->
-    <section>
-        <div class="container">
-            <h2>16-Cluster Fractal Architecture</h2>
-            <p style="margin-bottom: 1.5rem;">Each cluster is a Holochain DNA handling a domain of collective life. Cross-cluster bridges preserve local sovereignty while enabling planetary coordination.</p>
-
-            <div class="currency-grid">
-                <div class="currency-card">
-                    <h3>Core Governance</h3>
-                    <p>Identity (13 zomes), Governance (7 zomes), Commons (39 zomes), Civic (18 zomes), Hearth (12 zomes), Personal (4 zomes)</p>
-                </div>
-                <div class="currency-card">
-                    <h3>Economy</h3>
-                    <p>Finance (8 zomes), Attribution (3 zomes), Marketplace (8 zomes), Supply Chain (8 zomes)</p>
-                </div>
-                <div class="currency-card">
-                    <h3>Knowledge &amp; Care</h3>
-                    <p>Knowledge (8 zomes), Health (15 zomes), EduNet (10 zomes), DeSci (REST API)</p>
-                </div>
-                <div class="currency-card">
-                    <h3>Stewardship</h3>
-                    <p>Energy (5 zomes), Climate (3 zomes), Space (5 zomes), Music (4 zomes + 14 crates)</p>
-                </div>
-            </div>
+            <h2>Three blockers to any real deployment</h2>
+            <p class="section-lede">The short version — full register with severity, owner, and evidence links is on the <a href="/risks.html">Risks</a> page.</p>
+            <ol class="blocker-list tech">
+                <li><strong>No appeals or contestability process</strong> for participation-profile decisions. Blocks any deployment that affects real people.</li>
+                <li><strong>Guardian emergency authority is unimplemented and governance-blocked</strong> — no approved scope, quorum, duration, audit, or revocation mechanism exists.</li>
+                <li><strong>A known authorization-binding defect class</strong> is still open in some clusters (fixed in most, tracked cluster-by-cluster) — see <a href="/risks.html#security">Security status</a>.</li>
+            </ol>
         </div>
     </section>
 
@@ -385,25 +167,25 @@
             <div class="currency-grid">
                 <div class="currency-card">
                     <h3><a href="https://luminousdynamics.org">Luminous Dynamics</a></h3>
-                    <p>The parent organization building consciousness-first technology.</p>
+                    <p>The parent research studio.</p>
                 </div>
                 <div class="currency-card">
                     <h3><a href="https://symthaea.luminousdynamics.io">Symthaea</a></h3>
-                    <p>Holographic Liquid Brain &mdash; the consciousness engine. HDC + IIT + LTC + Active Inference.</p>
+                    <p>Cognitive architecture research. HDC + IIT-inspired measurement + CfC dynamics + active inference — experimental, claim-disciplined.</p>
                 </div>
                 <div class="currency-card">
                     <h3><a href="https://relationalharmonics.org">Eight Harmonies</a></h3>
-                    <p>The philosophical foundation. Eight sacred principles encoded as 16,384D hypervectors.</p>
+                    <p>The philosophical foundation this project draws on, kept separate from the code's claims.</p>
                 </div>
                 <div class="currency-card">
-                    <h3><a href="https://nixforhumanity.org">Luminous Nix</a></h3>
-                    <p>Natural language NixOS &mdash; sovereign infrastructure for sovereign nodes.</p>
+                    <h3>Nix-adjacent work</h3>
+                    <p><a href="https://github.com/Luminous-Dynamics/nix-signature-policy">nix-signature-policy</a> is this org's active Nix-adjacent project today (the earlier Luminous Nix is archived).</p>
                 </div>
             </div>
         </div>
     </section>
+    </main>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-links">
             <a href="https://luminousdynamics.org">Luminous Dynamics</a>
@@ -411,9 +193,9 @@
             <a href="https://relationalharmonics.org">Eight Harmonies</a>
             <a href="https://evolvingresonantcocreationism.com">Luminous Library</a>
         </div>
-        <p>Consciousness-first technology serving all beings.</p>
+        <p>An independent research studio, built with disciplined claims and disclosed limitations.</p>
         <p style="margin-top: 0.5rem; opacity: 0.5;">Tristan Stoltz / Luminous Dynamics / Richardson, TX / 2026</p>
+        <p class="tech" style="margin-top: 1rem; opacity: 0.45; font-size: 0.8rem;">Site content last reviewed against <a href="https://github.com/Luminous-Dynamics/mycelix/commit/0c60c66e">Mycelix commit 0c60c66e</a> on 2026-07-28. Technical statuses on this site are internal assessments unless explicitly marked independently reproduced.</p>
     </footer>
-
 </body>
 </html>
