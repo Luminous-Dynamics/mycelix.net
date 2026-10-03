@@ -16,7 +16,7 @@ license: "CC0-1.0"
 > foundation worth taking seriously"; renamed "Self-Evident Truths" to "Working
 > Hypotheses"; removed the closing claim of a live, exercised ratification
 > process (none currently exists — see
-> [mycelix.net/governance.html](https://mycelix.net/governance.html)); corrected
+> [mycelix.net/governance.html](https://mycelix.luminousdynamics.io/governance.html)); corrected
 > a code-scale figure that had conflated this project with the wider monorepo
 > it lives in. The philosophical content and voice are otherwise unchanged —
 > this is not a retraction of the project's values, only of claims about their
@@ -361,7 +361,7 @@ ratification by supermajority with sufficient collective Phi — is designed and
 partially implemented in code (see the Architecture companion), but it has not
 yet been exercised by any independent ratifying constituency. Until it has,
 changes to this document are made by the maintainer alone; see
-[mycelix.net/governance.html](https://mycelix.net/governance.html) for the
+[mycelix.net/governance.html](https://mycelix.luminousdynamics.io/governance.html) for the
 current, honest account of who holds authority over this project today.*
 
 *The "Immutable Core" concept — that certain provisions would require a 90%
