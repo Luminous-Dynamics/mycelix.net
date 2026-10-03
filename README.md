@@ -50,7 +50,7 @@ git push -u origin main
 
 DNS is already configured via Cloudflare:
 ```
-CNAME mycelix.luminousdynamics.io -> Luminous-Dynamics.github.io
+CNAME mycelix.luminousdynamics.io -> luminous-dynamics.github.io
 ```
 
 Once GitHub Pages is enabled, the site will be live at https://mycelix.luminousdynamics.io
