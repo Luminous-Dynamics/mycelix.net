@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
-# Deploy mycelix.net to GitHub Pages
+# Deploy mycelix.luminousdynamics.io to GitHub Pages
 # Usage: ./deploy.sh
 
 set -e  # Exit on error
 
-echo "🚀 Deploying mycelix.net..."
+echo "🚀 Deploying mycelix.luminousdynamics.io..."
 
 # Check if we're in the right directory
 if [ ! -f "index.html" ]; then
-    echo "❌ Error: index.html not found. Run this script from the mycelix.net-pogq directory."
+    echo "❌ Error: index.html not found. Run this script from the mycelix.luminousdynamics.io-pogq directory."
     exit 1
 fi
 
@@ -25,7 +25,7 @@ git add .
 
 # Commit changes
 echo "💾 Committing changes..."
-git commit -m "🚀 Launch mycelix.net: Byzantine-Resistant Federated Learning
+git commit -m "🚀 Launch mycelix.luminousdynamics.io: Byzantine-Resistant Federated Learning
 
 - 100% attack detection at 45% adversaries
 - +23pp accuracy improvement over Multi-Krum
@@ -37,7 +37,7 @@ git commit -m "🚀 Launch mycelix.net: Byzantine-Resistant Federated Learning
 # Add remote if not already added
 if ! git remote | grep -q "origin"; then
     echo "🔗 Adding remote origin..."
-    git remote add origin git@github.com:Luminous-Dynamics/mycelix.net.git
+    git remote add origin git@github.com:Luminous-Dynamics/mycelix.luminousdynamics.io.git
 fi
 
 # Push to GitHub
@@ -49,12 +49,12 @@ echo ""
 echo "✅ Deployment complete!"
 echo ""
 echo "📋 Next steps:"
-echo "1. Go to https://github.com/Luminous-Dynamics/mycelix.net/settings/pages"
+echo "1. Go to https://github.com/Luminous-Dynamics/mycelix.luminousdynamics.io/settings/pages"
 echo "2. Source: Deploy from a branch"
 echo "3. Branch: main / (root)"
 echo "4. Click 'Save'"
 echo ""
-echo "🌐 Your site will be live at https://mycelix.net in 2-3 minutes!"
+echo "🌐 Your site will be live at https://mycelix.luminousdynamics.io in 2-3 minutes!"
 echo ""
 echo "📊 Monitor GitHub Pages build:"
-echo "   https://github.com/Luminous-Dynamics/mycelix.net/actions"
+echo "   https://github.com/Luminous-Dynamics/mycelix.luminousdynamics.io/actions"

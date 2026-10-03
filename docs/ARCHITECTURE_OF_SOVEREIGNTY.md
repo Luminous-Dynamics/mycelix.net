@@ -18,8 +18,8 @@ license: "CC0-1.0"
 > explicit status to every mechanism, distinguishing a coded data structure
 > from a functioning institution, and removes "ratified" everywhere no real,
 > independent ratification has actually occurred. See
-> [mycelix.net/governance.html](https://mycelix.net/governance.html) and
-> [mycelix.net/risks.html](https://mycelix.net/risks.html) for the fuller,
+> [mycelix.net/governance.html](https://mycelix.luminousdynamics.io/governance.html) and
+> [mycelix.net/risks.html](https://mycelix.luminousdynamics.io/risks.html) for the fuller,
 > continuously-maintained account this document defers to.
 
 # The Architecture of Sovereignty
@@ -75,7 +75,7 @@ score that determines governance tier in the current design:
 
 We previously called this a "consciousness score." It is not a validated
 measure of consciousness, moral worth, or civic value — see
-[mycelix.net/governance.html](https://mycelix.net/governance.html#participation-profile)
+[mycelix.net/governance.html](https://mycelix.luminousdynamics.io/governance.html#participation-profile)
 for the full disclosure. Vote weight following a continuous sigmoid rather than
 a hard cliff is a real, implemented design choice; whether tier advancement
 should be "earned" at all, by these dimensions, is exactly the kind of
@@ -231,7 +231,7 @@ this would still need to determine equivalence, accessibility, skill,
 intensity, care-work valuation, and dispute rules — none of that is specified
 by the protocol itself.
 
-See [mycelix.net/governance.html](https://mycelix.net/governance.html#economy)
+See [mycelix.net/governance.html](https://mycelix.luminousdynamics.io/governance.html#economy)
 for the current, shorter public description; this document's finance-semantics
 companion (`MYCELIX_FINANCE_ECONOMICS.md`, referenced in the archived original)
 should be treated as internal design documentation, not evidence of a live
